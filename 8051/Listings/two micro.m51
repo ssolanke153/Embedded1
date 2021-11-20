@@ -1,0 +1,118 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    04/11/2020  07:47:13  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\two.obj TO .\Objects\two micro PRINT (.\Listings\two micro.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\two.obj (TWO)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\two micro (TWO)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0033H     UNIT         ?PR?DELAY?TWO
+            CODE    0833H     0016H     UNIT         ?PR?MAIN?TWO
+            CODE    0849H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0855H     0003H     UNIT         ?CO?TWO
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\two micro (TWO)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?TWO
+
+?PR?MAIN?TWO
+  +--> ?CO?TWO
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\two micro (TWO)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        TWO
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0800H         PUBLIC        delay
+  B:0098H.1       PUBLIC        TI
+  C:0833H         PUBLIC        main
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/11/2020  07:47:13  PAGE 2
+
+
+  D:0089H         PUBLIC        TMOD
+  B:0088H.7       PUBLIC        TF1
+  D:008DH         PUBLIC        TH1
+  D:008BH         PUBLIC        TL1
+  B:0088H.6       PUBLIC        TR1
+  -------         PROC          MAIN
+  C:0833H         LINE#         4
+  C:0833H         LINE#         5
+  C:0833H         LINE#         7
+  C:0836H         LINE#         8
+  C:0839H         LINE#         9
+  C:083CH         LINE#         10
+  C:083EH         LINE#         12
+  C:0841H         LINE#         14
+  C:0844H         LINE#         15
+  C:0844H         LINE#         17
+  C:0846H         LINE#         19
+  C:0848H         LINE#         23
+  -------         ENDPROC       MAIN
+  -------         PROC          DELAY
+  -------         DO            
+  D:0007H         SYMBOL        x
+  D:0006H         SYMBOL        y
+  -------         ENDDO         
+  C:0800H         LINE#         27
+  C:0800H         LINE#         28
+  C:0800H         LINE#         31
+  C:080CH         LINE#         33
+  C:080CH         LINE#         34
+  C:0818H         LINE#         35
+  C:0818H         LINE#         36
+  C:081BH         LINE#         37
+  C:081EH         LINE#         38
+  C:0821H         LINE#         39
+  C:0823H         LINE#         41
+  C:0826H         LINE#         42
+  C:0826H         LINE#         43
+  C:0828H         LINE#         44
+  C:082AH         LINE#         46
+  C:082CH         LINE#         48
+  C:082FH         LINE#         50
+  C:0832H         LINE#         51
+  -------         ENDPROC       DELAY
+  -------         ENDMOD        TWO
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY?TWO
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 004CH BYTE ( 3%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=91
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

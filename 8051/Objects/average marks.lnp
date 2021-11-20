@@ -1,0 +1,3 @@
+".\Objects\average.obj" 
+TO ".\Objects\average marks" 
+PRINT(".\Listings\average marks.m51")

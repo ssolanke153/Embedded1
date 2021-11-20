@@ -1,0 +1,67 @@
+A51 MACRO ASSEMBLER  INTERRUPT                                                            06/03/2020 15:47:46 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\interrupt.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE interrupt.a51 SET(SMALL) DEBUG PRINT(.\Listings\interrupt.lst) OBJECT(.
+                      \Objects\interrupt.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0H
+0000 02001E            2              LJMP MAIN
+                       3              
+001B                   4     ORG 001BH
+001B 020035            5             LJMP INT
+                       6             
+                       7             
+001E                   8     MAIN:
+001E 758910            9          MOV TMOD, #10H
+0021 7580FF           10              MOV P0,#0FFH
+0024 758DFC           11              MOV TH1,#0FCH
+0027 758B18           12              MOV TL1,#18H
+002A 75A888           13              MOV IE,#10001000B
+002D D28E             14              SETB TR1
+                      15              
+002F E580             16     BACK:MOV A,P0
+0031 F590             17              MOV P1,A
+0033 80FA             18              SJMP BACK
+                      19              
+0035 C28E             20     INT: CLR TR1
+0037 C2A0             21          CLR P2.0
+0039 7A64             22              MOV R2,#100
+003B DAFE             23     HERE:DJNZ R2,HERE
+003D 758DFC           24              MOV TH1,#0FCH
+0040 758B18           25              MOV TL1,#18H
+0043 D28E             26              SETB TR1
+0045 D2A0             27              SETB P2.0
+0047 32               28              RETI
+                      29             
+                      30     END
+                                      
+A51 MACRO ASSEMBLER  INTERRUPT                                                            06/03/2020 15:47:46 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BACK . . . . . . .  C ADDR   002FH   A   
+HERE . . . . . . .  C ADDR   003BH   A   
+IE . . . . . . . .  D ADDR   00A8H   A   
+INT. . . . . . . .  C ADDR   0035H   A   
+MAIN . . . . . . .  C ADDR   001EH   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TL1. . . . . . . .  D ADDR   008BH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

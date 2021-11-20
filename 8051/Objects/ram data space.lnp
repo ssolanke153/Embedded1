@@ -1,0 +1,3 @@
+".\Objects\ex1.obj" 
+TO ".\Objects\ram data space" 
+PRINT(".\Listings\ram data space.m51")

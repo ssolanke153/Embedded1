@@ -1,0 +1,51 @@
+A51 MACRO ASSEMBLER  TIME                                                                 06/21/2020 13:32:40 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\TIME.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE TIME.a51 SET(SMALL) DEBUG PRINT(.\Listings\TIME.lst) OBJECT(.\Objects\T
+                      IME.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0H
+                       2             
+0000 780A              3             MOV R0, #10
+0002 7420              4             MOV A, #20H
+0004 F2                5             MOVX @R0, A
+                       6             
+0005 780B              7             MOV R0, #11
+0007 7483              8             MOV A, #83H
+0009 F2                9             MOVX @R0, A
+                      10             
+                      11             
+000A 7800             12             MOV R0, #0
+000C 7455             13             MOV A, #55H
+000E F2               14             MOVX @R0, A
+000F 7802             15             MOV R0, #02
+0011 7458             16             MOV A, #58H
+0013 F2               17             MOVX @R0, A
+0014 7804             18             MOV R0, #04
+0016 7416             19             MOV A, #16H
+0018 F2               20             MOVX @R0, A
+0019 780B             21             MOV R0, #11
+001B 7403             22             MOV A, #03
+001D F2               23             MOVX @R0, A
+                      24             
+                      25             END
+                                     
+                                     
+A51 MACRO ASSEMBLER  TIME                                                                 06/21/2020 13:32:40 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

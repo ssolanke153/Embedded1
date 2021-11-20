@@ -1,0 +1,3 @@
+".\Objects\ascii.obj" 
+TO ".\Objects\jalsa1" 
+PRINT(".\Listings\jalsa1.m51")

@@ -1,0 +1,7 @@
+ORG 00H
+	
+	MOV A,#25H
+	MOV B,#10H
+	MUL AB
+
+	END

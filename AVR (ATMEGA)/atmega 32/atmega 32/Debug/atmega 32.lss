@@ -1,0 +1,6 @@
+
+AVRASM ver. 2.2.8  C:\Users\Shri\3D Objects\moved\Embedded\AVR (ATMEGA)\atmega 32\atmega 32\main.asm Sun May 09 13:46:45 2021
+
+[builtin](2): error: Cannot find include file: m328pdef.inc
+C:\Users\Shri\3D Objects\moved\Embedded\AVR (ATMEGA)\atmega 32\atmega 32\main.asm(0): '[builtin]' included form here
+C:\Users\Shri\3D Objects\moved\Embedded\AVR (ATMEGA)\atmega 32\atmega 32\main.asm(1): error: Cannot find include file: M32DEF.INC

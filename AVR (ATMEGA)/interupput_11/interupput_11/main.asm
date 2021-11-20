@@ -1,0 +1,44 @@
+;
+; interupput_11.asm
+;
+; Created: 6/4/2020 4:19:22 PM
+; Author : Shri
+
+
+ .ORG 0
+
+ SBI DDRB, 2
+
+ LDI R16, 0x55
+ 
+ 
+ AGAIN:OUT PORTB, R16
+       COM R16
+	   RCALL DELAY
+       RJMP AGAIN
+
+
+DELAY:
+      LDI R20,0x00
+	  OUT TCNT0, R20
+
+	  LDI R20, 9
+	  OUT OCR0, R20
+
+
+	  LDI R20, 0x09
+	  OUT TCCR0, R20
+
+AGAIN1: IN R20, TIFR
+      SBRS R20, OCF0
+	  RJMP AGAIN1
+
+	  LDI R20, 0x00
+	  OUT TCCR0, R20
+
+	  LDI R20, 1<<OCF0
+	  OUT TIFR, R20
+	  RET
+
+
+	  .EXIT

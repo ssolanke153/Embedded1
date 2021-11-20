@@ -1,0 +1,120 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    04/10/2020  09:28:36  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\RECV.obj TO .\Objects\RECEIVE PRINT (.\Listings\RECEIVE.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\RECV.obj (RECV)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\RECEIVE (RECV)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0033H     UNIT         ?PR?DELAY?RECV
+            CODE    0833H     001BH     UNIT         ?PR?MAIN?RECV
+            CODE    084EH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\RECEIVE (RECV)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?RECV
+
+?PR?MAIN?RECV
+  +--> ?PR?DELAY?RECV
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\RECEIVE (RECV)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        RECV
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:0800H         PUBLIC        delay
+  B:0098H.0       PUBLIC        RI
+  C:0833H         PUBLIC        main
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/10/2020  09:28:36  PAGE 2
+
+
+  D:0089H         PUBLIC        TMOD
+  D:00E0H         PUBLIC        ACC
+  B:0088H.7       PUBLIC        TF1
+  D:008DH         PUBLIC        TH1
+  D:008BH         PUBLIC        TL1
+  B:0088H.6       PUBLIC        TR1
+  -------         PROC          MAIN
+  C:0833H         LINE#         3
+  C:0833H         LINE#         4
+  C:0833H         LINE#         6
+  C:0836H         LINE#         7
+  C:0839H         LINE#         8
+  C:083CH         LINE#         9
+  C:083EH         LINE#         10
+  C:0840H         LINE#         11
+  C:0840H         LINE#         12
+  C:0840H         LINE#         13
+  C:0843H         LINE#         14
+  C:0843H         LINE#         15
+  C:0845H         LINE#         16
+  C:0847H         LINE#         17
+  C:0849H         LINE#         18
+  C:084CH         LINE#         20
+  -------         ENDPROC       MAIN
+  -------         PROC          DELAY
+  -------         DO            
+  D:0007H         SYMBOL        x
+  D:0006H         SYMBOL        y
+  -------         ENDDO         
+  C:0800H         LINE#         28
+  C:0800H         LINE#         29
+  C:0800H         LINE#         32
+  C:080CH         LINE#         34
+  C:080CH         LINE#         35
+  C:0818H         LINE#         36
+  C:0818H         LINE#         37
+  C:081BH         LINE#         38
+  C:081EH         LINE#         39
+  C:0821H         LINE#         40
+  C:0823H         LINE#         42
+  C:0826H         LINE#         43
+  C:0826H         LINE#         44
+  C:0828H         LINE#         45
+  C:082AH         LINE#         47
+  C:082CH         LINE#         49
+  C:082FH         LINE#         51
+  C:0832H         LINE#         52
+  -------         ENDPROC       DELAY
+  -------         ENDMOD        RECV
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 004EH BYTE ( 3%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=93
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

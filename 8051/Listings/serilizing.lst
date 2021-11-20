@@ -1,0 +1,91 @@
+A51 MACRO ASSEMBLER  SERILIZING                                                           03/25/2020 17:50:36 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\serilizing.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE serilizing.a51 SET(SMALL) DEBUG PRINT(.\Listings\serilizing.lst) OBJECT
+                      (.\Objects\serilizing.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     
+                       2     
+                       3     
+                       4     
+                       5     
+                       6     
+                       7     
+                       8     
+                       9     
+                      10     
+                      11     
+                      12     
+                      13     
+                      14     
+                      15     
+                      16     
+                      17                     
+                      18                     
+                      19     
+                      20     
+                      21     
+                      22     
+                      23     
+                      24     
+                      25     
+                      26     
+                      27     
+                      28     
+                      29     
+                      30     
+                      31             
+                      32             
+                      33                     
+                      34     
+                      35     
+                      36     
+                      37             
+0000                  38             ORG 00H
+0000 B3               39                     BACK:CPL C
+0001 9292             40                     MOV P1.2,C
+0003 1107             41                 ACALL DELAY
+0005 80F9             42             SJMP BACK       
+0007                  43                     DELAY:
+0007 79FF             44                     MOV R1,#255
+0009 78FF             45                             H2:MOV R0,#255
+000B D8FE             46                     H1:DJNZ R0,H1
+000D D9FA             47                     DJNZ R1,H2
+000F 22               48                     RET
+                      49     
+                      50     END
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+A51 MACRO ASSEMBLER  SERILIZING                                                           03/25/2020 17:50:36 PAGE     2
+
+                                             
+                                             
+                                             
+A51 MACRO ASSEMBLER  SERILIZING                                                           03/25/2020 17:50:36 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BACK . . . . . . .  C ADDR   0000H   A   
+DELAY. . . . . . .  C ADDR   0007H   A   
+H1 . . . . . . . .  C ADDR   000BH   A   
+H2 . . . . . . . .  C ADDR   0009H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

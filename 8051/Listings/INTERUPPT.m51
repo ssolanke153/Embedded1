@@ -1,0 +1,55 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    04/13/2020  14:01:12  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\LCD.obj TO .\Objects\INTERUPPT PRINT (.\Listings\INTERUPPT.m51)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\LCD.obj (LCD)
+
+
+LINK MAP OF MODULE:  .\Objects\INTERUPPT (LCD)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0035H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\INTERUPPT (LCD)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        LCD
+  C:001BH         SYMBOL        BACK
+  C:0033H         SYMBOL        HERE
+  D:00A8H         SYMBOL        IE
+  C:0030H         SYMBOL        MAIN
+  D:00A0H         SYMBOL        P2
+  C:0000H         LINE#         79
+  C:0013H         LINE#         82
+  C:0015H         LINE#         83
+  C:0017H         LINE#         84
+  C:0019H         LINE#         85
+  C:001BH         LINE#         87
+  C:001DH         LINE#         88
+  C:001FH         LINE#         89
+  C:0021H         LINE#         90
+  C:0030H         LINE#         93
+  C:0033H         LINE#         94
+  -------         ENDMOD        LCD
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0017H BYTE ( 1%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=53
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

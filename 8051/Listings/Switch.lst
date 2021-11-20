@@ -1,0 +1,71 @@
+A51 MACRO ASSEMBLER  SWITCH                                                               04/20/2020 21:34:18 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Switch.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Switch.a51 SET(SMALL) DEBUG PRINT(.\Listings\Switch.lst) OBJECT(.\Objec
+                      ts\Switch.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 00H 
+0000 020030            2      LJMP MAIN
+                       3      
+0030                   4      ORG 0030H
+0030 D288              5              MAIN:SETB TCON.0
+0032 75A881            6              MOV IE,#81H
+0035 80FE              7              HERE: SJMP HERE
+                       8              
+                       9              
+0003                  10              ORG 0003H
+0003 020080           11                      LJMP TEST 
+0080                  12                      ORG 0080H
+0080 D281             13                              TEST:SETB P0.1
+0082 D282             14                              SETB P0.2
+0084 D3               15                              SETB C
+0085 A281             16                              TEST1: MOV C,P0.1
+0087 5007             17                              JNC SW1
+0089 A282             18                              MOV C,P0.2
+008B 500B             19                              JNC SW2
+008D 74FF             20                              MOV A,#0FFH
+                      21                               
+008F 32               22                              RETI
+                      23                              
+0090 A282             24                              SW1:MOV C,P0.2
+0092 5008             25                              JNC BOTH
+0094 7401             26                              MOV A,#01H
+                      27                              
+0096 80ED             28                              SJMP TEST1
+0098 7402             29                              SW2:MOV A,#02H
+                      30                              
+009A 80E9             31                              SJMP TEST1
+009C 740F             32                              BOTH: MOV A,#0FH
+                      33                               
+009E 80E5             34                              SJMP TEST1       
+00A0 22               35     RET                                      
+                      36     END
+                             
+A51 MACRO ASSEMBLER  SWITCH                                                               04/20/2020 21:34:18 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BOTH . . . . . . .  C ADDR   009CH   A   
+HERE . . . . . . .  C ADDR   0035H   A   
+IE . . . . . . . .  D ADDR   00A8H   A   
+MAIN . . . . . . .  C ADDR   0030H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+SW1. . . . . . . .  C ADDR   0090H   A   
+SW2. . . . . . . .  C ADDR   0098H   A   
+TCON . . . . . . .  D ADDR   0088H   A   
+TEST . . . . . . .  C ADDR   0080H   A   
+TEST1. . . . . . .  C ADDR   0085H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

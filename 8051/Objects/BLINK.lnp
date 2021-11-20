@@ -1,0 +1,3 @@
+".\Objects\l1.obj" 
+TO ".\Objects\BLINK" 
+PRINT(".\Listings\BLINK.m51")

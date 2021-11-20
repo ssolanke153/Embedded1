@@ -1,0 +1,3 @@
+".\Objects\first in c.obj" 
+TO ".\Objects\first in c" 
+PRINT(".\Listings\first in c.m51")

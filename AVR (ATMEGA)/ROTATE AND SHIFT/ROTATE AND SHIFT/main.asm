@@ -1,0 +1,32 @@
+;
+; ROTATE AND SHIFT.asm
+;
+; Created: 07-05-2020 8.32.19 PM
+; Author : Shri
+;
+
+ 
+ .INCLUDE "M32DEF.INC"
+
+ .ORG $0
+
+ LDI R20,0x90
+ ROR R20 
+ ROR R20
+ ROR R20
+ CLC
+ROR R20
+
+ LDI R20,0x10
+ ROL R20 
+ ROL R20
+ ROL R20
+ CLC
+ROL R20
+
+
+
+
+
+
+ 

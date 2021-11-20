@@ -1,0 +1,49 @@
+A51 MACRO ASSEMBLER  CHECK1                                                               03/20/2020 19:21:23 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\check1.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE check1.a51 SET(SMALL) DEBUG PRINT(.\Listings\check1.lst) OBJECT(.\Objec
+                      ts\check1.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 00H
+0000 900300            2             MOV DPTR,#MYDATA
+0003 7980              3             MOV R1,#80H
+0005 E4                4             B1:     CLR A
+0006 F7                5         MOV @R1,A
+0007 F580              6         MOV P0,A
+0009 6004              7         JZ EXIT
+000B A3                8         INC DPTR
+000C 09                9         INC         R1
+000D 80F6             10             SJMP B1
+000F 80FE             11             EXIT: SJMP $
+                      12                     
+0300                  13                     ORG 300H
+0300 54686520         14                             MYDATA: DB "The promise of world peace"
+0304 70726F6D                
+0308 69736520                
+030C 6F662077                
+0310 6F726C64                
+0314 20706561                
+0318 6365                    
+                      15                                     END
+A51 MACRO ASSEMBLER  CHECK1                                                               03/20/2020 19:21:23 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B1 . . . . . . . .  C ADDR   0005H   A   
+EXIT . . . . . . .  C ADDR   000FH   A   
+MYDATA . . . . . .  C ADDR   0300H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

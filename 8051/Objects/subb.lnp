@@ -1,0 +1,4 @@
+".\Objects\sub.obj",
+".\Objects\SUBB1.obj" 
+TO ".\Objects\subb" 
+PRINT(".\Listings\subb.m51")

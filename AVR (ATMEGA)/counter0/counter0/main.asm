@@ -1,0 +1,25 @@
+;
+; counter0.asm
+;
+; Created: 19-05-2020 08:56:18
+; Author : Shri
+
+ .INCLUDE "M32DEF.INC"
+
+     CBI  DDRB,0
+	 LDI R20,0xFF
+	 OUT DDRC,R20
+	 LDI R20,0x06
+	 OUT TCCR0,R20
+
+AGAIN: 
+     IN R20,TCNT0
+	 OUT PORTC,R20
+	 IN R16,TIFR
+	 SBRS R16,TOV0
+	 RJMP AGAIN
+	 LDI R16,1<<TOV0
+	 OUT TIFR,R16
+	 RJMP AGAIN
+
+	.EXIT

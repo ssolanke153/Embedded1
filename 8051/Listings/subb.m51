@@ -1,0 +1,60 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/23/2020  09:47:44  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\sub.obj, .\Objects\SUBB1.obj TO .\Objects\subb PRINT (.\Listings\subb.m51)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\sub.obj (SUB)
+  .\Objects\SUBB1.obj (SUBB1)
+
+
+LINK MAP OF MODULE:  .\Objects\subb (SUB)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0006H     ABSOLUTE     
+* OVERLAP * CODE    0000H     000AH     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\subb (SUB)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        SUB
+  C:0000H         LINE#         3
+  C:0001H         LINE#         4
+  C:0003H         LINE#         5
+  C:0005H         LINE#         6
+  -------         ENDMOD        SUB
+
+  -------         MODULE        SUBB1
+  C:0009H         SYMBOL        NEXT
+  C:0000H         LINE#         2
+  C:0001H         LINE#         3
+  C:0003H         LINE#         4
+  C:0005H         LINE#         5
+  C:0007H         LINE#         6
+  C:0008H         LINE#         7
+  C:0009H         LINE#         8
+  -------         ENDMOD        SUBB1
+
+*** WARNING L5: CODE SPACE MEMORY OVERLAP
+    FROM:    0000H
+    TO:      0005H
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0010H BYTE ( 0%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=16
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

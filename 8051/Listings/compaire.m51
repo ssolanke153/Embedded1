@@ -1,0 +1,36 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/24/2020  14:33:29  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\compair instructions.obj TO .\Objects\compaire PRINT (.\Listings\compaire.m51)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\compair instructions.obj (COMPAIR_INSTRUCTIONS)
+
+
+LINK MAP OF MODULE:  .\Objects\compaire (COMPAIR_INSTRUCTIONS)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\compaire (COMPAIR_INSTRUCTIONS)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        COMPAIR_INSTRUCTIONS
+  -------         ENDMOD        COMPAIR_INSTRUCTIONS
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0000H BYTE ( 0%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=0
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

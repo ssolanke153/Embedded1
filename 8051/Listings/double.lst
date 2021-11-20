@@ -1,0 +1,145 @@
+A51 MACRO ASSEMBLER  DOUBLE                                                               04/09/2020 12:14:31 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\double.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE double.a51 SET(SMALL) DEBUG PRINT(.\Listings\double.lst) OBJECT(.\Objec
+                      ts\double.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ; Q1. ASSUMING THAT XTAL = 11.0592 MHz FOR THE FOLLOWING  FRQUENCY USED BY THE TIMER 1 TO S
+                             ET THE BAUD RATE, AND (C) FIND THE BAUD RATE OF THE DATA TRANSFER.
+                       2     
+                       3     ;       ORG 00H
+                       4     ;               MOV A,PCON
+                       5     ;               SETB ACC.7
+                       6     ;               MOV  PCON,A
+                       7     ;               
+                       8     ;               MOV TMOD,#20H
+                       9     ;               MOV TH1,#-3
+                      10     ;               
+                      11     ;               MOV SCON,#50H
+                      12     ;               SETB TR1
+                      13     ;               MOV A,#'B'
+                      14     ;               A_1:    CLR TI
+                      15     ;               MOV SBUF,A
+                      16     ;               H_1:    JNB TI,H_1
+                      17     ;               SJMP A_1
+                      18     
+                      19     ;       END
+                      20     
+                      21     
+                      22     
+                      23     ; Q2.PORT 0 OF AN 8051 IS USED TO MONITOR A PARAMETER IN AN INDUSTRIES ENVIRONMENT. IF THE 
+                             PARAMETER GIVES A READING ABOVE 0FH A MESSAGE 'H1' IS TO BE SENT
+                      24     ;SERIALLY.OTHERWISE,A MESSAGE 'OK' IS TO BE SENT. THE WORDS 'H1' AND 'OK' ARE BURNED INTO R
+                             OM LOCATIONS 
+                      25     
+0000                  26     ORG 00H
+0000 7580FF           27                     MOV P0,#0FFH
+0003 758920           28                     MOV TMOD,#20H
+0006 758DFD           29                     MOV TH1,#-3
+0009 759850           30                     MOV SCON,#50H
+000C D28E             31                     SETB TR1
+                      32             
+000E E580             33     CHECK:  MOV A,P0
+0010 B40F02           34                     CJNE A,#0FH,TEST
+0013 8002             35                     SJMP OK
+                      36             
+0015 5007             37     TEST:   JNC H1
+0017 9000A0           38     OK:         MOV DPTR,#00A0H
+001A 1125             39                     ACALL ACCESS
+001C 80F0             40                     SJMP CHECK
+                      41                     
+001E 900090           42     H1:     MOV DPTR,#0090H
+0021 1125             43                     ACALL ACCESS
+0023 80E9             44                     SJMP CHECK
+                      45     
+0025 E4               46     ACCESS: CLR A
+0026 93               47                     MOVC A,@A+DPTR
+0027 112F             48                     ACALL SEND 
+0029 A3               49                     INC DPTR
+002A E4               50                     CLR A
+002B 93               51                     MOVC A,@A+DPTR
+002C 112F             52                     ACALL SEND
+                      53     
+002E 22               54     RET
+A51 MACRO ASSEMBLER  DOUBLE                                                               04/09/2020 12:14:31 PAGE     2
+
+                      55     
+002F F599             56     SEND:   MOV SBUF,A
+0031 3099FD           57     HERE:   JNB TI,HERE
+0034 C299             58             CLR TI
+0036 22               59     RET
+                      60     
+0090                  61     ORG 0090H
+0090 4849             62     MES1:   DB "HI"
+                      63                     
+00A0                  64     ORG 00A0H
+00A0 4F4B             65     MES2:   DB "OK"
+                      66                                     
+                      67     END
+                                             
+                                     
+                             ;       
+                             ;       ORG 00H
+                             ;               MOV TMOD ,20H
+                             ;               MOV TH1,#-3
+                             ;               MOV SCON,#50H
+                             ;               SETB TR1
+                             ;               
+                             ;AGAIN: MOV A,#"A"
+                             ;               MOV SBUF,A
+                             ;               
+                             ;RPT:   JNB T1,RPT
+                             ;               CLR TI
+                             ;               SJMP AGAIN
+                             
+                             ORG 00H
+*** WARNING #A73 IN 84 (double.a51, LINE 84): TEXT FOUND BEYOND END STATEMENT - IGNORED
+                                             MOV A,PCON
+                                             MOV ACC.7,#1
+                                             MOV PCON,A
+                             
+                                             MOV TMOD,#20H
+                                             MOV TH1,#-3
+                                             MOV SCON,#50H
+                                             SETB TR1
+                             
+                             AGAIN:  MOV A,#"f"
+                                     MOV SBUF,A
+                             
+                             HERE:   JNB TI,HERE
+                                     CLR TI
+                                         SJMP AGAIN
+A51 MACRO ASSEMBLER  DOUBLE                                                               04/09/2020 12:14:31 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+ACCESS . . . . . .  C ADDR   0025H   A   
+CHECK. . . . . . .  C ADDR   000EH   A   
+H1 . . . . . . . .  C ADDR   001EH   A   
+HERE . . . . . . .  C ADDR   0031H   A   
+MES1 . . . . . . .  C ADDR   0090H   A   
+MES2 . . . . . . .  C ADDR   00A0H   A   
+OK . . . . . . . .  C ADDR   0017H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+SBUF . . . . . . .  D ADDR   0099H   A   
+SCON . . . . . . .  D ADDR   0098H   A   
+SEND . . . . . . .  C ADDR   002FH   A   
+TEST . . . . . . .  C ADDR   0015H   A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TI . . . . . . . .  B ADDR   0098H.1 A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  1 WARNING(S), 0 ERROR(S)

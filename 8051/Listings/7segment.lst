@@ -1,0 +1,75 @@
+A51 MACRO ASSEMBLER  7SEGMENT                                                             03/22/2020 17:27:26 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\7segment.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE 7segment.a51 SET(SMALL) DEBUG PRINT(.\Listings\7segment.lst) OBJECT(.\O
+                      bjects\7segment.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1      ORG 0000H
+0000                   2              START:
+                       3     
+0000 790A              4          MOV R1,#10
+0002 7B0A              5              MOV R3,#10
+                       6             
+0004 E4                7              B1: CLR A
+0005 83                8              MOVC A,@A+PC
+0006 F5A0              9              MOV P2,A
+                      10              
+                      11            
+0008 900400           12              MOV DPTR,#400H
+000B E4               13              BACK:CLR A
+000C 93               14              MOVC A,@A+DPTR
+000D F590             15              MOV P1,A
+000F 910A             16              ACALL DELAY
+0011 A3               17              INC DPTR
+                      18              
+                      19              
+0012 D9F7             20              DJNZ R1,BACK
+0014 DBEE             21              DJNZ R3,B1
+0016 80E8             22              SJMP START
+                      23              
+0400                  24              ORG 400H
+0400 3F065B4F         25                      DB 3FH,06H,5BH,4FH,66H,6DH,7DH,07H,7FH,6FH
+0404 666D7D07                
+0408 7F6F                    
+040A 7A08             26                              DELAY: MOV R2,#08H
+040C 7CFF             27                              H2: MOV R4,#0FFH
+040E 7B96             28                              H1: MOV R3,#150
+0410 DBFE             29                              HERE: DJNZ R3,HERE
+0412 DCFA             30                              DJNZ R4,H1
+0414 DAF6             31                              DJNZ R2,H2
+0416 22               32                              RET
+                      33                              
+0300                  34                              ORG 300H
+0300 3F065B4F         35                                       DB 3FH,06H,5BH,4FH,66H,6DH,7DH,07H,7FH,6FH
+0304 666D7D07                
+0308 7F6F                    
+030A 22               36                                               RET
+                      37                              
+                      38                              END
+A51 MACRO ASSEMBLER  7SEGMENT                                                             03/22/2020 17:27:26 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B1 . . . . . . . .  C ADDR   0004H   A   
+BACK . . . . . . .  C ADDR   000BH   A   
+DELAY. . . . . . .  C ADDR   040AH   A   
+H1 . . . . . . . .  C ADDR   040EH   A   
+H2 . . . . . . . .  C ADDR   040CH   A   
+HERE . . . . . . .  C ADDR   0410H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+START. . . . . . .  C ADDR   0000H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

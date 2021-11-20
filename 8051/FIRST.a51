@@ -1,0 +1,4 @@
+ORG 00H
+	MOV 0E0H,R3
+	END
+	

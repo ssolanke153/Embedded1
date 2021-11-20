@@ -1,0 +1,78 @@
+C51 COMPILER V9.60.0.0   RECV                                                              04/10/2020 09:28:36 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RECV
+OBJECT MODULE PLACED IN .\Objects\RECV.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE RECV.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\RECV
+                    -.lst) TABS(2) OBJECT(.\Objects\RECV.obj)
+
+line level    source
+
+   1          # include<reg51.h>
+   2          void delay(void);
+   3          void main()
+   4          {
+   5   1      
+   6   1          TMOD=0X20;
+   7   1          TH1=-3;
+   8   1          SCON=0X50;
+   9   1          TR1=1;
+  10   1          RI=0;
+  11   1        while(1)
+  12   1        {
+  13   2          while(RI==1)
+  14   2          {
+  15   3         ACC=SBUF;
+  16   3          P2=ACC;
+  17   3          RI=0;
+  18   3            delay();
+  19   3          
+  20   3          }
+  21   2            
+  22   2          
+  23   2        }
+  24   1      
+  25   1      }
+  26          
+  27          
+  28          void delay()
+  29          {
+  30   1          unsigned char x,y;
+  31   1        
+  32   1        for(x=0;x<250;x++)
+  33   1        
+  34   1        {
+  35   2          for(y=0;y<100;y++)
+  36   2          {
+  37   3          TMOD = 0x10;
+  38   3          TH1=0XFF;
+  39   3          TL1=0XE9;
+  40   3          TR1=1;  
+  41   3            
+  42   3            while(TF1==1)
+  43   3          {
+  44   4            TF1=0;
+  45   4            TR1=0;
+  46   4            
+  47   4          }
+  48   3          
+  49   3          }
+  50   2          
+  51   2        }
+  52   1      }
+
+
+C51 COMPILER V9.60.0.0   RECV                                                              04/10/2020 09:28:36 PAGE 2   
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     78    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

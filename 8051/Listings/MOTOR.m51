@@ -1,0 +1,88 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/22/2020  18:23:21  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\servo.obj, .\Objects\motor.obj TO .\Objects\MOTOR PRINT (.\Listings\MOTOR.m51)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\servo.obj (SERVO)
+  .\Objects\motor.obj (MOTOR)
+
+
+LINK MAP OF MODULE:  .\Objects\MOTOR (SERVO)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0017H     ABSOLUTE     
+* OVERLAP * CODE    0000H     001EH     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\MOTOR (SERVO)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        SERVO
+  C:000EH         SYMBOL        DELAY
+  C:0012H         SYMBOL        H1
+  C:0010H         SYMBOL        H2
+  C:0000H         SYMBOL        MAIN
+  D:00A0H         SYMBOL        P2
+  C:0000H         LINE#         3
+  C:0002H         LINE#         4
+  C:0004H         LINE#         5
+  C:0006H         LINE#         6
+  C:0008H         LINE#         7
+  C:000AH         LINE#         8
+  C:000CH         LINE#         9
+  C:000EH         LINE#         14
+  C:0010H         LINE#         15
+  C:0012H         LINE#         16
+  C:0014H         LINE#         17
+  C:0016H         LINE#         18
+  -------         ENDMOD        SERVO
+
+  -------         MODULE        MOTOR
+  C:0016H         SYMBOL        DELAY
+  C:0018H         SYMBOL        H1
+  C:001AH         SYMBOL        H2
+  C:0000H         SYMBOL        MAIN
+  D:00A0H         SYMBOL        P2
+  C:0000H         LINE#         3
+  C:0002H         LINE#         4
+  C:0004H         LINE#         6
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/22/2020  18:23:21  PAGE 2
+
+
+  C:0006H         LINE#         7
+  C:0008H         LINE#         9
+  C:000AH         LINE#         10
+  C:000CH         LINE#         12
+  C:000EH         LINE#         14
+  C:0010H         LINE#         15
+  C:0012H         LINE#         16
+  C:0014H         LINE#         23
+  C:0016H         LINE#         27
+  C:0018H         LINE#         28
+  C:001AH         LINE#         30
+  C:001CH         LINE#         31
+  -------         ENDMOD        MOTOR
+
+*** WARNING L5: CODE SPACE MEMORY OVERLAP
+    FROM:    0000H
+    TO:      0016H
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0035H BYTE ( 2%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=53
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

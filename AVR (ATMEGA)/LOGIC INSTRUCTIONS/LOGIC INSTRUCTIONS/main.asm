@@ -1,0 +1,103 @@
+;
+; LOGIC INSTRUCTIONS.asm
+;
+; Created: 07-05-2020 3.28.45 AM
+; Author : Shri
+;
+
+
+ /*.INCLUDE "M32DEF.INC"
+
+ .ORG $0
+
+ LDI R16,30
+ LDI R17,25
+
+ EOR R16,R17
+ OR R16,R17
+
+ ORI R16,$00
+ AND R16,R17
+ ANDI R16,$00
+ CLR R17
+
+ .EXIT*/
+
+
+/* .INCLUDE "M32DEF.INC"
+
+ .ORG $0
+START:
+	 LDI R18,0x45
+
+	 LDI R16,0x00
+	 LDI R17,0xFF
+	 OUT DDRB,R17
+	 OUT PORTB,R18
+	 OUT DDRB,R16
+	 OUT DDRC,R17
+	 
+
+H1:  IN R20,PINB
+
+ CP R20,R18
+
+ BRNE H1
+
+ LDI R18,0x99
+ OUT PORTC,R18
+
+
+ RJMP START
+
+ .EXIT
+*/
+
+
+
+
+.INCLUDE "M32DEF.INC"
+
+LDI R18,0xFF
+LDI R19,$45
+OUT DDRB,R18
+OUT PORTB,R19
+
+LDI R18,0x00
+OUT DDRB,R18
+IN R20,PINB
+
+H_1:
+	CPI  R20,0X48
+	/*SES
+	CLS
+	CLV*/
+	BRNE H_1
+
+.EXIT
+
+/*BRNE Z=0
+BREQ Z=1
+
+BRSH C=0
+BRLO C=1
+
+BRLT S=1
+BRGE S=0
+
+BRVS V=1
+BRVC V=0*/
+
+
+brne 
+breq
+
+brsh
+brlo
+
+brlt
+brge
+
+brvs
+brvc
+

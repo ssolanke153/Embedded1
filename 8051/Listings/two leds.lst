@@ -1,0 +1,88 @@
+C51 COMPILER V9.60.0.0   TWO_LEDS                                                          04/01/2020 00:11:06 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE TWO_LEDS
+OBJECT MODULE PLACED IN .\Objects\two leds.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE two leds.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\
+                    -two leds.lst) TABS(2) OBJECT(.\Objects\two leds.obj)
+
+line level    source
+
+   1          #include<reg52.h>
+   2          //#define LED P2
+   3          
+   4          
+   5          void delay(unsigned char time);
+   6          
+   7          void main()
+   8          {
+   9   1        unsigned char z,d=200;
+  10   1        unsigned char count;
+  11   1        unsigned char value[]={0x0C,0x06,0x03,0x09};
+  12   1        
+  13   1      //  P1=00;
+  14   1      //  LED=0;
+  15   1      //  for(;;)
+  16   1      //  {
+  17   1      //    P1++;
+  18   1      //    LED++;
+  19   1      //  }
+  20   1        
+  21   1      //P1=0x65>>2;
+  22   1      //  P1=0x65<<2;
+  23   1      //  ACC=0x95;
+  24   1      //  ACC=ACC>>4;
+  25   1      //  ACC = ACC|0X50;
+  26   1      //  P1=0x50;
+  27   1        
+  28   1      //for(z=0;z<8;z++)
+  29   1      //  {
+  30   1      //    if(P1==0)
+  31   1      //    {
+  32   1      //      count++;
+  33   1      //    }
+  34   1      //    P1++;
+  35   1      //  
+  36   1      //  }
+  37   1      //  
+  38   1      //  ACC=count;
+  39   1      
+  40   1      for(z=0;z<4;z++)
+  41   1      { 
+  42   2       P2 = value[z];
+  43   2        delay(d);
+  44   2        
+  45   2        
+  46   2      
+  47   2      }
+  48   1      }
+*** WARNING C280 IN LINE 10 OF two leds.c: 'count': unreferenced local variable
+  49          
+  50          void delay(unsigned char time)
+  51          {
+  52   1      
+  53   1        unsigned int i,j;
+C51 COMPILER V9.60.0.0   TWO_LEDS                                                          04/01/2020 00:11:06 PAGE 2   
+
+  54   1        for(i=0;i<time;i++)
+  55   1        {
+  56   2          for(j=0;j<1275;j++)
+  57   2          {
+  58   3          }
+  59   2        }
+  60   1      
+  61   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     89    ----
+   CONSTANT SIZE    =      4    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       7
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

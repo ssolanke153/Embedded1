@@ -1,0 +1,85 @@
+A51 MACRO ASSEMBLER  THKVFDV                                                              04/17/2020 21:40:37 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\THKVFDV.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE THKVFDV.a51 SET(SMALL) DEBUG PRINT(.\Listings\THKVFDV.lst) OBJECT(.\Obj
+                      ects\THKVFDV.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ; ORG 00H
+                       2     ;        LJMP MAIN
+                       3     ;        
+                       4     ;        
+                       5     ;        ORG 001BH
+                       6     ;                LJMP ISR_T1
+                       7     ;                
+                       8     ;                ORG 0030H
+                       9     ;MAIN:           MOV TMOD,#10H
+                      10     ;                        MOV P0,#0FFH
+                      11     ;                        MOV TL1,#018H
+                      12     ;                        MOV TH1,#0FCH
+                      13     ;                        MOV IE,#88H
+                      14     ;                        SETB TR1
+                      15     ;BACK:        MOV A,P0
+                      16     ;             MOV P1,A
+                      17     ;                        SJMP BACK
+                      18     ;                        
+                      19     ;ISR_T1:                 CLR TR1
+                      20     ;                        CLR P2.1
+                      21     ;                        MOV R2,#4
+                      22     ;HERE:           DJNZ R2,HERE
+                      23     ;                        MOV TL1,#18H
+                      24     ;                        MOV TH1,#0FCH
+                      25     ;                        SETB TR1
+                      26     ;                        SETB P2.1
+                      27     ;                        RETI
+                      28     ;                        
+                      29     ;                        END
+                      30     ;               
+                      31     
+0000                  32     ORG 00H
+0000 020030           33             LJMP MAIN
+                      34             
+000B                  35             ORG 000BH
+000B B293             36                     CPL P1.3
+000D 32               37                     RETI 
+                      38                     
+001B                  39                     ORG 001BH
+001B B2A3             40                             CPL P2.3
+001D 32               41                             RETI
+                      42                             
+0030                  43                             ORG 0030H
+0030 758922           44     MAIN:           MOV TMOD,#22H
+0033 75A88A           45                 MOV IE,#8AH
+0036 758C48           46                             MOV TH0,#048H
+0039 758DB6           47                             MOV TH1,#0B6H
+003C D28C             48                             SETB TR0
+003E D28E             49                             SETB TR1
+0040 80FE             50     WAIT:       SJMP WAIT
+                      51                             END
+A51 MACRO ASSEMBLER  THKVFDV                                                              04/17/2020 21:40:37 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+IE . . . . . . . .  D ADDR   00A8H   A   
+MAIN . . . . . . .  C ADDR   0030H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+WAIT . . . . . . .  C ADDR   0040H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

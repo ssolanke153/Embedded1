@@ -1,0 +1,28 @@
+A51 MACRO ASSEMBLER  FIRST                                                                03/21/2020 15:06:37 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\FIRST.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE FIRST.a51 SET(SMALL) DEBUG PRINT(.\Listings\FIRST.lst) OBJECT(.\Objects
+                      \FIRST.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 00H
+0000 8BE0              2             MOV 0E0H,R3
+                       3             END
+                                     
+A51 MACRO ASSEMBLER  FIRST                                                                03/21/2020 15:06:37 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

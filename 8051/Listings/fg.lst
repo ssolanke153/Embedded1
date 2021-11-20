@@ -1,0 +1,69 @@
+C51 COMPILER V9.60.0.0   FG                                                                05/31/2020 16:35:02 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE FG
+OBJECT MODULE PLACED IN .\Objects\fg.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE fg.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\fg.lst
+                    -) TABS(2) OBJECT(.\Objects\fg.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          
+   3          int main()
+   4          {
+   5   1      
+   6   1       int a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,ab,ac,ad,ae,af,ag,ah,ai;
+   7   1      
+   8   1      }
+*** WARNING C280 IN LINE 6 OF fg.c: 'a': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'b': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'c': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'd': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'e': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'f': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'g': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'h': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'i': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'j': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'k': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'l': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'm': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'n': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'o': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'p': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'q': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'r': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 's': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 't': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'u': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'v': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'w': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'x': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'y': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'z': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'ab': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'ac': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'ad': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'ae': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'af': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'ag': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'ah': unreferenced local variable
+*** WARNING C280 IN LINE 6 OF fg.c: 'ai': unreferenced local variable
+*** WARNING C290 IN LINE 8 OF fg.c: missing return value
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =      1    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      68
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+C51 COMPILER V9.60.0.0   FG                                                                05/31/2020 16:35:02 PAGE 2   
+
+
+C51 COMPILATION COMPLETE.  35 WARNING(S),  0 ERROR(S)

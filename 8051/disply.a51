@@ -1,0 +1,97 @@
+ORG 00H
+HERE: MOV A,#38H
+	  ACALL CMND
+	
+	  MOV A,#0FH 
+	  ACALL CMND
+	
+	 ;MOV A,#01H
+	 ;ACALL CMND
+	
+	  MOV A,#0CH
+	  ACALL CMND
+	
+	  MOV A,#06H
+	  ACALL CMND
+	
+	  MOV A,#80H
+	  ACALL CMND
+	
+	  MOV A,#'S'
+	  ACALL DISP
+	
+	  MOV A,#'H'
+	  ACALL DISP
+	
+	  MOV A,#'R'
+	  ACALL DISP
+	
+	  MOV A,#'I'
+	  ACALL DISP
+	
+	  MOV A,#'K'
+	  ACALL DISP
+	
+	  MOV A,#'A'
+	  ACALL DISP
+	
+	  MOV A,#'N'
+	  ACALL DISP
+	
+	  MOV A,#'T'
+	  ACALL DISP
+	
+	  MOV A,#' '
+	  ACALL DISP
+	
+      MOV A,#0C8H
+	  ACALL CMND
+	
+      MOV A,#'S'
+	  ACALL DISP
+	
+	  MOV A,#'O'
+	  ACALL DISP
+	
+	  MOV A,#'L'
+	  ACALL DISP
+	
+	  MOV A,#'A'
+	  ACALL DISP
+	
+	  MOV A,#'N'
+	  ACALL DISP
+	
+	  MOV A,#'K'
+	  ACALL DISP
+	
+	  MOV A,#'E'
+	  ACALL DISP
+	
+	  SJMP HERE
+	
+	  CMND: MOV P2,A
+	  CLR P3.5
+	  CLR P3.4
+	  SETB P3.3
+	  CLR P3.3
+	  ACALL DELAY
+	  RET
+	
+DISP: MOV P2,A
+	  SETB P3.5
+	  CLR P3.4
+	  SETB P3.3
+	  CLR P3.3
+      ACALL DELAY 
+	  RET
+	
+DELAY: MOV R3,#0FFH
+GO1:   MOV R2,#0FFH
+GO:   DJNZ R2,GO
+	  DJNZ R3,GO1
+	
+	RET 
+	
+	END
+	

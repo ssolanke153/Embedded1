@@ -1,0 +1,41 @@
+;
+; buzzer.asm
+;
+; Created: 02-06-2020 16:30:06
+; Author : Shri
+ 
+   
+ .INCLUDE "M32DEF.INC"
+
+
+      CBI DDRB,1
+	  SBI DDRC,0
+	  LDI R16,0x01
+	  LDI R17,0
+
+	  LDI R20, 0x00
+	  OUT TCCR1A, R20
+	  LDI R20, 0x0E
+	  OUT TCCR1B, R20
+
+AGAIN:
+      LDI R20, 0
+	  OUT OCR1AH, R20
+	  LDI R20, 99
+	  OUT OCR1AL, R20
+L1: 
+      IN R20, TIFR
+	  SBRS R20, OCF1A
+	  RJMP L1
+
+	  LDI R20, 1<<OCF1A
+	  OUT TIFR, R20
+
+	  EOR R17, R16
+	  OUT PORTC, R17
+	  RJMP AGAIN
+
+
+
+
+	  .EXIT

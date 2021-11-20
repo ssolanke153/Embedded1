@@ -1,0 +1,75 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    04/20/2020  21:34:19  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\Switch.obj TO .\Objects\switch PRINT (.\Listings\switch.m51)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\Switch.obj (SWITCH)
+
+
+LINK MAP OF MODULE:  .\Objects\switch (SWITCH)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     00A1H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\switch (SWITCH)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        SWITCH
+  C:009CH         SYMBOL        BOTH
+  C:0035H         SYMBOL        HERE
+  D:00A8H         SYMBOL        IE
+  C:0030H         SYMBOL        MAIN
+  D:0080H         SYMBOL        P0
+  C:0090H         SYMBOL        SW1
+  C:0098H         SYMBOL        SW2
+  D:0088H         SYMBOL        TCON
+  C:0080H         SYMBOL        TEST
+  C:0085H         SYMBOL        TEST1
+  C:0000H         LINE#         2
+  C:0030H         LINE#         5
+  C:0032H         LINE#         6
+  C:0035H         LINE#         7
+  C:0003H         LINE#         11
+  C:0080H         LINE#         13
+  C:0082H         LINE#         14
+  C:0084H         LINE#         15
+  C:0085H         LINE#         16
+  C:0087H         LINE#         17
+  C:0089H         LINE#         18
+  C:008BH         LINE#         19
+  C:008DH         LINE#         20
+  C:008FH         LINE#         22
+  C:0090H         LINE#         24
+  C:0092H         LINE#         25
+  C:0094H         LINE#         26
+  C:0096H         LINE#         28
+  C:0098H         LINE#         29
+  C:009AH         LINE#         31
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/20/2020  21:34:19  PAGE 2
+
+
+  C:009CH         LINE#         32
+  C:009EH         LINE#         34
+  C:00A0H         LINE#         35
+  -------         ENDMOD        SWITCH
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 002EH BYTE ( 2%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=161
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

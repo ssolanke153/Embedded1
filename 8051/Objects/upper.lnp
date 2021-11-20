@@ -1,0 +1,4 @@
+".\Objects\check.obj",
+".\Objects\check1.obj" 
+TO ".\Objects\upper" 
+PRINT(".\Listings\upper.m51") RAMSIZE(256) 

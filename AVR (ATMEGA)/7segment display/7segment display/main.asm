@@ -1,0 +1,61 @@
+;
+; 7segment display.asm
+;
+; Created: 18-05-2020 17:48:39
+; Author : Shri
+;
+
+
+ .ORG $0
+
+
+
+ LDI R20,0xFF
+ OUT DDRC,R20
+MAIN:CLZ
+   LDI ZL,LOW(MYDATA<<1)
+ LDI ZH,HIGH(MYDATA<<1)
+
+
+RPT: LPM R21,Z
+     CPI R21,0x00
+	 BREQ MAIN
+	 OUT PORTC,R21
+   INC ZL
+
+ RCALL DELAY
+ RCALL DELAY
+
+
+ RJMP RPT
+
+ MYDATA:
+     .DB 0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F,0x3F,0
+
+ DELAY:
+        LDI R20,-250
+		OUT TCNT0,R20
+		LDI R20,0x05
+		OUT TCCR0,R20
+RETURN:	IN R20,TIFR
+		SBRS R20,TOV0
+		RJMP RETURN
+		LDI R20,0x00
+		OUT TCCR0,R20
+		LDI R20,(1<<TOV0)
+		OUT TIFR,R20
+		RET
+
+
+       /*LDI R21,250
+JMP2:	   LDI R22,250
+
+JMP1:	   DEC R22
+	   BRNE JMP1
+
+	   DEC R21
+	   BRNE JMP2
+	   RET*/
+
+	   .EXIT
+

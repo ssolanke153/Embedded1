@@ -1,0 +1,126 @@
+A51 MACRO ASSEMBLER  LCD                                                                  04/13/2020 14:01:11 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\LCD.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE LCD.a51 SET(SMALL) DEBUG PRINT(.\Listings\LCD.lst) OBJECT(.\Objects\LCD
+                      .obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ;ORG 00H 
+                       2     ;       
+                       3     ;RPT:   MOV A,#38H
+                       4     ;       ACALL COMMAND
+                       5     ;       
+                       6     ;       MOV A,0EH
+                       7     ;       ACALL COMMAND
+                       8     ;       
+                       9     ;       MOV A,01H
+                      10     ;       ACALL COMMAND
+                      11     ;       
+                      12     ;       MOV A,06H
+                      13     ;       ACALL COMMAND
+                      14     ;       
+                      15     ;       
+                      16     ;       LJMP MAIN
+                      17     ;       
+                      18     ;       
+                      19     ;       ORG 000BH
+                      20     ;               CPL P1.2
+                      21     ;               RETI
+                      22     ;               
+                      23     ;               ORG 0030H
+                      24     ;                       MOV TMOD,#20H
+                      25     ;                       
+                      26     ;MAIN:          MOV TH0,#0B6H
+                      27     ;                       MOV IE,#82H
+                      28     ;                       SETB TR0
+                      29     ;                       
+                      30     ;               MOV P0,#"Y"
+                      31     ;            ACALL DISPLAY
+                      32     ;                       SJMP RPT
+                      33     ;                       
+                      34     ;COMMAND:
+                      35     ;         MOV P0,A
+                      36     ;         CLR P3.0
+                      37     ;                CLR P3.1
+                      38     ;                SETB P3.2
+                      39     ;                CLR P3.2
+                      40     ;                RET 
+                      41     ;                
+                      42     ;DISPLAY:
+                      43     ;        MOV P0,#'A'
+                      44     ;        SETB P3.0
+                      45     ;               CLR P3.1
+                      46     ;               SETB P3.2
+                      47     ;                CLR P3.2
+                      48     ;                RET
+                      49     ;       
+                      50     ;               
+                      51     ;                       END
+                      52     ;
+                      53     
+                      54     
+                      55     
+                      56     
+                      57     ;ORG 00H 
+A51 MACRO ASSEMBLER  LCD                                                                  04/13/2020 14:01:11 PAGE     2
+
+                      58     ;       LJMP MAIN
+                      59     ;       
+                      60     ;       ORG 0003H
+                      61     ;LED1:  MOV P0,#0FFH
+                      62     ;               MOV R0,#255
+                      63     ;               DJNZ R0,LED1
+                      64     ;RETI
+                      65     
+                      66     ;ORG 0013H 
+                      67     ;LED2:  MOV P2,#0FFH
+                      68     ;       MOV R0,#255
+                      69     ;       DJNZ R0,LED2
+                      70     ;       RETI 
+                      71     ;       
+                      72     ;       ORG 0030H
+                      73     ;MAIN:  MOV IE,#85H
+                      74     ;HERE:          SJMP HERE
+                      75     ;               END
+                      76     
+                      77     
+0000                  78     ORG 0000H
+0000 020030           79             LJMP MAIN
+                      80             
+0013                  81             ORG 0013H
+0013 D2A6             82                     SETB P2.6
+0015 C2A7             83                     CLR P2.7
+0017 7DFF             84                     MOV R5,#255
+0019 AAFF             85                     MOV R2,255
+                      86                     
+001B DDFE             87                     BACK: DJNZ R5,BACK
+001D C2A6             88                     CLR P2.6
+001F D2A7             89                     SETB P2.7
+0021 32               90                     RETI 
+                      91                     
+0030                  92                     ORG 30H
+0030 75A884           93                             MAIN:MOV IE,#10000100B
+0033 80FE             94                             HERE: SJMP HERE 
+                      95                             END
+A51 MACRO ASSEMBLER  LCD                                                                  04/13/2020 14:01:11 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BACK . . . . . . .  C ADDR   001BH   A   
+HERE . . . . . . .  C ADDR   0033H   A   
+IE . . . . . . . .  D ADDR   00A8H   A   
+MAIN . . . . . . .  C ADDR   0030H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

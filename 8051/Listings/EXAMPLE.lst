@@ -1,0 +1,87 @@
+A51 MACRO ASSEMBLER  EXAMPLE                                                              04/09/2020 12:40:21 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+NO OBJECT MODULE REQUESTED
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE EXAMPLE.a51 SET(SMALL) DEBUG PRINT(.\Listings\EXAMPLE.lst) OBJECT(.\Obj
+                      ects\EXAMPLE.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1      ORG 00H
+                       2              
+0000 758920            3              MOV TMOD,#20H
+0003 758DFA            4              MOV TH1,#-6
+0006 759850            5              MOV SCON,#50H
+0009 D28E              6              SETB TR1
+                       7              
+000B 900300            8              MOV DPTR,#300H
+000E 93                9     H_1: MOVC A,@A+DPTR
+000F 6008             10          JZ H_2
+0011 F599             11              MOV SBUF,A
+0013 112A             12              ACALL CHECK
+0015 A3               13              INC DPTR
+0016 E4               14              CLR A
+0017 80F5             15              SJMP H_1
+                      16              
+0019                  17     H_2:
+0019 C298             18             CLR RI
+001B                  19     HERE1:  JNB RI HERE1
+*** ________________________________________^
+*** ERROR #A9 IN 19 (EXAMPLE.a51, LINE 19): SYNTAX ERROR
+001E E599             20             MOV A,SBUF
+0020 F590             21             MOV P1,A
+0022 F5A0             22                     MOV P2,A
+0024 F599             23                     MOV SBUF,A
+0026 112A             24                     ACALL CHECK
+0028 80EF             25             SJMP H_2
+                      26                     
+                      27                      
+                      28             
+                      29              
+                      30              
+                      31              
+                      32              
+002A                  33     CHECK:
+002A 3099FD           34     HERE:  JNB TI,HERE
+002D C299             35                CLR TI
+002F 22               36                RET
+                      37                
+0300                  38                ORG 300H
+0300 57652041         39                        DB  "We Are Ready",0
+0304 72652052                
+0308 65616479                
+030C 00                      
+030D 22               40                     RET
+                      41              
+                      42              
+                      43              
+*** WARNING #A41 IN 43 (EXAMPLE.a51, LINE 43): MISSING 'END' STATEMENT
+A51 MACRO ASSEMBLER  EXAMPLE                                                              04/09/2020 12:40:21 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+CHECK. . . . . . .  C ADDR   002AH   A   
+HERE . . . . . . .  C ADDR   002AH   A   
+HERE1. . . . . . .  C ADDR   001BH   A   
+H_1. . . . . . . .  C ADDR   000EH   A   
+H_2. . . . . . . .  C ADDR   0019H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+RI . . . . . . . .  B ADDR   0098H.0 A   
+SBUF . . . . . . .  D ADDR   0099H   A   
+SCON . . . . . . .  D ADDR   0098H   A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TI . . . . . . . .  B ADDR   0098H.1 A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  1 WARNING(S), 1 ERROR(S)

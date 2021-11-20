@@ -1,0 +1,35 @@
+A51 MACRO ASSEMBLER  SUBB1                                                                03/23/2020 09:47:44 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\SUBB1.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE SUBB1.a51 SET(SMALL) DEBUG PRINT(.\Listings\SUBB1.lst) OBJECT(.\Objects
+                      \SUBB1.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 00H
+0000 C3                2             CLR C
+0001 744C              3             MOV A,#4CH
+0003 946E              4             SUBB A,#6EH
+0005 5002              5             JNC NEXT
+0007 F4                6             CPL A
+0008 04                7             INC A
+0009 F9                8             NEXT:MOV R1,A
+                       9             
+                      10             END
+A51 MACRO ASSEMBLER  SUBB1                                                                03/23/2020 09:47:44 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+NEXT . . . . . . .  C ADDR   0009H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

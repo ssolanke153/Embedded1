@@ -1,0 +1,99 @@
+
+
+Microchip MPLAB XC8 Assembler V2.20 build 20200408173844 
+                                                                                                           Wed Aug 05 09:15:14 2020
+
+
+     1                           	processor	18F458
+     2                           	pagewidth 132
+     3                           	opt	flic
+     4                           	psect	udata_acs,global,class=COMRAM,space=1,delta=1,noexec
+     5                           	psect	udata_bank0,global,class=BANK0,space=1,delta=1,noexec
+     6                           	psect	udata_bank1,global,class=BANK1,space=1,delta=1,noexec
+     7                           	psect	udata_bank2,global,class=BANK2,space=1,delta=1,noexec
+     8                           	psect	udata_bank3,global,class=BANK3,space=1,delta=1,noexec
+     9                           	psect	udata_bank4,global,class=BANK4,space=1,delta=1,noexec
+    10                           	psect	udata_bank5,global,class=BANK5,space=1,delta=1,noexec
+    11                           	psect	udata,global,class=RAM,space=1,delta=1,noexec
+    12                           	psect	code,global,reloc=2,class=CODE,delta=1
+    13                           	psect	data,global,reloc=2,class=CONST,delta=1,noexec
+    14                           	psect	edata,global,class=EEDATA,space=3,delta=2,noexec
+    15                           	psect	barfunc,local,class=CODE,delta=2
+    16  0000                     
+    17                           	psect	edata
+    18  0000                     stk_offset	set	0
+    19  0000                     auto_size	set	0
+    20                           
+    21                           ; stack_auto defines a symbol /name/_offset which equates to the
+    22                           ; stack offset of the auto object in question
+    23  0000'                    
+    24                           ; stack_param defines a symbol /name/_offset which equates to the
+    25                           ; stack offset of the parameter object in question
+    26  0000'                    
+    27                           ; alloc_stack adjusts the SP to allocate space for auto objects
+    28                           ; it also links in to the btemp symbol so that can be used
+    29  0000'                    
+    30                           ; restore_stack adjusts the SP to remove all auto and parameter
+    31                           ; objects from the stack prior to returning from a function
+    32  0000'                    
+    33                           ; When assembly code is placed in a psect, it can be manipulated as a
+    34                           ; whole by the linker and placed in memory.
+    35                           ;
+    36                           ; In this example, barfunc is the program section (psect) name, 'local' means
+    37                           ; that the section will not be combined with other sections even if they have
+    38                           ; the same name. class=CODE means the barfunc must go in the CODE container.
+    39                           ; PIC18's should have a delta (addressible unit size) of 1 (default) since they
+    40                           ; are byte addressible. PIC10/12/16's have a delta of 2 since they are word
+    41                           ; addressible. PIC18's should have a reloc (alignment) flag of 2 for any
+    42                           ; psect which contains executable code. PIC10/12/16's can use the default
+    43                           ; reloc value of 1. Use one of the psects below for the device you use:
+    44                           
+    45                           	psect	barfunc
+    46  0000'                    _bar:
+    47                           	callstack 0
+    48  0000' 5080               	movf	3968,w,c	; here we use a symbol defined via xc.inc
+    49  0001' 0012               	return	
+    50                           tosu	equ	0xFFF
+    51                           tosh	equ	0xFFE
+    52                           tosl	equ	0xFFD
+    53                           stkptr	equ	0xFFC
+    54                           pclatu	equ	0xFFB
+    55                           pclath	equ	0xFFA
+    56                           pcl	equ	0xFF9
+    57                           tblptru	equ	0xFF8
+    58                           tblptrh	equ	0xFF7
+    59                           tblptrl	equ	0xFF6
+    60                           tablat	equ	0xFF5
+    61                           prodh	equ	0xFF4
+    62                           prodl	equ	0xFF3
+    63                           indf0	equ	0xFEF
+    64                           postinc0	equ	0xFEE
+    65                           postdec0	equ	0xFED
+    66                           preinc0	equ	0xFEC
+    67                           plusw0	equ	0xFEB
+    68                           fsr0h	equ	0xFEA
+    69                           fsr0l	equ	0xFE9
+    70                           wreg	equ	0xFE8
+    71                           indf1	equ	0xFE7
+    72                           postinc1	equ	0xFE6
+    73                           postdec1	equ	0xFE5
+    74                           preinc1	equ	0xFE4
+    75                           plusw1	equ	0xFE3
+    76                           fsr1h	equ	0xFE2
+    77                           fsr1l	equ	0xFE1
+    78                           bsr	equ	0xFE0
+    79                           indf2	equ	0xFDF
+    80                           postinc2	equ	0xFDE
+    81                           postdec2	equ	0xFDD
+    82                           preinc2	equ	0xFDC
+    83                           plusw2	equ	0xFDB
+    84                           fsr2h	equ	0xFDA
+    85                           fsr2l	equ	0xFD9
+    86                           status	equ	0xFD8
+
+
+Microchip Technology PIC18 Macro Assembler V2.20 build 20200408173844 
+Symbol Table                                                                                               Wed Aug 05 09:15:14 2020
+
+                                                         _bar 000000  
+                                                        PORTA 000F80  

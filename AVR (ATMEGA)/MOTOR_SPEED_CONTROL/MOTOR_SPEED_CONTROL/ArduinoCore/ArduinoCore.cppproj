@@ -1,0 +1,1246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>7.0</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8.CPP</ToolchainName>
+    <ProjectGuid>f5e5d572-b169-4ea0-9a90-da083b68e7cb</ProjectGuid>
+    <avrdevice>atmega328p</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>StaticLibrary</OutputType>
+    <Language>CPP</Language>
+    <OutputFileName>lib$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.a</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <Name>ArduinoCore</Name>
+    <ArduinoIdeDir>C:\Program Files (x86)\Arduino</ArduinoIdeDir>
+    <ArduinoProjectType>Core</ArduinoProjectType>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <AssemblyName>ArduinoCore</AssemblyName>
+    <RootNamespace>ArduinoCore</RootNamespace>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress />
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <OverrideVtorValue />
+    <BootSegment>2</BootSegment>
+    <ResetRule>0</ResetRule>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <EraseKey />
+    <AsfFrameworkConfig>
+      <framework-data xmlns="">
+  <options />
+  <configurations />
+  <files />
+  <documentation help="" />
+  <offline-documentation help="" />
+  <dependencies>
+    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.48.0" />
+  </dependencies>
+</framework-data>
+    </AsfFrameworkConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGccCpp>
+  <avrgcc.common.Device>-mmcu=atmega328p -B "%24(PackRepoDir)\Atmel\ATmega_DFP\1.4.351\gcc\dev\atmega328p"</avrgcc.common.Device>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>NDEBUG</Value>
+      <Value>F_CPU=16000000L</Value>
+      <Value>ARDUINO=108012</Value>
+      <Value>ARDUINO_AVR_UNO</Value>
+      <Value>ARDUINO_ARCH_AVR</Value>
+      <Value>USB_VID=0x2341</Value>
+      <Value>USB_PID=0x0043</Value>
+      <Value>USB_MANUFACTURER="\"Arduino LLC\""</Value>
+    </ListValues>
+  </avrgcc.compiler.symbols.DefSymbols>
+  <avrgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\Atmel\ATmega_DFP\1.4.351\include</Value>
+      <Value>..\include\l293d</Value>
+      <Value>..\include\libraries\Adafruit_ADXL343</Value>
+      <Value>..\include\libraries\Adafruit_LiquidCrystal</Value>
+      <Value>..\include\libraries\Adafruit_LiquidCrystal\utility</Value>
+      <Value>..\include\libraries\Adafruit_Unified_Sensor</Value>
+      <Value>..\include\libraries\AM232X</Value>
+      <Value>..\include\libraries\ArduinoBearSSL\src</Value>
+      <Value>..\include\libraries\ArduinoBearSSL\src\bearssl</Value>
+      <Value>..\include\libraries\ArduinoBearSSL\src\utility</Value>
+      <Value>..\include\libraries\ArduinoECCX08\src</Value>
+      <Value>..\include\libraries\ArduinoECCX08\src\utility</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\BasicAuthGet</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\CustomHeader</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\DweetGet</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\DweetPost</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\HueBlink</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\PostWithHeaders</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\SimpleDelete</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\SimpleGet</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\SimpleHttpExample</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\SimplePost</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\SimplePut</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\SimpleWebSocket</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\src</Value>
+      <Value>..\include\libraries\Arduino_CRC32\src</Value>
+      <Value>..\include\libraries\Arduino_DebugUtils\src</Value>
+      <Value>..\include\libraries\Arduino_HTS221\src</Value>
+      <Value>..\include\libraries\Arduino_LSM6DS3\src</Value>
+      <Value>..\include\libraries\Arduino_OAuth\examples\GetTwitterStatus</Value>
+      <Value>..\include\libraries\Arduino_OAuth\examples\Tweeter</Value>
+      <Value>..\include\libraries\Arduino_OAuth\src</Value>
+      <Value>..\include\libraries\DHT12</Value>
+      <Value>..\include\libraries\DHTNEW</Value>
+      <Value>..\include\libraries\DHT_sensor_library</Value>
+      <Value>..\include\libraries\DHT_sensor_library_for_ESPx</Value>
+      <Value>..\include\libraries\EduIntro\src</Value>
+      <Value>..\include\libraries\EduIntro\src\Button</Value>
+      <Value>..\include\libraries\EduIntro\src\DHT11</Value>
+      <Value>..\include\libraries\EduIntro\src\Generic</Value>
+      <Value>..\include\libraries\EduIntro\src\IMU</Value>
+      <Value>..\include\libraries\EduIntro\src\LED</Value>
+      <Value>..\include\libraries\EduIntro\src\LightSensor</Value>
+      <Value>..\include\libraries\EduIntro\src\LM35</Value>
+      <Value>..\include\libraries\EduIntro\src\MosFet</Value>
+      <Value>..\include\libraries\EduIntro\src\Piezo</Value>
+      <Value>..\include\libraries\EduIntro\src\PIR</Value>
+      <Value>..\include\libraries\EduIntro\src\Potentiometer</Value>
+      <Value>..\include\libraries\EduIntro\src\Relay</Value>
+      <Value>..\include\libraries\EduIntro\src\ServoMotor</Value>
+      <Value>..\include\libraries\EduIntro\src\Thermistor</Value>
+      <Value>..\include\libraries\EduIntro\src\WiFiComm</Value>
+      <Value>..\include\libraries\ESPAsyncTCP-master\examples\ClientServer\Client</Value>
+      <Value>..\include\libraries\ESPAsyncTCP-master\examples\ClientServer\Server</Value>
+      <Value>..\include\libraries\ESPAsyncTCP-master\src</Value>
+      <Value>..\include\libraries\ESPAsyncWebServer-master\examples\ESP_AsyncFSBrowser\data</Value>
+      <Value>..\include\libraries\ESPAsyncWebServer-master\src</Value>
+      <Value>..\include\libraries\Grove_Temperature_And_Humidity_Sensor</Value>
+      <Value>..\include\libraries\PID</Value>
+      <Value>..\include\libraries\QTRSensors</Value>
+      <Value>..\include\libraries\SDHT</Value>
+      <Value>..\include\libraries\SimpleDHT</Value>
+      <Value>..\include\libraries\TroykaDHT\src</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\AP_SimpleWebServer</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\ConnectNoEncryption</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\ConnectWithWEP</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\ConnectWithWPA</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\ConnectWithWPA2Enterprise</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\SimpleWebServerWiFi</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\Tools\FirmwareUpdater</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiChatServer</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiPing</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiSSLClient</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiUdpNtpClient</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiUdpSendReceiveString</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiWebClient</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiWebClientRepeating</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiWebServer</Value>
+      <Value>..\include\libraries\WiFiNINA\src</Value>
+      <Value>..\include\libraries\WiFiNINA\src\utility</Value>
+      <Value>..\include\master_write</Value>
+      <Value>..\include\motor_with_L293D</Value>
+      <Value>..\include\receive_slave</Value>
+      <Value>..\include\core</Value>
+      <Value>..\include\variants\standard</Value>
+    </ListValues>
+  </avrgcc.compiler.directories.IncludePaths>
+  <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+  <avrgcc.compiler.optimization.OtherFlags>-fno-threadsafe-statics</avrgcc.compiler.optimization.OtherFlags>
+  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+  <avrgcc.compiler.warnings.InhibitAllWarnings>True</avrgcc.compiler.warnings.InhibitAllWarnings>
+  <avrgcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -std=gnu11</avrgcc.compiler.miscellaneous.OtherFlags>
+  <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcccpp.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>NDEBUG</Value>
+      <Value>F_CPU=16000000L</Value>
+      <Value>ARDUINO=108012</Value>
+      <Value>ARDUINO_AVR_UNO</Value>
+      <Value>ARDUINO_ARCH_AVR</Value>
+      <Value>USB_VID=0x2341</Value>
+      <Value>USB_PID=0x0043</Value>
+      <Value>USB_MANUFACTURER="\"Arduino LLC\""</Value>
+    </ListValues>
+  </avrgcccpp.compiler.symbols.DefSymbols>
+  <avrgcccpp.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\Atmel\ATmega_DFP\1.4.351\include</Value>
+      <Value>..\include\l293d</Value>
+      <Value>..\include\libraries\Adafruit_ADXL343</Value>
+      <Value>..\include\libraries\Adafruit_LiquidCrystal</Value>
+      <Value>..\include\libraries\Adafruit_LiquidCrystal\utility</Value>
+      <Value>..\include\libraries\Adafruit_Unified_Sensor</Value>
+      <Value>..\include\libraries\AM232X</Value>
+      <Value>..\include\libraries\ArduinoBearSSL\src</Value>
+      <Value>..\include\libraries\ArduinoBearSSL\src\bearssl</Value>
+      <Value>..\include\libraries\ArduinoBearSSL\src\utility</Value>
+      <Value>..\include\libraries\ArduinoECCX08\src</Value>
+      <Value>..\include\libraries\ArduinoECCX08\src\utility</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\BasicAuthGet</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\CustomHeader</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\DweetGet</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\DweetPost</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\HueBlink</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\PostWithHeaders</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\SimpleDelete</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\SimpleGet</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\SimpleHttpExample</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\SimplePost</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\SimplePut</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\SimpleWebSocket</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\src</Value>
+      <Value>..\include\libraries\Arduino_CRC32\src</Value>
+      <Value>..\include\libraries\Arduino_DebugUtils\src</Value>
+      <Value>..\include\libraries\Arduino_HTS221\src</Value>
+      <Value>..\include\libraries\Arduino_LSM6DS3\src</Value>
+      <Value>..\include\libraries\Arduino_OAuth\examples\GetTwitterStatus</Value>
+      <Value>..\include\libraries\Arduino_OAuth\examples\Tweeter</Value>
+      <Value>..\include\libraries\Arduino_OAuth\src</Value>
+      <Value>..\include\libraries\DHT12</Value>
+      <Value>..\include\libraries\DHTNEW</Value>
+      <Value>..\include\libraries\DHT_sensor_library</Value>
+      <Value>..\include\libraries\DHT_sensor_library_for_ESPx</Value>
+      <Value>..\include\libraries\EduIntro\src</Value>
+      <Value>..\include\libraries\EduIntro\src\Button</Value>
+      <Value>..\include\libraries\EduIntro\src\DHT11</Value>
+      <Value>..\include\libraries\EduIntro\src\Generic</Value>
+      <Value>..\include\libraries\EduIntro\src\IMU</Value>
+      <Value>..\include\libraries\EduIntro\src\LED</Value>
+      <Value>..\include\libraries\EduIntro\src\LightSensor</Value>
+      <Value>..\include\libraries\EduIntro\src\LM35</Value>
+      <Value>..\include\libraries\EduIntro\src\MosFet</Value>
+      <Value>..\include\libraries\EduIntro\src\Piezo</Value>
+      <Value>..\include\libraries\EduIntro\src\PIR</Value>
+      <Value>..\include\libraries\EduIntro\src\Potentiometer</Value>
+      <Value>..\include\libraries\EduIntro\src\Relay</Value>
+      <Value>..\include\libraries\EduIntro\src\ServoMotor</Value>
+      <Value>..\include\libraries\EduIntro\src\Thermistor</Value>
+      <Value>..\include\libraries\EduIntro\src\WiFiComm</Value>
+      <Value>..\include\libraries\ESPAsyncTCP-master\examples\ClientServer\Client</Value>
+      <Value>..\include\libraries\ESPAsyncTCP-master\examples\ClientServer\Server</Value>
+      <Value>..\include\libraries\ESPAsyncTCP-master\src</Value>
+      <Value>..\include\libraries\ESPAsyncWebServer-master\examples\ESP_AsyncFSBrowser\data</Value>
+      <Value>..\include\libraries\ESPAsyncWebServer-master\src</Value>
+      <Value>..\include\libraries\Grove_Temperature_And_Humidity_Sensor</Value>
+      <Value>..\include\libraries\PID</Value>
+      <Value>..\include\libraries\QTRSensors</Value>
+      <Value>..\include\libraries\SDHT</Value>
+      <Value>..\include\libraries\SimpleDHT</Value>
+      <Value>..\include\libraries\TroykaDHT\src</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\AP_SimpleWebServer</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\ConnectNoEncryption</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\ConnectWithWEP</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\ConnectWithWPA</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\ConnectWithWPA2Enterprise</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\SimpleWebServerWiFi</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\Tools\FirmwareUpdater</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiChatServer</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiPing</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiSSLClient</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiUdpNtpClient</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiUdpSendReceiveString</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiWebClient</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiWebClientRepeating</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiWebServer</Value>
+      <Value>..\include\libraries\WiFiNINA\src</Value>
+      <Value>..\include\libraries\WiFiNINA\src\utility</Value>
+      <Value>..\include\master_write</Value>
+      <Value>..\include\motor_with_L293D</Value>
+      <Value>..\include\receive_slave</Value>
+      <Value>..\include\core</Value>
+      <Value>..\include\variants\standard</Value>
+    </ListValues>
+  </avrgcccpp.compiler.directories.IncludePaths>
+  <avrgcccpp.compiler.optimization.level>Optimize for size (-Os)</avrgcccpp.compiler.optimization.level>
+  <avrgcccpp.compiler.optimization.OtherFlags>-fno-threadsafe-statics</avrgcccpp.compiler.optimization.OtherFlags>
+  <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+  <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
+  <avrgcccpp.compiler.warnings.InhibitAllWarnings>True</avrgcccpp.compiler.warnings.InhibitAllWarnings>
+  <avrgcccpp.compiler.miscellaneous.OtherFlags>-std=gnu++11</avrgcccpp.compiler.miscellaneous.OtherFlags>
+  <avrgcccpp.linker.libraries.Libraries>
+    <ListValues>
+      <Value>libm</Value>
+    </ListValues>
+  </avrgcccpp.linker.libraries.Libraries>
+  <avrgcccpp.linker.miscellaneous.LinkerFlags>-Os</avrgcccpp.linker.miscellaneous.LinkerFlags>
+  <avrgcccpp.assembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\Atmel\ATmega_DFP\1.4.351\include</Value>
+    </ListValues>
+  </avrgcccpp.assembler.general.IncludePaths>
+  <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
+</AvrGccCpp>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGccCpp>
+  <avrgcc.common.Device>-mmcu=atmega328p -B "%24(PackRepoDir)\Atmel\ATmega_DFP\1.4.351\gcc\dev\atmega328p"</avrgcc.common.Device>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>DEBUG</Value>
+      <Value>F_CPU=16000000L</Value>
+      <Value>ARDUINO=108012</Value>
+      <Value>ARDUINO_AVR_UNO</Value>
+      <Value>ARDUINO_ARCH_AVR</Value>
+      <Value>USB_VID=0x2341</Value>
+      <Value>USB_PID=0x0043</Value>
+      <Value>USB_MANUFACTURER="\"Arduino LLC\""</Value>
+    </ListValues>
+  </avrgcc.compiler.symbols.DefSymbols>
+  <avrgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\Atmel\ATmega_DFP\1.4.351\include</Value>
+      <Value>..\include\l293d</Value>
+      <Value>..\include\libraries\Adafruit_ADXL343</Value>
+      <Value>..\include\libraries\Adafruit_LiquidCrystal</Value>
+      <Value>..\include\libraries\Adafruit_LiquidCrystal\utility</Value>
+      <Value>..\include\libraries\Adafruit_Unified_Sensor</Value>
+      <Value>..\include\libraries\AM232X</Value>
+      <Value>..\include\libraries\ArduinoBearSSL\src</Value>
+      <Value>..\include\libraries\ArduinoBearSSL\src\bearssl</Value>
+      <Value>..\include\libraries\ArduinoBearSSL\src\utility</Value>
+      <Value>..\include\libraries\ArduinoECCX08\src</Value>
+      <Value>..\include\libraries\ArduinoECCX08\src\utility</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\BasicAuthGet</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\CustomHeader</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\DweetGet</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\DweetPost</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\HueBlink</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\PostWithHeaders</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\SimpleDelete</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\SimpleGet</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\SimpleHttpExample</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\SimplePost</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\SimplePut</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\SimpleWebSocket</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\src</Value>
+      <Value>..\include\libraries\Arduino_CRC32\src</Value>
+      <Value>..\include\libraries\Arduino_DebugUtils\src</Value>
+      <Value>..\include\libraries\Arduino_HTS221\src</Value>
+      <Value>..\include\libraries\Arduino_LSM6DS3\src</Value>
+      <Value>..\include\libraries\Arduino_OAuth\examples\GetTwitterStatus</Value>
+      <Value>..\include\libraries\Arduino_OAuth\examples\Tweeter</Value>
+      <Value>..\include\libraries\Arduino_OAuth\src</Value>
+      <Value>..\include\libraries\DHT12</Value>
+      <Value>..\include\libraries\DHTNEW</Value>
+      <Value>..\include\libraries\DHT_sensor_library</Value>
+      <Value>..\include\libraries\DHT_sensor_library_for_ESPx</Value>
+      <Value>..\include\libraries\EduIntro\src</Value>
+      <Value>..\include\libraries\EduIntro\src\Button</Value>
+      <Value>..\include\libraries\EduIntro\src\DHT11</Value>
+      <Value>..\include\libraries\EduIntro\src\Generic</Value>
+      <Value>..\include\libraries\EduIntro\src\IMU</Value>
+      <Value>..\include\libraries\EduIntro\src\LED</Value>
+      <Value>..\include\libraries\EduIntro\src\LightSensor</Value>
+      <Value>..\include\libraries\EduIntro\src\LM35</Value>
+      <Value>..\include\libraries\EduIntro\src\MosFet</Value>
+      <Value>..\include\libraries\EduIntro\src\Piezo</Value>
+      <Value>..\include\libraries\EduIntro\src\PIR</Value>
+      <Value>..\include\libraries\EduIntro\src\Potentiometer</Value>
+      <Value>..\include\libraries\EduIntro\src\Relay</Value>
+      <Value>..\include\libraries\EduIntro\src\ServoMotor</Value>
+      <Value>..\include\libraries\EduIntro\src\Thermistor</Value>
+      <Value>..\include\libraries\EduIntro\src\WiFiComm</Value>
+      <Value>..\include\libraries\ESPAsyncTCP-master\examples\ClientServer\Client</Value>
+      <Value>..\include\libraries\ESPAsyncTCP-master\examples\ClientServer\Server</Value>
+      <Value>..\include\libraries\ESPAsyncTCP-master\src</Value>
+      <Value>..\include\libraries\ESPAsyncWebServer-master\examples\ESP_AsyncFSBrowser\data</Value>
+      <Value>..\include\libraries\ESPAsyncWebServer-master\src</Value>
+      <Value>..\include\libraries\Grove_Temperature_And_Humidity_Sensor</Value>
+      <Value>..\include\libraries\PID</Value>
+      <Value>..\include\libraries\QTRSensors</Value>
+      <Value>..\include\libraries\SDHT</Value>
+      <Value>..\include\libraries\SimpleDHT</Value>
+      <Value>..\include\libraries\TroykaDHT\src</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\AP_SimpleWebServer</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\ConnectNoEncryption</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\ConnectWithWEP</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\ConnectWithWPA</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\ConnectWithWPA2Enterprise</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\SimpleWebServerWiFi</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\Tools\FirmwareUpdater</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiChatServer</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiPing</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiSSLClient</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiUdpNtpClient</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiUdpSendReceiveString</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiWebClient</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiWebClientRepeating</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiWebServer</Value>
+      <Value>..\include\libraries\WiFiNINA\src</Value>
+      <Value>..\include\libraries\WiFiNINA\src\utility</Value>
+      <Value>..\include\master_write</Value>
+      <Value>..\include\motor_with_L293D</Value>
+      <Value>..\include\receive_slave</Value>
+      <Value>..\include\core</Value>
+      <Value>..\include\variants\standard</Value>
+    </ListValues>
+  </avrgcc.compiler.directories.IncludePaths>
+  <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+  <avrgcc.compiler.optimization.OtherFlags>-fno-threadsafe-statics</avrgcc.compiler.optimization.OtherFlags>
+  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+  <avrgcc.compiler.warnings.InhibitAllWarnings>True</avrgcc.compiler.warnings.InhibitAllWarnings>
+  <avrgcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -std=gnu11</avrgcc.compiler.miscellaneous.OtherFlags>
+  <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcccpp.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>DEBUG</Value>
+      <Value>F_CPU=16000000L</Value>
+      <Value>ARDUINO=108012</Value>
+      <Value>ARDUINO_AVR_UNO</Value>
+      <Value>ARDUINO_ARCH_AVR</Value>
+      <Value>USB_VID=0x2341</Value>
+      <Value>USB_PID=0x0043</Value>
+      <Value>USB_MANUFACTURER="\"Arduino LLC\""</Value>
+    </ListValues>
+  </avrgcccpp.compiler.symbols.DefSymbols>
+  <avrgcccpp.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\Atmel\ATmega_DFP\1.4.351\include</Value>
+      <Value>..\include\l293d</Value>
+      <Value>..\include\libraries\Adafruit_ADXL343</Value>
+      <Value>..\include\libraries\Adafruit_LiquidCrystal</Value>
+      <Value>..\include\libraries\Adafruit_LiquidCrystal\utility</Value>
+      <Value>..\include\libraries\Adafruit_Unified_Sensor</Value>
+      <Value>..\include\libraries\AM232X</Value>
+      <Value>..\include\libraries\ArduinoBearSSL\src</Value>
+      <Value>..\include\libraries\ArduinoBearSSL\src\bearssl</Value>
+      <Value>..\include\libraries\ArduinoBearSSL\src\utility</Value>
+      <Value>..\include\libraries\ArduinoECCX08\src</Value>
+      <Value>..\include\libraries\ArduinoECCX08\src\utility</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\BasicAuthGet</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\CustomHeader</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\DweetGet</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\DweetPost</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\HueBlink</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\PostWithHeaders</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\SimpleDelete</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\SimpleGet</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\SimpleHttpExample</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\SimplePost</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\SimplePut</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\examples\SimpleWebSocket</Value>
+      <Value>..\include\libraries\ArduinoHttpClient\src</Value>
+      <Value>..\include\libraries\Arduino_CRC32\src</Value>
+      <Value>..\include\libraries\Arduino_DebugUtils\src</Value>
+      <Value>..\include\libraries\Arduino_HTS221\src</Value>
+      <Value>..\include\libraries\Arduino_LSM6DS3\src</Value>
+      <Value>..\include\libraries\Arduino_OAuth\examples\GetTwitterStatus</Value>
+      <Value>..\include\libraries\Arduino_OAuth\examples\Tweeter</Value>
+      <Value>..\include\libraries\Arduino_OAuth\src</Value>
+      <Value>..\include\libraries\DHT12</Value>
+      <Value>..\include\libraries\DHTNEW</Value>
+      <Value>..\include\libraries\DHT_sensor_library</Value>
+      <Value>..\include\libraries\DHT_sensor_library_for_ESPx</Value>
+      <Value>..\include\libraries\EduIntro\src</Value>
+      <Value>..\include\libraries\EduIntro\src\Button</Value>
+      <Value>..\include\libraries\EduIntro\src\DHT11</Value>
+      <Value>..\include\libraries\EduIntro\src\Generic</Value>
+      <Value>..\include\libraries\EduIntro\src\IMU</Value>
+      <Value>..\include\libraries\EduIntro\src\LED</Value>
+      <Value>..\include\libraries\EduIntro\src\LightSensor</Value>
+      <Value>..\include\libraries\EduIntro\src\LM35</Value>
+      <Value>..\include\libraries\EduIntro\src\MosFet</Value>
+      <Value>..\include\libraries\EduIntro\src\Piezo</Value>
+      <Value>..\include\libraries\EduIntro\src\PIR</Value>
+      <Value>..\include\libraries\EduIntro\src\Potentiometer</Value>
+      <Value>..\include\libraries\EduIntro\src\Relay</Value>
+      <Value>..\include\libraries\EduIntro\src\ServoMotor</Value>
+      <Value>..\include\libraries\EduIntro\src\Thermistor</Value>
+      <Value>..\include\libraries\EduIntro\src\WiFiComm</Value>
+      <Value>..\include\libraries\ESPAsyncTCP-master\examples\ClientServer\Client</Value>
+      <Value>..\include\libraries\ESPAsyncTCP-master\examples\ClientServer\Server</Value>
+      <Value>..\include\libraries\ESPAsyncTCP-master\src</Value>
+      <Value>..\include\libraries\ESPAsyncWebServer-master\examples\ESP_AsyncFSBrowser\data</Value>
+      <Value>..\include\libraries\ESPAsyncWebServer-master\src</Value>
+      <Value>..\include\libraries\Grove_Temperature_And_Humidity_Sensor</Value>
+      <Value>..\include\libraries\PID</Value>
+      <Value>..\include\libraries\QTRSensors</Value>
+      <Value>..\include\libraries\SDHT</Value>
+      <Value>..\include\libraries\SimpleDHT</Value>
+      <Value>..\include\libraries\TroykaDHT\src</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\AP_SimpleWebServer</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\ConnectNoEncryption</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\ConnectWithWEP</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\ConnectWithWPA</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\ConnectWithWPA2Enterprise</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\SimpleWebServerWiFi</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\Tools\FirmwareUpdater</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiChatServer</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiPing</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiSSLClient</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiUdpNtpClient</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiUdpSendReceiveString</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiWebClient</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiWebClientRepeating</Value>
+      <Value>..\include\libraries\WiFiNINA\examples\WiFiWebServer</Value>
+      <Value>..\include\libraries\WiFiNINA\src</Value>
+      <Value>..\include\libraries\WiFiNINA\src\utility</Value>
+      <Value>..\include\master_write</Value>
+      <Value>..\include\motor_with_L293D</Value>
+      <Value>..\include\receive_slave</Value>
+      <Value>..\include\core</Value>
+      <Value>..\include\variants\standard</Value>
+    </ListValues>
+  </avrgcccpp.compiler.directories.IncludePaths>
+  <avrgcccpp.compiler.optimization.level>Optimize for size (-Os)</avrgcccpp.compiler.optimization.level>
+  <avrgcccpp.compiler.optimization.OtherFlags>-fno-threadsafe-statics</avrgcccpp.compiler.optimization.OtherFlags>
+  <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+  <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
+  <avrgcccpp.compiler.warnings.InhibitAllWarnings>True</avrgcccpp.compiler.warnings.InhibitAllWarnings>
+  <avrgcccpp.compiler.miscellaneous.OtherFlags>-std=gnu++11</avrgcccpp.compiler.miscellaneous.OtherFlags>
+  <avrgcccpp.linker.libraries.Libraries>
+    <ListValues>
+      <Value>libm</Value>
+    </ListValues>
+  </avrgcccpp.linker.libraries.Libraries>
+  <avrgcccpp.linker.miscellaneous.LinkerFlags>-Os</avrgcccpp.linker.miscellaneous.LinkerFlags>
+  <avrgcccpp.assembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\Atmel\ATmega_DFP\1.4.351\include</Value>
+    </ListValues>
+  </avrgcccpp.assembler.general.IncludePaths>
+  <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
+</AvrGccCpp>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="include\core\Arduino.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\binary.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Client.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\HardwareSerial.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\HardwareSerial_private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\IPAddress.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\new.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\PluggableUSB.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Print.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Printable.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Server.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Stream.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Udp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\USBAPI.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\USBCore.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\USBDesc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\WCharacter.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\wiring_private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\WString.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Adafruit_ADXL343\Adafruit_ADXL343.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Adafruit_LiquidCrystal\Adafruit_LiquidCrystal.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Adafruit_LiquidCrystal\utility\Adafruit_MCP23008.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Adafruit_Unified_Sensor\Adafruit_Sensor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\AM232X\AM232X.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoBearSSL\src\ArduinoBearSSL.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoBearSSL\src\BearSSLClient.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoBearSSL\src\BearSSLTrustAnchors.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoBearSSL\src\bearssl\bearssl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoBearSSL\src\bearssl\bearssl_aead.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoBearSSL\src\bearssl\bearssl_block.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoBearSSL\src\bearssl\bearssl_ec.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoBearSSL\src\bearssl\bearssl_hash.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoBearSSL\src\bearssl\bearssl_hmac.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoBearSSL\src\bearssl\bearssl_kdf.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoBearSSL\src\bearssl\bearssl_pem.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoBearSSL\src\bearssl\bearssl_prf.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoBearSSL\src\bearssl\bearssl_rand.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoBearSSL\src\bearssl\bearssl_rsa.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoBearSSL\src\bearssl\bearssl_ssl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoBearSSL\src\bearssl\bearssl_x509.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoBearSSL\src\bearssl\config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoBearSSL\src\bearssl\inner.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoBearSSL\src\SHA.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoBearSSL\src\SHA1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoBearSSL\src\SHA256.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoBearSSL\src\utility\eccX08_asn1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoECCX08\src\ArduinoECCX08.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoECCX08\src\ECCX08.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoECCX08\src\utility\ASN1Utils.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoECCX08\src\utility\ECCX08CSR.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoECCX08\src\utility\ECCX08DefaultTLSConfig.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoECCX08\src\utility\ECCX08JWS.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoECCX08\src\utility\ECCX08SelfSignedCert.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoECCX08\src\utility\PEMUtils.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoECCX08\src\utility\sha1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoHttpClient\examples\BasicAuthGet\arduino_secrets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoHttpClient\examples\CustomHeader\arduino_secrets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoHttpClient\examples\DweetGet\arduino_secrets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoHttpClient\examples\DweetPost\arduino_secrets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoHttpClient\examples\HueBlink\arduino_secrets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoHttpClient\examples\PostWithHeaders\arduino_secrets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoHttpClient\examples\SimpleDelete\arduino_secrets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoHttpClient\examples\SimpleGet\arduino_secrets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoHttpClient\examples\SimpleHttpExample\arduino_secrets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoHttpClient\examples\SimplePost\arduino_secrets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoHttpClient\examples\SimplePut\arduino_secrets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoHttpClient\examples\SimpleWebSocket\arduino_secrets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoHttpClient\src\ArduinoHttpClient.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoHttpClient\src\b64.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoHttpClient\src\HttpClient.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoHttpClient\src\URLEncoder.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ArduinoHttpClient\src\WebSocketClient.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Arduino_CRC32\src\Arduino_CRC32.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Arduino_CRC32\src\crc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Arduino_DebugUtils\src\Arduino_DebugUtils.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Arduino_HTS221\src\Arduino_HTS221.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Arduino_HTS221\src\HTS.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Arduino_LSM6DS3\src\Arduino_LSM6DS3.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Arduino_LSM6DS3\src\LSM6DS3.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Arduino_OAuth\examples\GetTwitterStatus\arduino_secrets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Arduino_OAuth\examples\Tweeter\arduino_secrets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Arduino_OAuth\src\Arduino_OAuth.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Arduino_OAuth\src\OAuthClient.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\DHT12\DHT12.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\DHTNEW\dhtnew.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\DHT_sensor_library\DHT.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\DHT_sensor_library\DHT_U.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\DHT_sensor_library_for_ESPx\DHTesp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\EduIntro\src\Button\Button.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\EduIntro\src\DHT11\DHT11.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\EduIntro\src\EduIntro.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\EduIntro\src\Generic\AnalogInput.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\EduIntro\src\Generic\AnalogInput2.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\EduIntro\src\Generic\DigitalInput.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\EduIntro\src\Generic\Output.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\EduIntro\src\IMU\Motion.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\EduIntro\src\LED\LED.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\EduIntro\src\LightSensor\LightSensor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\EduIntro\src\LM35\LM35.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\EduIntro\src\MosFet\MosFet.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\EduIntro\src\Piezo\Piezo.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\EduIntro\src\Piezo\pitches.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\EduIntro\src\PIR\PIR.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\EduIntro\src\Potentiometer\Potentiometer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\EduIntro\src\Relay\Relay.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\EduIntro\src\ServoMotor\ServoMotor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\EduIntro\src\Thermistor\Thermistor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\EduIntro\src\WiFiComm\WiFiComm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ESPAsyncTCP-master\examples\ClientServer\Client\config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ESPAsyncTCP-master\examples\ClientServer\Server\config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ESPAsyncTCP-master\src\AsyncPrinter.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ESPAsyncTCP-master\src\async_config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ESPAsyncTCP-master\src\DebugPrintMacros.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ESPAsyncTCP-master\src\ESPAsyncTCP.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ESPAsyncTCP-master\src\ESPAsyncTCPbuffer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ESPAsyncTCP-master\src\SyncClient.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ESPAsyncTCP-master\src\tcp_axtls.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ESPAsyncWebServer-master\src\AsyncEventSource.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ESPAsyncWebServer-master\src\AsyncJson.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ESPAsyncWebServer-master\src\AsyncWebSocket.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ESPAsyncWebServer-master\src\AsyncWebSynchronization.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ESPAsyncWebServer-master\src\ESPAsyncWebServer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ESPAsyncWebServer-master\src\SPIFFSEditor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ESPAsyncWebServer-master\src\StringArray.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ESPAsyncWebServer-master\src\WebAuthentication.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ESPAsyncWebServer-master\src\WebHandlerImpl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ESPAsyncWebServer-master\src\WebResponseImpl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Grove_Temperature_And_Humidity_Sensor\DHT.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\PID\PID_v1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\QTRSensors\QTRSensors.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SDHT\SDHT.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SimpleDHT\SimpleDHT.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\TroykaDHT\src\TroykaDHT.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\examples\AP_SimpleWebServer\arduino_secrets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\examples\ConnectNoEncryption\arduino_secrets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\examples\ConnectWithWEP\arduino_secrets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\examples\ConnectWithWPA2Enterprise\arduino_secrets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\examples\ConnectWithWPA\arduino_secrets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\examples\SimpleWebServerWiFi\arduino_secrets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\examples\Tools\FirmwareUpdater\ESP32BootROM.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\examples\WiFiChatServer\arduino_secrets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\examples\WiFiPing\arduino_secrets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\examples\WiFiSSLClient\arduino_secrets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\examples\WiFiUdpNtpClient\arduino_secrets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\examples\WiFiUdpSendReceiveString\arduino_secrets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\examples\WiFiWebClientRepeating\arduino_secrets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\examples\WiFiWebClient\arduino_secrets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\examples\WiFiWebServer\arduino_secrets.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\src\utility\debug.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\src\utility\server_drv.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\src\utility\spi_drv.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\src\utility\WiFiSocketBuffer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\src\utility\wifi_drv.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\src\utility\wifi_spi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\src\utility\wl_definitions.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\src\utility\wl_types.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\src\WiFi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\src\WiFiClient.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\src\WiFiNINA.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\src\WiFiServer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\src\WiFiSSLClient.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\WiFiNINA\src\WiFiUdp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\variants\standard\pins_arduino.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\abi.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\CDC.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\HardwareSerial.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\HardwareSerial0.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\HardwareSerial1.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\HardwareSerial2.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\HardwareSerial3.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\hooks.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\IPAddress.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\main.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\new.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\PluggableUSB.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\PreprocessingAssembly\wiring_pulse.S">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\Print.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\Stream.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\Tone.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\USBCore.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\WInterrupts.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring_analog.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring_digital.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring_pulse.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring_shift.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\WMath.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\WString.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="include\" />
+    <Folder Include="include\core\" />
+    <Folder Include="include\l293d\" />
+    <Folder Include="include\libraries\" />
+    <Folder Include="include\libraries\Adafruit_ADXL343\" />
+    <Folder Include="include\libraries\Adafruit_LiquidCrystal\" />
+    <Folder Include="include\libraries\Adafruit_LiquidCrystal\utility\" />
+    <Folder Include="include\libraries\Adafruit_Unified_Sensor\" />
+    <Folder Include="include\libraries\AM232X\" />
+    <Folder Include="include\libraries\ArduinoBearSSL\" />
+    <Folder Include="include\libraries\ArduinoBearSSL\src\" />
+    <Folder Include="include\libraries\ArduinoBearSSL\src\bearssl\" />
+    <Folder Include="include\libraries\ArduinoBearSSL\src\utility\" />
+    <Folder Include="include\libraries\ArduinoECCX08\" />
+    <Folder Include="include\libraries\ArduinoECCX08\src\" />
+    <Folder Include="include\libraries\ArduinoECCX08\src\utility\" />
+    <Folder Include="include\libraries\ArduinoHttpClient\" />
+    <Folder Include="include\libraries\ArduinoHttpClient\examples\" />
+    <Folder Include="include\libraries\ArduinoHttpClient\examples\BasicAuthGet\" />
+    <Folder Include="include\libraries\ArduinoHttpClient\examples\CustomHeader\" />
+    <Folder Include="include\libraries\ArduinoHttpClient\examples\DweetGet\" />
+    <Folder Include="include\libraries\ArduinoHttpClient\examples\DweetPost\" />
+    <Folder Include="include\libraries\ArduinoHttpClient\examples\HueBlink\" />
+    <Folder Include="include\libraries\ArduinoHttpClient\examples\PostWithHeaders\" />
+    <Folder Include="include\libraries\ArduinoHttpClient\examples\SimpleDelete\" />
+    <Folder Include="include\libraries\ArduinoHttpClient\examples\SimpleGet\" />
+    <Folder Include="include\libraries\ArduinoHttpClient\examples\SimpleHttpExample\" />
+    <Folder Include="include\libraries\ArduinoHttpClient\examples\SimplePost\" />
+    <Folder Include="include\libraries\ArduinoHttpClient\examples\SimplePut\" />
+    <Folder Include="include\libraries\ArduinoHttpClient\examples\SimpleWebSocket\" />
+    <Folder Include="include\libraries\ArduinoHttpClient\src\" />
+    <Folder Include="include\libraries\Arduino_CRC32\" />
+    <Folder Include="include\libraries\Arduino_CRC32\src\" />
+    <Folder Include="include\libraries\Arduino_DebugUtils\" />
+    <Folder Include="include\libraries\Arduino_DebugUtils\src\" />
+    <Folder Include="include\libraries\Arduino_HTS221\" />
+    <Folder Include="include\libraries\Arduino_HTS221\src\" />
+    <Folder Include="include\libraries\Arduino_LSM6DS3\" />
+    <Folder Include="include\libraries\Arduino_LSM6DS3\src\" />
+    <Folder Include="include\libraries\Arduino_OAuth\" />
+    <Folder Include="include\libraries\Arduino_OAuth\examples\" />
+    <Folder Include="include\libraries\Arduino_OAuth\examples\GetTwitterStatus\" />
+    <Folder Include="include\libraries\Arduino_OAuth\examples\Tweeter\" />
+    <Folder Include="include\libraries\Arduino_OAuth\src\" />
+    <Folder Include="include\libraries\DHT12\" />
+    <Folder Include="include\libraries\DHTNEW\" />
+    <Folder Include="include\libraries\DHT_sensor_library\" />
+    <Folder Include="include\libraries\DHT_sensor_library_for_ESPx\" />
+    <Folder Include="include\libraries\EduIntro\" />
+    <Folder Include="include\libraries\EduIntro\src\" />
+    <Folder Include="include\libraries\EduIntro\src\Button\" />
+    <Folder Include="include\libraries\EduIntro\src\DHT11\" />
+    <Folder Include="include\libraries\EduIntro\src\Generic\" />
+    <Folder Include="include\libraries\EduIntro\src\IMU\" />
+    <Folder Include="include\libraries\EduIntro\src\LED\" />
+    <Folder Include="include\libraries\EduIntro\src\LightSensor\" />
+    <Folder Include="include\libraries\EduIntro\src\LM35\" />
+    <Folder Include="include\libraries\EduIntro\src\MosFet\" />
+    <Folder Include="include\libraries\EduIntro\src\Piezo\" />
+    <Folder Include="include\libraries\EduIntro\src\PIR\" />
+    <Folder Include="include\libraries\EduIntro\src\Potentiometer\" />
+    <Folder Include="include\libraries\EduIntro\src\Relay\" />
+    <Folder Include="include\libraries\EduIntro\src\ServoMotor\" />
+    <Folder Include="include\libraries\EduIntro\src\Thermistor\" />
+    <Folder Include="include\libraries\EduIntro\src\WiFiComm\" />
+    <Folder Include="include\libraries\ESPAsyncTCP-master\" />
+    <Folder Include="include\libraries\ESPAsyncTCP-master\examples\" />
+    <Folder Include="include\libraries\ESPAsyncTCP-master\examples\ClientServer\" />
+    <Folder Include="include\libraries\ESPAsyncTCP-master\examples\ClientServer\Client\" />
+    <Folder Include="include\libraries\ESPAsyncTCP-master\examples\ClientServer\Server\" />
+    <Folder Include="include\libraries\ESPAsyncTCP-master\src\" />
+    <Folder Include="include\libraries\ESPAsyncWebServer-master\" />
+    <Folder Include="include\libraries\ESPAsyncWebServer-master\examples\" />
+    <Folder Include="include\libraries\ESPAsyncWebServer-master\examples\ESP_AsyncFSBrowser\" />
+    <Folder Include="include\libraries\ESPAsyncWebServer-master\examples\ESP_AsyncFSBrowser\data\" />
+    <Folder Include="include\libraries\ESPAsyncWebServer-master\src\" />
+    <Folder Include="include\libraries\Grove_Temperature_And_Humidity_Sensor\" />
+    <Folder Include="include\libraries\PID\" />
+    <Folder Include="include\libraries\QTRSensors\" />
+    <Folder Include="include\libraries\SDHT\" />
+    <Folder Include="include\libraries\SimpleDHT\" />
+    <Folder Include="include\libraries\TroykaDHT\" />
+    <Folder Include="include\libraries\TroykaDHT\src\" />
+    <Folder Include="include\libraries\WiFiNINA\" />
+    <Folder Include="include\libraries\WiFiNINA\examples\" />
+    <Folder Include="include\libraries\WiFiNINA\examples\AP_SimpleWebServer\" />
+    <Folder Include="include\libraries\WiFiNINA\examples\ConnectNoEncryption\" />
+    <Folder Include="include\libraries\WiFiNINA\examples\ConnectWithWEP\" />
+    <Folder Include="include\libraries\WiFiNINA\examples\ConnectWithWPA2Enterprise\" />
+    <Folder Include="include\libraries\WiFiNINA\examples\ConnectWithWPA\" />
+    <Folder Include="include\libraries\WiFiNINA\examples\SimpleWebServerWiFi\" />
+    <Folder Include="include\libraries\WiFiNINA\examples\Tools\" />
+    <Folder Include="include\libraries\WiFiNINA\examples\Tools\FirmwareUpdater\" />
+    <Folder Include="include\libraries\WiFiNINA\examples\WiFiChatServer\" />
+    <Folder Include="include\libraries\WiFiNINA\examples\WiFiPing\" />
+    <Folder Include="include\libraries\WiFiNINA\examples\WiFiSSLClient\" />
+    <Folder Include="include\libraries\WiFiNINA\examples\WiFiUdpNtpClient\" />
+    <Folder Include="include\libraries\WiFiNINA\examples\WiFiUdpSendReceiveString\" />
+    <Folder Include="include\libraries\WiFiNINA\examples\WiFiWebClientRepeating\" />
+    <Folder Include="include\libraries\WiFiNINA\examples\WiFiWebClient\" />
+    <Folder Include="include\libraries\WiFiNINA\examples\WiFiWebServer\" />
+    <Folder Include="include\libraries\WiFiNINA\src\" />
+    <Folder Include="include\libraries\WiFiNINA\src\utility\" />
+    <Folder Include="include\master_write\" />
+    <Folder Include="include\motor_with_L293D\" />
+    <Folder Include="include\receive_slave\" />
+    <Folder Include="include\variants\" />
+    <Folder Include="include\variants\standard\" />
+    <Folder Include="src\" />
+    <Folder Include="src\core\" />
+    <Folder Include="src\core\PreprocessingAssembly\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="include\l293d\l293d.ino.eightanaloginputs.hex">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="include\l293d\l293d.ino.with_bootloader.eightanaloginputs.hex">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="include\libraries\ESPAsyncWebServer-master\examples\ESP_AsyncFSBrowser\data\index.htm">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="include\libraries\ESPAsyncWebServer-master\src\edit.htm">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="include\master_write\master_write.ino.standard.hex">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="include\master_write\master_write.ino.with_bootloader.standard.hex">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="include\motor_with_L293D\motor_with_L293D.ino.eightanaloginputs.hex">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="include\motor_with_L293D\motor_with_L293D.ino.with_bootloader.eightanaloginputs.hex">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="include\receive_slave\receive_slave.ino.standard.hex">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="include\receive_slave\receive_slave.ino.with_bootloader.standard.hex">
+      <SubType>compile</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>

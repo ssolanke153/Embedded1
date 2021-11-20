@@ -1,0 +1,83 @@
+A51 MACRO ASSEMBLER  SERIAL                                                               04/07/2020 16:24:22 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\serial.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE serial.a51 SET(SMALL) DEBUG PRINT(.\Listings\serial.lst) OBJECT(.\Objec
+                      ts\serial.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ;          ORG 00H
+                       2     ;                       MOV TMOD,#20H
+                       3     ;                       MOV TH1,#-3
+                       4     ;                       MOV SCON,#50H
+                       5     ;                       SETB TR1
+                       6     
+                       7     ;AGAIN:      MOV SBUF,#'Y'
+                       8     ;HERE:      JNB T1,HERE
+                       9     ;                       CLR T1
+                      10     ;                       MOV P0,#'N'
+                      11     ;                       
+                      12     ;                       
+                      13     ;    END
+                      14     
+                      15     
+                      16     
+                      17     
+                      18     ;   1.  TAKE DATA IN THROUGH PORTS 0,1 AND 2 ONE AFTER THE ONTHER AND TRANSFER THIS DATA SE
+                             RIALLY, CONTINUOSLY
+                      19     
+0000                  20      ORG 00H
+0000 758920           21                      MOV TMOD,#20H
+0003 758DFA           22                      MOV TH1,#-6
+0006 759850           23                      MOV SCON,#50H
+0009 7580FF           24                      MOV P0,#0FFH
+000C 7590FF           25                      MOV P1,#0FFH
+000F 75A0FF           26                      MOV P2,#0FFH
+0012 D28E             27                      SETB TR1
+                      28                      
+0014 E580             29      RPT:    MOV A,P0
+0016 1122             30                      ACALL SEND
+                      31                      
+0018 E590             32                      MOV A,P1
+001A 1122             33                      ACALL SEND
+                      34                      
+001C E5A0             35                      MOV A,P2
+001E 1122             36                      ACALL SEND
+                      37                      
+0020 80F2             38                      SJMP RPT
+                      39              
+0022 F599             40     SEND:    MOV SBUF,A
+0024 30B5FD           41     HERE:    JNB T1,HERE
+0027 C2B5             42                  CLR T1
+0029 22               43                  RET
+                      44              
+                      45      END
+                                      
+A51 MACRO ASSEMBLER  SERIAL                                                               04/07/2020 16:24:22 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+HERE . . . . . . .  C ADDR   0024H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+RPT. . . . . . . .  C ADDR   0014H   A   
+SBUF . . . . . . .  D ADDR   0099H   A   
+SCON . . . . . . .  D ADDR   0098H   A   
+SEND . . . . . . .  C ADDR   0022H   A   
+T1 . . . . . . . .  B ADDR   00B0H.5 A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

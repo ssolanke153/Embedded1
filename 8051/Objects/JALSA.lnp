@@ -1,0 +1,4 @@
+".\Objects\JALSA.obj",
+".\Objects\timer.obj" 
+TO ".\Objects\JALSA" 
+PRINT(".\Listings\JALSA.m51") CODE( 0X0000-0X0FFF )

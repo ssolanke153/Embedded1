@@ -1,0 +1,168 @@
+ORG 00H
+
+MAIN:
+
+MOV A,#38H
+ACALL COMMAND
+
+MOV A,#01H
+ACALL COMMAND
+
+MOV A,#0CH
+ACALL COMMAND
+
+MOV A,#06H
+ACALL COMMAND
+
+MOV A,#80H
+ACALL COMMAND
+
+
+/* 1. Observe the following noting the role of the OV flag.
+*/
+
+								;MOV DPTR,#400H
+								;CLR A
+								;MOVC A,@A+DPTR
+								;ACALL DISPLAY
+								;INC DPTR
+								
+								
+								
+;MOV TMOD,#00000110B
+;MOV TH0,#-60
+;SETB P3.4 
+;AGAIN3:SETB TR0
+;BACK: MOV A,TL0
+;ACALL CONV
+;ACALL DISPLAY
+;JNB TF0,BACK
+;CLR TR0 
+;CLR TF0 
+;SJMP AGAIN3
+
+
+;CONV:
+;MOV B,#10
+;DIV AB
+;MOV R2,B
+;MOV B,#10
+;DIV AB
+;ORL A,#30H
+;MOV R4,A
+;MOV A,B
+;ORL A,#30H
+;MOV R3,A
+;MOV A,R2
+;ORL A,#30H
+;MOV R2,A
+;RET
+
+
+								
+	 
+
+
+	
+
+MOV A,#'S'
+ACALL DISPLAY
+
+MOV A,#'H'
+ACALL DISPLAY
+
+MOV A,#'R'
+ACALL DISPLAY
+
+MOV A,#'I'
+ACALL DISPLAY
+
+MOV A,#'K'
+ACALL DISPLAY
+
+MOV A,#'A'
+ACALL DISPLAY
+
+MOV A,#'N'
+ACALL DISPLAY
+
+MOV A,#'T'
+ACALL DISPLAY
+
+
+MOV A,#0C8H
+ACALL COMMAND
+
+MOV A,#'S'
+ACALL DISPLAY
+
+MOV A,#'O'
+ACALL DISPLAY
+
+MOV A,#'L'
+ACALL DISPLAY
+
+MOV A,#'A'
+ACALL DISPLAY
+
+MOV A,#'N'
+ACALL DISPLAY
+
+MOV A,#'K'
+ACALL DISPLAY
+
+MOV A,#'E'
+ACALL DISPLAY
+ 
+
+ 
+								;MOV DPTR,#300H
+								;D2:CLR A
+								;MOVC A,@A+DPTR
+								;ACALL DISPLAY
+								;INC DPTR
+								;SJMP D2
+
+SJMP MAIN
+
+
+COMMAND:
+
+MOV P1,A
+CLR P3.0
+CLR P3.1
+SETB P3.2
+CLR P3.2
+ACALL DELAY
+RET
+
+DISPLAY:
+
+MOV P1,A
+SETB P3.0
+CLR P3.1
+SETB P3.2
+CLR P3.2
+ACALL DELAY
+RET
+
+
+DELAY:
+
+   MOV R0,#255
+AGAIN1:MOV R1,#255
+AGAIN: DJNZ R1,AGAIN
+       DJNZ R0,AGAIN1
+	  
+RET
+
+							;ORG 400H
+							;	DB  "SHRIKANT"
+							;	
+							;	
+							;	
+							;	ORG 300H
+							;		DB "SOLANKE"
+							; RET
+END
+

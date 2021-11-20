@@ -1,0 +1,6 @@
+
+AVRASM ver. 2.2.7  c:\users\shri\Documents\Atmel Studio\7.0\AssemblerApplication3\AssemblerApplication3\main.asm Wed Apr 08 18:06:28 2020
+
+[builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\avrasm\inc\m328pdef.inc'
+c:\users\shri\Documents\Atmel Studio\7.0\AssemblerApplication3\AssemblerApplication3\main.asm(1): error: ORG: Unknown instruction or macro
+c:\users\shri\Documents\Atmel Studio\7.0\AssemblerApplication3\AssemblerApplication3\main.asm(1): error: syntax error, unexpected INTEGER

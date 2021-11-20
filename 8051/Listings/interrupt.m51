@@ -1,0 +1,58 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    04/12/2020  08:45:54  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\interrupt1.obj TO .\Objects\interrupt PRINT (.\Listings\interrupt.m51)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\interrupt1.obj (INTERRUPT1)
+
+
+LINK MAP OF MODULE:  .\Objects\interrupt (INTERRUPT1)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0043H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\interrupt (INTERRUPT1)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        INTERRUPT1
+  C:003BH         SYMBOL        BACK
+  D:00A8H         SYMBOL        IE
+  C:0033H         SYMBOL        MAIN
+  D:0080H         SYMBOL        P0
+  D:0090H         SYMBOL        P1
+  D:00A0H         SYMBOL        P2
+  D:008CH         SYMBOL        TH0
+  D:0089H         SYMBOL        TMOD
+  B:0088H.4       SYMBOL        TR0
+  C:0000H         LINE#         2
+  C:000BH         LINE#         6
+  C:000DH         LINE#         7
+  C:0030H         LINE#         10
+  C:0033H         LINE#         12
+  C:0036H         LINE#         13
+  C:0039H         LINE#         14
+  C:003BH         LINE#         16
+  C:003EH         LINE#         17
+  C:0041H         LINE#         19
+  -------         ENDMOD        INTERRUPT1
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0019H BYTE ( 1%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=67
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

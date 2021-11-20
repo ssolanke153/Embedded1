@@ -1,0 +1,156 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    04/03/2020  22:45:53  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\ascii.obj TO .\Objects\jalsa1 PRINT (.\Listings\jalsa1.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\ascii.obj (ASCII)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\jalsa1 (ASCII)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         _DATA_GROUP_
+            DATA    000AH     0001H     UNIT         ?DT?ASCII
+            IDATA   000BH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     008CH     UNIT         ?C_C51STARTUP
+            CODE    088CH     0036H     UNIT         ?PR?MAIN?ASCII
+            CODE    08C2H     0020H     UNIT         ?PR?_DELAY?ASCII
+            CODE    08E2H     0012H     UNIT         ?PR?COMMAND?ASCII
+            CODE    08F4H     0011H     UNIT         ?PR?_DISPLAY?ASCII
+            CODE    0905H     0004H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\jalsa1 (ASCII)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?ASCII
+  +--> ?C_INITSEG
+
+?PR?MAIN?ASCII                 0008H    0002H
+  +--> ?PR?COMMAND?ASCII
+  +--> ?PR?_DISPLAY?ASCII
+
+?PR?COMMAND?ASCII              -----    -----
+  +--> ?PR?_DELAY?ASCII
+
+?PR?_DISPLAY?ASCII             -----    -----
+  +--> ?PR?_DELAY?ASCII
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/03/2020  22:45:53  PAGE 2
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\jalsa1 (ASCII)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ASCII
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  C:08C2H         PUBLIC        _delay
+  C:088CH         PUBLIC        main
+  B:00B0H.2       PUBLIC        En
+  B:00B0H.0       PUBLIC        Rs
+  B:00B0H.1       PUBLIC        Rw
+  C:08E2H         PUBLIC        command
+  D:000AH         PUBLIC        d
+  C:08F4H         PUBLIC        _display
+  -------         PROC          COMMAND
+  C:08E2H         LINE#         23
+  C:08E2H         LINE#         24
+  C:08E2H         LINE#         26
+  C:08E4H         LINE#         27
+  C:08E6H         LINE#         28
+  C:08E8H         LINE#         29
+  C:08EAH         LINE#         30
+  -------         ENDPROC       COMMAND
+  -------         PROC          MAIN
+  -------         DO            
+  D:0007H         SYMBOL        x
+  D:0007H         SYMBOL        y
+  D:0008H         SYMBOL        s
+  D:0009H         SYMBOL        z
+  -------         ENDDO         
+  C:088CH         LINE#         33
+  C:088CH         LINE#         34
+  C:088CH         LINE#         61
+  C:088FH         LINE#         63
+  C:0892H         LINE#         65
+  C:0895H         LINE#         66
+  C:0898H         LINE#         71
+  C:089BH         LINE#         72
+  C:089EH         LINE#         75
+  C:08A1H         LINE#         76
+  C:08A4H         LINE#         79
+  C:08A7H         LINE#         80
+  C:08AAH         LINE#         82
+  C:08AEH         LINE#         83
+  C:08B2H         LINE#         84
+  C:08B5H         LINE#         85
+  C:08B8H         LINE#         87
+  C:08BCH         LINE#         88
+  C:08BFH         LINE#         89
+  -------         ENDPROC       MAIN
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        time
+  -------         DO            
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/03/2020  22:45:53  PAGE 3
+
+
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:08C2H         LINE#         92
+  C:08C2H         LINE#         93
+  C:08C2H         LINE#         95
+  C:08CCH         LINE#         96
+  C:08CCH         LINE#         97
+  C:08CFH         LINE#         98
+  C:08CFH         LINE#         100
+  C:08DAH         LINE#         101
+  C:08E1H         LINE#         102
+  -------         ENDPROC       _DELAY
+  -------         PROC          _DISPLAY
+  D:0007H         SYMBOL        a
+  C:08F4H         LINE#         104
+  C:08F4H         LINE#         105
+  C:08F4H         LINE#         108
+  C:08F6H         LINE#         110
+  C:08F8H         LINE#         111
+  C:08FAH         LINE#         112
+  C:08FCH         LINE#         113
+  C:08FEH         LINE#         114
+  -------         ENDPROC       _DISPLAY
+  -------         ENDMOD        ASCII
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 007CH BYTE ( 6%) *
+******************************************************************************
+
+Program Size: data=12.0 xdata=0 code=268
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

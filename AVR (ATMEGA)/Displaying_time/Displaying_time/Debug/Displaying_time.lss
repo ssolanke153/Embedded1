@@ -1,0 +1,839 @@
+
+Displaying_time.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000422  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000010  00800060  00000422  00000496  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .comment      00000030  00000000  00000000  000004a6  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000004d8  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 000000a0  00000000  00000000  00000514  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000e82  00000000  00000000  000005b4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000006c2  00000000  00000000  00001436  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000006d8  00000000  00000000  00001af8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000001c8  00000000  00000000  000021d0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000003ce  00000000  00000000  00002398  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000006e1  00000000  00000000  00002766  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 000000c0  00000000  00000000  00002e47  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+   8:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+   c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  10:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  14:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  18:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  1c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  20:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  24:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  28:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  2c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  30:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  34:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  38:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  3c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  40:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  44:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  48:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  4c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  50:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	e2 e2       	ldi	r30, 0x22	; 34
+  68:	f4 e0       	ldi	r31, 0x04	; 4
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	a0 37       	cpi	r26, 0x70	; 112
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+  76:	0e 94 90 01 	call	0x320	; 0x320 <main>
+  7a:	0c 94 0f 02 	jmp	0x41e	; 0x41e <_exit>
+
+0000007e <__bad_interrupt>:
+  7e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000082 <cmd>:
+}
+
+void usart_send(unsigned char data)
+{
+	display = data;
+	send_data();
+  82:	c0 98       	cbi	0x18, 0	; 24
+  84:	c1 98       	cbi	0x18, 1	; 24
+  86:	c2 9a       	sbi	0x18, 2	; 24
+  88:	c2 98       	cbi	0x18, 2	; 24
+  8a:	8f e9       	ldi	r24, 0x9F	; 159
+  8c:	9f e0       	ldi	r25, 0x0F	; 15
+  8e:	01 97       	sbiw	r24, 0x01	; 1
+  90:	f1 f7       	brne	.-4      	; 0x8e <cmd+0xc>
+  92:	00 c0       	rjmp	.+0      	; 0x94 <cmd+0x12>
+  94:	00 00       	nop
+  96:	08 95       	ret
+
+00000098 <send_data>:
+  98:	c0 9a       	sbi	0x18, 0	; 24
+  9a:	c1 98       	cbi	0x18, 1	; 24
+  9c:	c2 9a       	sbi	0x18, 2	; 24
+  9e:	c2 98       	cbi	0x18, 2	; 24
+  a0:	8f e9       	ldi	r24, 0x9F	; 159
+  a2:	9f e0       	ldi	r25, 0x0F	; 15
+  a4:	01 97       	sbiw	r24, 0x01	; 1
+  a6:	f1 f7       	brne	.-4      	; 0xa4 <send_data+0xc>
+  a8:	00 c0       	rjmp	.+0      	; 0xaa <send_data+0x12>
+  aa:	00 00       	nop
+  ac:	08 95       	ret
+
+000000ae <usart_init>:
+  ae:	8f ef       	ldi	r24, 0xFF	; 255
+  b0:	87 bb       	out	0x17, r24	; 23
+  b2:	81 bb       	out	0x11, r24	; 17
+  b4:	88 e3       	ldi	r24, 0x38	; 56
+  b6:	82 bb       	out	0x12, r24	; 18
+  b8:	0e 94 41 00 	call	0x82	; 0x82 <cmd>
+  bc:	80 e8       	ldi	r24, 0x80	; 128
+  be:	82 bb       	out	0x12, r24	; 18
+  c0:	0e 94 41 00 	call	0x82	; 0x82 <cmd>
+  c4:	8c e0       	ldi	r24, 0x0C	; 12
+  c6:	82 bb       	out	0x12, r24	; 18
+  c8:	0e 94 41 00 	call	0x82	; 0x82 <cmd>
+  cc:	86 e0       	ldi	r24, 0x06	; 6
+  ce:	82 bb       	out	0x12, r24	; 18
+  d0:	0e 94 41 00 	call	0x82	; 0x82 <cmd>
+  d4:	08 95       	ret
+
+000000d6 <usart_send_packedBCD>:
+	
+}
+
+
+void usart_send_packedBCD(unsigned char data)
+{
+  d6:	cf 93       	push	r28
+  d8:	c8 2f       	mov	r28, r24
+	usart_send(0x30 | (data>>4));
+  da:	82 95       	swap	r24
+  dc:	8f 70       	andi	r24, 0x0F	; 15
+  de:	80 63       	ori	r24, 0x30	; 48
+	cmd();	
+}
+
+void usart_send(unsigned char data)
+{
+	display = data;
+  e0:	82 bb       	out	0x12, r24	; 18
+	send_data();
+  e2:	0e 94 4c 00 	call	0x98	; 0x98 <send_data>
+
+
+void usart_send_packedBCD(unsigned char data)
+{
+	usart_send(0x30 | (data>>4));
+	usart_send(0x30 | (data & 0x0F));
+  e6:	cf 70       	andi	r28, 0x0F	; 15
+  e8:	c0 63       	ori	r28, 0x30	; 48
+	cmd();	
+}
+
+void usart_send(unsigned char data)
+{
+	display = data;
+  ea:	c2 bb       	out	0x12, r28	; 18
+	send_data();
+  ec:	0e 94 4c 00 	call	0x98	; 0x98 <send_data>
+void usart_send_packedBCD(unsigned char data)
+{
+	usart_send(0x30 | (data>>4));
+	usart_send(0x30 | (data & 0x0F));
+	
+}
+  f0:	cf 91       	pop	r28
+  f2:	08 95       	ret
+
+000000f4 <i2c_init>:
+
+void i2c_init(void)
+{
+	TWSR = 0x00;
+  f4:	11 b8       	out	0x01, r1	; 1
+	TWBR = 0x47;
+  f6:	87 e4       	ldi	r24, 0x47	; 71
+  f8:	80 b9       	out	0x00, r24	; 0
+	TWCR = 0x04;	
+  fa:	84 e0       	ldi	r24, 0x04	; 4
+  fc:	86 bf       	out	0x36, r24	; 54
+  fe:	08 95       	ret
+
+00000100 <i2c_start>:
+}
+
+void i2c_start(void)
+{
+	TWCR = (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);
+ 100:	84 ea       	ldi	r24, 0xA4	; 164
+ 102:	86 bf       	out	0x36, r24	; 54
+	while(!(TWCR & (1<<TWINT)));	
+ 104:	06 b6       	in	r0, 0x36	; 54
+ 106:	07 fe       	sbrs	r0, 7
+ 108:	fd cf       	rjmp	.-6      	; 0x104 <i2c_start+0x4>
+}
+ 10a:	08 95       	ret
+
+0000010c <i2c_write>:
+
+void i2c_write(unsigned char data)
+{
+	TWDR = data;
+ 10c:	83 b9       	out	0x03, r24	; 3
+	TWCR = (1<<TWINT) | (1<<TWEN);
+ 10e:	84 e8       	ldi	r24, 0x84	; 132
+ 110:	86 bf       	out	0x36, r24	; 54
+	while(!(TWCR & (1<<TWINT)));
+ 112:	06 b6       	in	r0, 0x36	; 54
+ 114:	07 fe       	sbrs	r0, 7
+ 116:	fd cf       	rjmp	.-6      	; 0x112 <i2c_write+0x6>
+}
+ 118:	08 95       	ret
+
+0000011a <i2c_read>:
+
+unsigned char i2c_read(unsigned char ackval)
+{
+	TWCR = (1<<TWINT) | (1<<TWEN) | (ackval<<TWEA);
+ 11a:	20 e4       	ldi	r18, 0x40	; 64
+ 11c:	82 9f       	mul	r24, r18
+ 11e:	c0 01       	movw	r24, r0
+ 120:	11 24       	eor	r1, r1
+ 122:	84 68       	ori	r24, 0x84	; 132
+ 124:	86 bf       	out	0x36, r24	; 54
+	while(!(TWCR &(1<<TWINT)));
+ 126:	06 b6       	in	r0, 0x36	; 54
+ 128:	07 fe       	sbrs	r0, 7
+ 12a:	fd cf       	rjmp	.-6      	; 0x126 <i2c_read+0xc>
+	return TWDR;	
+ 12c:	83 b1       	in	r24, 0x03	; 3
+}
+ 12e:	08 95       	ret
+
+00000130 <i2c_stop>:
+
+void i2c_stop()
+{
+  TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWSTO);
+ 130:	84 e9       	ldi	r24, 0x94	; 148
+ 132:	86 bf       	out	0x36, r24	; 54
+ 134:	84 e6       	ldi	r24, 0x64	; 100
+ 136:	90 e0       	ldi	r25, 0x00	; 0
+ 138:	01 97       	sbiw	r24, 0x01	; 1
+  for (int k = 0; k<100; k++)
+ 13a:	f1 f7       	brne	.-4      	; 0x138 <i2c_stop+0x8>
+  {
+	  
+  }
+}
+ 13c:	08 95       	ret
+
+0000013e <rtc_init>:
+
+void rtc_init(void)
+{
+	i2c_init();
+ 13e:	0e 94 7a 00 	call	0xf4	; 0xf4 <i2c_init>
+	i2c_start();
+ 142:	0e 94 80 00 	call	0x100	; 0x100 <i2c_start>
+	i2c_write(0XD0);
+ 146:	80 ed       	ldi	r24, 0xD0	; 208
+ 148:	0e 94 86 00 	call	0x10c	; 0x10c <i2c_write>
+	i2c_write(0X07);
+ 14c:	87 e0       	ldi	r24, 0x07	; 7
+ 14e:	0e 94 86 00 	call	0x10c	; 0x10c <i2c_write>
+	i2c_write(0X00);
+ 152:	80 e0       	ldi	r24, 0x00	; 0
+ 154:	0e 94 86 00 	call	0x10c	; 0x10c <i2c_write>
+	i2c_stop();
+ 158:	0e 94 98 00 	call	0x130	; 0x130 <i2c_stop>
+ 15c:	08 95       	ret
+
+0000015e <rtc_setTime>:
+
+}
+
+void rtc_setTime(unsigned char h, unsigned char m, unsigned char s)
+{
+ 15e:	1f 93       	push	r17
+ 160:	cf 93       	push	r28
+ 162:	df 93       	push	r29
+ 164:	c8 2f       	mov	r28, r24
+ 166:	d6 2f       	mov	r29, r22
+ 168:	14 2f       	mov	r17, r20
+	i2c_start();
+ 16a:	0e 94 80 00 	call	0x100	; 0x100 <i2c_start>
+	i2c_write(0xD0);
+ 16e:	80 ed       	ldi	r24, 0xD0	; 208
+ 170:	0e 94 86 00 	call	0x10c	; 0x10c <i2c_write>
+	i2c_write(0x00);
+ 174:	80 e0       	ldi	r24, 0x00	; 0
+ 176:	0e 94 86 00 	call	0x10c	; 0x10c <i2c_write>
+	i2c_write(s);
+ 17a:	81 2f       	mov	r24, r17
+ 17c:	0e 94 86 00 	call	0x10c	; 0x10c <i2c_write>
+	i2c_write(m);
+ 180:	8d 2f       	mov	r24, r29
+ 182:	0e 94 86 00 	call	0x10c	; 0x10c <i2c_write>
+	i2c_write(h);
+ 186:	8c 2f       	mov	r24, r28
+ 188:	0e 94 86 00 	call	0x10c	; 0x10c <i2c_write>
+	i2c_stop();
+ 18c:	0e 94 98 00 	call	0x130	; 0x130 <i2c_stop>
+	
+}
+ 190:	df 91       	pop	r29
+ 192:	cf 91       	pop	r28
+ 194:	1f 91       	pop	r17
+ 196:	08 95       	ret
+
+00000198 <rtc_setDate>:
+
+void rtc_setDate(unsigned char y,  unsigned char m, unsigned char d)
+{
+ 198:	1f 93       	push	r17
+ 19a:	cf 93       	push	r28
+ 19c:	df 93       	push	r29
+ 19e:	c8 2f       	mov	r28, r24
+ 1a0:	d6 2f       	mov	r29, r22
+ 1a2:	14 2f       	mov	r17, r20
+	i2c_start();
+ 1a4:	0e 94 80 00 	call	0x100	; 0x100 <i2c_start>
+	i2c_write(0xD0);
+ 1a8:	80 ed       	ldi	r24, 0xD0	; 208
+ 1aa:	0e 94 86 00 	call	0x10c	; 0x10c <i2c_write>
+	i2c_write(0x04);
+ 1ae:	84 e0       	ldi	r24, 0x04	; 4
+ 1b0:	0e 94 86 00 	call	0x10c	; 0x10c <i2c_write>
+	i2c_write(d);
+ 1b4:	81 2f       	mov	r24, r17
+ 1b6:	0e 94 86 00 	call	0x10c	; 0x10c <i2c_write>
+	i2c_write(m);
+ 1ba:	8d 2f       	mov	r24, r29
+ 1bc:	0e 94 86 00 	call	0x10c	; 0x10c <i2c_write>
+	i2c_write(y);
+ 1c0:	8c 2f       	mov	r24, r28
+ 1c2:	0e 94 86 00 	call	0x10c	; 0x10c <i2c_write>
+	i2c_stop();
+ 1c6:	0e 94 98 00 	call	0x130	; 0x130 <i2c_stop>
+	
+}
+ 1ca:	df 91       	pop	r29
+ 1cc:	cf 91       	pop	r28
+ 1ce:	1f 91       	pop	r17
+ 1d0:	08 95       	ret
+
+000001d2 <rtc_getTime>:
+
+
+void rtc_getTime(unsigned char *h, unsigned char *m, unsigned char *s)
+{
+ 1d2:	ef 92       	push	r14
+ 1d4:	ff 92       	push	r15
+ 1d6:	0f 93       	push	r16
+ 1d8:	1f 93       	push	r17
+ 1da:	cf 93       	push	r28
+ 1dc:	df 93       	push	r29
+ 1de:	ec 01       	movw	r28, r24
+ 1e0:	8b 01       	movw	r16, r22
+ 1e2:	7a 01       	movw	r14, r20
+	i2c_start();
+ 1e4:	0e 94 80 00 	call	0x100	; 0x100 <i2c_start>
+	i2c_write(0XD0);
+ 1e8:	80 ed       	ldi	r24, 0xD0	; 208
+ 1ea:	0e 94 86 00 	call	0x10c	; 0x10c <i2c_write>
+	i2c_write(0);
+ 1ee:	80 e0       	ldi	r24, 0x00	; 0
+ 1f0:	0e 94 86 00 	call	0x10c	; 0x10c <i2c_write>
+	i2c_stop();
+ 1f4:	0e 94 98 00 	call	0x130	; 0x130 <i2c_stop>
+    
+	i2c_start();
+ 1f8:	0e 94 80 00 	call	0x100	; 0x100 <i2c_start>
+    i2c_write(0XD1);
+ 1fc:	81 ed       	ldi	r24, 0xD1	; 209
+ 1fe:	0e 94 86 00 	call	0x10c	; 0x10c <i2c_write>
+	*s = i2c_read(1);
+ 202:	81 e0       	ldi	r24, 0x01	; 1
+ 204:	0e 94 8d 00 	call	0x11a	; 0x11a <i2c_read>
+ 208:	f7 01       	movw	r30, r14
+ 20a:	80 83       	st	Z, r24
+	*m = i2c_read(1);
+ 20c:	81 e0       	ldi	r24, 0x01	; 1
+ 20e:	0e 94 8d 00 	call	0x11a	; 0x11a <i2c_read>
+ 212:	f8 01       	movw	r30, r16
+ 214:	80 83       	st	Z, r24
+	*h = i2c_read(0);
+ 216:	80 e0       	ldi	r24, 0x00	; 0
+ 218:	0e 94 8d 00 	call	0x11a	; 0x11a <i2c_read>
+ 21c:	88 83       	st	Y, r24
+	i2c_stop();	
+ 21e:	0e 94 98 00 	call	0x130	; 0x130 <i2c_stop>
+}
+ 222:	df 91       	pop	r29
+ 224:	cf 91       	pop	r28
+ 226:	1f 91       	pop	r17
+ 228:	0f 91       	pop	r16
+ 22a:	ff 90       	pop	r15
+ 22c:	ef 90       	pop	r14
+ 22e:	08 95       	ret
+
+00000230 <rtc_getDate>:
+
+void rtc_getDate(unsigned char *y, unsigned char *m, unsigned char *d)
+{
+ 230:	ef 92       	push	r14
+ 232:	ff 92       	push	r15
+ 234:	0f 93       	push	r16
+ 236:	1f 93       	push	r17
+ 238:	cf 93       	push	r28
+ 23a:	df 93       	push	r29
+ 23c:	ec 01       	movw	r28, r24
+ 23e:	8b 01       	movw	r16, r22
+ 240:	7a 01       	movw	r14, r20
+	i2c_start();
+ 242:	0e 94 80 00 	call	0x100	; 0x100 <i2c_start>
+	i2c_write(0XD0);
+ 246:	80 ed       	ldi	r24, 0xD0	; 208
+ 248:	0e 94 86 00 	call	0x10c	; 0x10c <i2c_write>
+	i2c_write(0X04);
+ 24c:	84 e0       	ldi	r24, 0x04	; 4
+ 24e:	0e 94 86 00 	call	0x10c	; 0x10c <i2c_write>
+	i2c_stop();
+ 252:	0e 94 98 00 	call	0x130	; 0x130 <i2c_stop>
+	
+	i2c_start();
+ 256:	0e 94 80 00 	call	0x100	; 0x100 <i2c_start>
+	i2c_write(0XD1);
+ 25a:	81 ed       	ldi	r24, 0xD1	; 209
+ 25c:	0e 94 86 00 	call	0x10c	; 0x10c <i2c_write>
+	*d = i2c_read(1);
+ 260:	81 e0       	ldi	r24, 0x01	; 1
+ 262:	0e 94 8d 00 	call	0x11a	; 0x11a <i2c_read>
+ 266:	f7 01       	movw	r30, r14
+ 268:	80 83       	st	Z, r24
+	*m = i2c_read(1);
+ 26a:	81 e0       	ldi	r24, 0x01	; 1
+ 26c:	0e 94 8d 00 	call	0x11a	; 0x11a <i2c_read>
+ 270:	f8 01       	movw	r30, r16
+ 272:	80 83       	st	Z, r24
+	*y = i2c_read(0);
+ 274:	80 e0       	ldi	r24, 0x00	; 0
+ 276:	0e 94 8d 00 	call	0x11a	; 0x11a <i2c_read>
+ 27a:	88 83       	st	Y, r24
+	i2c_stop();
+ 27c:	0e 94 98 00 	call	0x130	; 0x130 <i2c_stop>
+}
+ 280:	df 91       	pop	r29
+ 282:	cf 91       	pop	r28
+ 284:	1f 91       	pop	r17
+ 286:	0f 91       	pop	r16
+ 288:	ff 90       	pop	r15
+ 28a:	ef 90       	pop	r14
+ 28c:	08 95       	ret
+
+0000028e <time_date>:
+	 
+     return 0;
+}
+
+void time_date()
+{
+ 28e:	df 92       	push	r13
+ 290:	ef 92       	push	r14
+ 292:	ff 92       	push	r15
+ 294:	0f 93       	push	r16
+ 296:	1f 93       	push	r17
+ 298:	cf 93       	push	r28
+ 29a:	df 93       	push	r29
+ 29c:	cd b7       	in	r28, 0x3d	; 61
+ 29e:	de b7       	in	r29, 0x3e	; 62
+ 2a0:	2e 97       	sbiw	r28, 0x0e	; 14
+ 2a2:	0f b6       	in	r0, 0x3f	; 63
+ 2a4:	f8 94       	cli
+ 2a6:	de bf       	out	0x3e, r29	; 62
+ 2a8:	0f be       	out	0x3f, r0	; 63
+ 2aa:	cd bf       	out	0x3d, r28	; 61
+	unsigned char z[14] = "TIME : DATE : " ;
+ 2ac:	8e e0       	ldi	r24, 0x0E	; 14
+ 2ae:	e0 e6       	ldi	r30, 0x60	; 96
+ 2b0:	f0 e0       	ldi	r31, 0x00	; 0
+ 2b2:	de 01       	movw	r26, r28
+ 2b4:	11 96       	adiw	r26, 0x01	; 1
+ 2b6:	01 90       	ld	r0, Z+
+ 2b8:	0d 92       	st	X+, r0
+ 2ba:	8a 95       	dec	r24
+ 2bc:	e1 f7       	brne	.-8      	; 0x2b6 <time_date+0x28>
+ 2be:	ce 01       	movw	r24, r28
+ 2c0:	01 96       	adiw	r24, 0x01	; 1
+ 2c2:	7c 01       	movw	r14, r24
+ 2c4:	01 e0       	ldi	r16, 0x01	; 1
+ 2c6:	10 e0       	ldi	r17, 0x00	; 0
+	
+	for (int d=0; d<14; d++)
+	{
+		if (d==7)
+		{
+			display = 0xC0;
+ 2c8:	0f 2e       	mov	r0, r31
+ 2ca:	f0 ec       	ldi	r31, 0xC0	; 192
+ 2cc:	df 2e       	mov	r13, r31
+ 2ce:	f0 2d       	mov	r31, r0
+ 2d0:	05 c0       	rjmp	.+10     	; 0x2dc <time_date+0x4e>
+ 2d2:	0f 5f       	subi	r16, 0xFF	; 255
+ 2d4:	1f 4f       	sbci	r17, 0xFF	; 255
+ 2d6:	9f ef       	ldi	r25, 0xFF	; 255
+ 2d8:	e9 1a       	sub	r14, r25
+ 2da:	f9 0a       	sbc	r15, r25
+{
+	unsigned char z[14] = "TIME : DATE : " ;
+	
+	for (int d=0; d<14; d++)
+	{
+		if (d==7)
+ 2dc:	08 30       	cpi	r16, 0x08	; 8
+ 2de:	11 05       	cpc	r17, r1
+ 2e0:	49 f4       	brne	.+18     	; 0x2f4 <time_date+0x66>
+		{
+			display = 0xC0;
+ 2e2:	d2 ba       	out	0x12, r13	; 18
+			cmd();
+ 2e4:	0e 94 41 00 	call	0x82	; 0x82 <cmd>
+		}
+		 
+		usart_send(z[d]);
+ 2e8:	f7 01       	movw	r30, r14
+ 2ea:	80 81       	ld	r24, Z
+	cmd();	
+}
+
+void usart_send(unsigned char data)
+{
+	display = data;
+ 2ec:	82 bb       	out	0x12, r24	; 18
+	send_data();
+ 2ee:	0e 94 4c 00 	call	0x98	; 0x98 <send_data>
+ 2f2:	ef cf       	rjmp	.-34     	; 0x2d2 <time_date+0x44>
+		{
+			display = 0xC0;
+			cmd();
+		}
+		 
+		usart_send(z[d]);
+ 2f4:	f7 01       	movw	r30, r14
+ 2f6:	80 81       	ld	r24, Z
+	cmd();	
+}
+
+void usart_send(unsigned char data)
+{
+	display = data;
+ 2f8:	82 bb       	out	0x12, r24	; 18
+	send_data();
+ 2fa:	0e 94 4c 00 	call	0x98	; 0x98 <send_data>
+
+void time_date()
+{
+	unsigned char z[14] = "TIME : DATE : " ;
+	
+	for (int d=0; d<14; d++)
+ 2fe:	0e 30       	cpi	r16, 0x0E	; 14
+ 300:	11 05       	cpc	r17, r1
+ 302:	3c f3       	brlt	.-50     	; 0x2d2 <time_date+0x44>
+		}
+		 
+		usart_send(z[d]);
+		 
+	}
+}
+ 304:	2e 96       	adiw	r28, 0x0e	; 14
+ 306:	0f b6       	in	r0, 0x3f	; 63
+ 308:	f8 94       	cli
+ 30a:	de bf       	out	0x3e, r29	; 62
+ 30c:	0f be       	out	0x3f, r0	; 63
+ 30e:	cd bf       	out	0x3d, r28	; 61
+ 310:	df 91       	pop	r29
+ 312:	cf 91       	pop	r28
+ 314:	1f 91       	pop	r17
+ 316:	0f 91       	pop	r16
+ 318:	ff 90       	pop	r15
+ 31a:	ef 90       	pop	r14
+ 31c:	df 90       	pop	r13
+ 31e:	08 95       	ret
+
+00000320 <main>:
+	i2c_stop();
+}
+
+
+int main()
+{
+ 320:	cf 93       	push	r28
+ 322:	df 93       	push	r29
+ 324:	00 d0       	rcall	.+0      	; 0x326 <main+0x6>
+ 326:	1f 92       	push	r1
+ 328:	cd b7       	in	r28, 0x3d	; 61
+ 32a:	de b7       	in	r29, 0x3e	; 62
+	 unsigned char i,j,k;
+	 rtc_init();
+ 32c:	0e 94 9f 00 	call	0x13e	; 0x13e <rtc_init>
+	 rtc_setTime(0x10, 0x01, 0x30);
+ 330:	40 e3       	ldi	r20, 0x30	; 48
+ 332:	61 e0       	ldi	r22, 0x01	; 1
+ 334:	80 e1       	ldi	r24, 0x10	; 16
+ 336:	0e 94 af 00 	call	0x15e	; 0x15e <rtc_setTime>
+	 rtc_setDate(0x14, 0x08, 0x20);
+ 33a:	40 e2       	ldi	r20, 0x20	; 32
+ 33c:	68 e0       	ldi	r22, 0x08	; 8
+ 33e:	84 e1       	ldi	r24, 0x14	; 20
+ 340:	0e 94 cc 00 	call	0x198	; 0x198 <rtc_setDate>
+	 usart_init();
+ 344:	0e 94 57 00 	call	0xae	; 0xae <usart_init>
+	 
+	time_date();
+ 348:	0e 94 47 01 	call	0x28e	; 0x28e <time_date>
+	 
+	 display = 0x87;
+ 34c:	87 e8       	ldi	r24, 0x87	; 135
+ 34e:	82 bb       	out	0x12, r24	; 18
+	 cmd(); 
+ 350:	0e 94 41 00 	call	0x82	; 0x82 <cmd>
+		 
+	 
+	 rtc_getTime(&i, &j, &k);
+ 354:	ae 01       	movw	r20, r28
+ 356:	4d 5f       	subi	r20, 0xFD	; 253
+ 358:	5f 4f       	sbci	r21, 0xFF	; 255
+ 35a:	be 01       	movw	r22, r28
+ 35c:	6e 5f       	subi	r22, 0xFE	; 254
+ 35e:	7f 4f       	sbci	r23, 0xFF	; 255
+ 360:	ce 01       	movw	r24, r28
+ 362:	01 96       	adiw	r24, 0x01	; 1
+ 364:	0e 94 e9 00 	call	0x1d2	; 0x1d2 <rtc_getTime>
+	 usart_send_packedBCD(i);
+ 368:	89 81       	ldd	r24, Y+1	; 0x01
+ 36a:	0e 94 6b 00 	call	0xd6	; 0xd6 <usart_send_packedBCD>
+	cmd();	
+}
+
+void usart_send(unsigned char data)
+{
+	display = data;
+ 36e:	1a e3       	ldi	r17, 0x3A	; 58
+ 370:	12 bb       	out	0x12, r17	; 18
+	send_data();
+ 372:	0e 94 4c 00 	call	0x98	; 0x98 <send_data>
+		 
+	 
+	 rtc_getTime(&i, &j, &k);
+	 usart_send_packedBCD(i);
+	 usart_send(':');
+	 usart_send_packedBCD(j);
+ 376:	8a 81       	ldd	r24, Y+2	; 0x02
+ 378:	0e 94 6b 00 	call	0xd6	; 0xd6 <usart_send_packedBCD>
+	cmd();	
+}
+
+void usart_send(unsigned char data)
+{
+	display = data;
+ 37c:	12 bb       	out	0x12, r17	; 18
+	send_data();
+ 37e:	0e 94 4c 00 	call	0x98	; 0x98 <send_data>
+	 usart_send_packedBCD(i);
+	 usart_send(':');
+	 usart_send_packedBCD(j);
+	 usart_send(':');
+	
+	display = 0xC7;
+ 382:	87 ec       	ldi	r24, 0xC7	; 199
+ 384:	82 bb       	out	0x12, r24	; 18
+	cmd();
+ 386:	0e 94 41 00 	call	0x82	; 0x82 <cmd>
+	
+	 rtc_getDate(&i, &j, &k);
+ 38a:	ae 01       	movw	r20, r28
+ 38c:	4d 5f       	subi	r20, 0xFD	; 253
+ 38e:	5f 4f       	sbci	r21, 0xFF	; 255
+ 390:	be 01       	movw	r22, r28
+ 392:	6e 5f       	subi	r22, 0xFE	; 254
+ 394:	7f 4f       	sbci	r23, 0xFF	; 255
+ 396:	ce 01       	movw	r24, r28
+ 398:	01 96       	adiw	r24, 0x01	; 1
+ 39a:	0e 94 18 01 	call	0x230	; 0x230 <rtc_getDate>
+	 usart_send_packedBCD(i);
+ 39e:	89 81       	ldd	r24, Y+1	; 0x01
+ 3a0:	0e 94 6b 00 	call	0xd6	; 0xd6 <usart_send_packedBCD>
+	cmd();	
+}
+
+void usart_send(unsigned char data)
+{
+	display = data;
+ 3a4:	12 bb       	out	0x12, r17	; 18
+	send_data();
+ 3a6:	0e 94 4c 00 	call	0x98	; 0x98 <send_data>
+	cmd();
+	
+	 rtc_getDate(&i, &j, &k);
+	 usart_send_packedBCD(i);
+	 usart_send(':');
+	 usart_send_packedBCD(j);
+ 3aa:	8a 81       	ldd	r24, Y+2	; 0x02
+ 3ac:	0e 94 6b 00 	call	0xd6	; 0xd6 <usart_send_packedBCD>
+	cmd();	
+}
+
+void usart_send(unsigned char data)
+{
+	display = data;
+ 3b0:	12 bb       	out	0x12, r17	; 18
+	send_data();
+ 3b2:	0e 94 4c 00 	call	0x98	; 0x98 <send_data>
+	 rtc_getDate(&i, &j, &k);
+	 usart_send_packedBCD(i);
+	 usart_send(':');
+	 usart_send_packedBCD(j);
+	 usart_send(':');
+	 usart_send_packedBCD(k);
+ 3b6:	8b 81       	ldd	r24, Y+3	; 0x03
+ 3b8:	0e 94 6b 00 	call	0xd6	; 0xd6 <usart_send_packedBCD>
+	
+	do
+	 {
+		rtc_getTime(&i, &j, &k);
+
+		display = 0x8D;
+ 3bc:	1d e8       	ldi	r17, 0x8D	; 141
+		   
+	 }while(k != 0X00);
+	
+	 if (k==0x00)
+	 {
+		 display = 0x8A;
+ 3be:	0f 2e       	mov	r0, r31
+ 3c0:	fa e8       	ldi	r31, 0x8A	; 138
+ 3c2:	ff 2e       	mov	r15, r31
+ 3c4:	f0 2d       	mov	r31, r0
+	cmd();	
+}
+
+void usart_send(unsigned char data)
+{
+	display = data;
+ 3c6:	0a e3       	ldi	r16, 0x3A	; 58
+	{
+		
+	
+	do
+	 {
+		rtc_getTime(&i, &j, &k);
+ 3c8:	ae 01       	movw	r20, r28
+ 3ca:	4d 5f       	subi	r20, 0xFD	; 253
+ 3cc:	5f 4f       	sbci	r21, 0xFF	; 255
+ 3ce:	be 01       	movw	r22, r28
+ 3d0:	6e 5f       	subi	r22, 0xFE	; 254
+ 3d2:	7f 4f       	sbci	r23, 0xFF	; 255
+ 3d4:	ce 01       	movw	r24, r28
+ 3d6:	01 96       	adiw	r24, 0x01	; 1
+ 3d8:	0e 94 e9 00 	call	0x1d2	; 0x1d2 <rtc_getTime>
+
+		display = 0x8D;
+ 3dc:	12 bb       	out	0x12, r17	; 18
+		cmd();
+ 3de:	0e 94 41 00 	call	0x82	; 0x82 <cmd>
+
+		 usart_send_packedBCD(k);
+ 3e2:	8b 81       	ldd	r24, Y+3	; 0x03
+ 3e4:	0e 94 6b 00 	call	0xd6	; 0xd6 <usart_send_packedBCD>
+		   
+	 }while(k != 0X00);
+ 3e8:	8b 81       	ldd	r24, Y+3	; 0x03
+ 3ea:	81 11       	cpse	r24, r1
+ 3ec:	ed cf       	rjmp	.-38     	; 0x3c8 <main+0xa8>
+	
+	 if (k==0x00)
+	 {
+		 display = 0x8A;
+ 3ee:	f2 ba       	out	0x12, r15	; 18
+		 cmd(); 
+ 3f0:	0e 94 41 00 	call	0x82	; 0x82 <cmd>
+		 usart_send_packedBCD(j);
+ 3f4:	8a 81       	ldd	r24, Y+2	; 0x02
+ 3f6:	0e 94 6b 00 	call	0xd6	; 0xd6 <usart_send_packedBCD>
+	cmd();	
+}
+
+void usart_send(unsigned char data)
+{
+	display = data;
+ 3fa:	02 bb       	out	0x12, r16	; 18
+	send_data();
+ 3fc:	0e 94 4c 00 	call	0x98	; 0x98 <send_data>
+		 usart_send_packedBCD(j);
+		 usart_send(':');
+	 }
+	 
+	 
+	 if (j==0x00)
+ 400:	8a 81       	ldd	r24, Y+2	; 0x02
+ 402:	81 11       	cpse	r24, r1
+ 404:	e1 cf       	rjmp	.-62     	; 0x3c8 <main+0xa8>
+	 {
+		 display = 0x87;
+ 406:	87 e8       	ldi	r24, 0x87	; 135
+ 408:	82 bb       	out	0x12, r24	; 18
+		 cmd();
+ 40a:	0e 94 41 00 	call	0x82	; 0x82 <cmd>
+       usart_send_packedBCD(i);
+ 40e:	89 81       	ldd	r24, Y+1	; 0x01
+ 410:	0e 94 6b 00 	call	0xd6	; 0xd6 <usart_send_packedBCD>
+	cmd();	
+}
+
+void usart_send(unsigned char data)
+{
+	display = data;
+ 414:	8a e3       	ldi	r24, 0x3A	; 58
+ 416:	82 bb       	out	0x12, r24	; 18
+	send_data();
+ 418:	0e 94 4c 00 	call	0x98	; 0x98 <send_data>
+ 41c:	d4 cf       	rjmp	.-88     	; 0x3c6 <main+0xa6>
+
+0000041e <_exit>:
+ 41e:	f8 94       	cli
+
+00000420 <__stop_program>:
+ 420:	ff cf       	rjmp	.-2      	; 0x420 <__stop_program>

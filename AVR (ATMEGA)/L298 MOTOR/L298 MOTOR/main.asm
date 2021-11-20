@@ -1,0 +1,29 @@
+;
+; L298 MOTOR.asm
+;
+; Created: 6/18/2020 1:24:18 PM
+; Author : Shri
+ 
+
+ .INCLUDE "M32DEF.INC"
+
+      SBI DDRB, 0
+	  SBI DDRB, 1
+	  SBI DDRB, 2
+	  SBI PORTB, 0
+	  CBI DDRA, 7
+	  SBI PORTA, 7
+
+MONITOR:  
+      SBIS PINA, 7
+	  RJMP CLKWISE
+	  CBI PORTB, 1
+	  SBI PORTB, 2
+	  JMP MONITOR
+
+CLKWISE:
+      SBI PORTB, 1
+	  CBI PORTB, 2
+	  JMP MONITOR
+
+.EXIT

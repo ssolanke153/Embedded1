@@ -1,0 +1,106 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    04/07/2020  00:21:25  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\delays.obj TO .\Objects\accurate delay PRINT (.\Listings\accurate delay.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\delays.obj (DELAYS)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\accurate delay (DELAYS)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0030H     UNIT         ?PR?DELAY?DELAYS
+            CODE    0830H     000CH     UNIT         ?C_C51STARTUP
+            CODE    083CH     000BH     UNIT         ?PR?MAIN?DELAYS
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\accurate delay (DELAYS)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?DELAYS
+
+?PR?MAIN?DELAYS
+  +--> ?PR?DELAY?DELAYS
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\accurate delay (DELAYS)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DELAYS
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  C:0800H         PUBLIC        delay
+  C:083CH         PUBLIC        main
+  D:0089H         PUBLIC        TMOD
+  B:0088H.5       PUBLIC        TF0
+  D:008CH         PUBLIC        TH0
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/07/2020  00:21:25  PAGE 2
+
+
+  B:0088H.4       PUBLIC        TR0
+  -------         PROC          MAIN
+  C:083CH         LINE#         46
+  C:083CH         LINE#         47
+  C:083CH         LINE#         48
+  C:083FH         LINE#         50
+  C:083FH         LINE#         51
+  C:083FH         LINE#         52
+  C:0842H         LINE#         53
+  C:0845H         LINE#         55
+  -------         ENDPROC       MAIN
+  -------         PROC          DELAY
+  -------         DO            
+  D:0007H         SYMBOL        x
+  D:0006H         SYMBOL        y
+  -------         ENDDO         
+  C:0800H         LINE#         59
+  C:0800H         LINE#         60
+  C:0800H         LINE#         64
+  C:080CH         LINE#         65
+  C:080CH         LINE#         66
+  C:0818H         LINE#         67
+  C:0818H         LINE#         68
+  C:081BH         LINE#         69
+  C:081EH         LINE#         70
+  C:0820H         LINE#         71
+  C:0823H         LINE#         72
+  C:0823H         LINE#         73
+  C:0825H         LINE#         74
+  C:0827H         LINE#         76
+  C:0829H         LINE#         77
+  C:082CH         LINE#         78
+  C:082FH         LINE#         81
+  -------         ENDPROC       DELAY
+  -------         ENDMOD        DELAYS
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 003BH BYTE ( 2%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=74
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

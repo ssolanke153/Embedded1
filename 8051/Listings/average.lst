@@ -1,0 +1,185 @@
+A51 MACRO ASSEMBLER  AVERAGE                                                              03/23/2020 16:24:52 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\average.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE average.a51 SET(SMALL) DEBUG PRINT(.\Listings\average.lst) OBJECT(.\Obj
+                      ects\average.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 00H
+                       2     
+                       3     
+                       4     
+                       5     
+                       6     
+                       7     
+                       8     
+                       9     
+                      10     
+                      11     
+                      12     
+                      13     
+                      14     
+                      15     
+                      16     
+                      17     
+                      18     
+                      19     
+0000                  20     MAIN:
+                      21     
+0000 7438             22     MOV A,#38H
+0002 1178             23     ACALL COMMAND
+                      24     
+0004 7401             25     MOV A,#01H
+0006 1178             26     ACALL COMMAND
+                      27     
+0008 740C             28     MOV A,#0CH
+000A 1178             29     ACALL COMMAND
+                      30     
+000C 7406             31     MOV A,#06H
+000E 1178             32     ACALL COMMAND
+                      33     
+0010 7480             34     MOV A,#80H
+0012 1178             35     ACALL COMMAND
+                      36     
+0014 752F18           37         MOV 47,#24
+0017 753014           38             MOV 48,#20
+001A 753117           39             MOV 49,#23
+001D 753215           40             MOV 50,#21
+0020 753316           41             MOV 51,#22
+0023 753413           42             MOV 52,#19
+0026 7906             43             MOV R1,#06
+0028 75F006           44             MOV B,#06
+002B 7847             45             MOV R0,#47H
+002D 7400             46             MOV A,#0
+002F 26               47             BACK: ADD A,@R0
+0030 08               48        INC R0
+0031 D9FC             49        DJNZ R1,BACK
+0033 84               50        DIV  AB
+                      51        
+                      52        
+0034 1185             53        ACALL DISPLAY
+                      54     
+                      55     
+                      56     
+                      57     
+A51 MACRO ASSEMBLER  AVERAGE                                                              03/23/2020 16:24:52 PAGE     2
+
+                      58     
+0036 7453             59     MOV A,#'S'
+0038 1185             60     ACALL DISPLAY
+                      61     
+003A 7448             62     MOV A,#'H'
+003C 1185             63     ACALL DISPLAY
+                      64     
+003E 7452             65     MOV A,#'R'
+0040 1185             66     ACALL DISPLAY
+                      67     
+0042 7449             68     MOV A,#'I'
+0044 1185             69     ACALL DISPLAY
+                      70     
+0046 744B             71     MOV A,#'K'
+0048 1185             72     ACALL DISPLAY
+                      73     
+004A 7441             74     MOV A,#'A'
+004C 1185             75     ACALL DISPLAY
+                      76     
+004E 744E             77     MOV A,#'N'
+0050 1185             78     ACALL DISPLAY
+                      79     
+0052 7454             80     MOV A,#'T'
+0054 1185             81     ACALL DISPLAY
+                      82     
+                      83     
+0056 74C8             84     MOV A,#0C8H
+0058 1178             85     ACALL COMMAND
+                      86     
+005A 7453             87     MOV A,#'S'
+005C 1185             88     ACALL DISPLAY
+                      89     
+005E 744F             90     MOV A,#'O'
+0060 1185             91     ACALL DISPLAY
+                      92     
+0062 744C             93     MOV A,#'L'
+0064 1185             94     ACALL DISPLAY
+                      95     
+0066 7441             96     MOV A,#'A'
+0068 1185             97     ACALL DISPLAY
+                      98     
+006A 744E             99     MOV A,#'N'
+006C 1185            100     ACALL DISPLAY
+                     101     
+006E 744B            102     MOV A,#'K'
+0070 1185            103     ACALL DISPLAY
+                     104     
+0072 7445            105     MOV A,#'E'
+0074 1185            106     ACALL DISPLAY
+                     107     
+0076 8088            108     SJMP MAIN
+                     109     
+                     110     
+0078                 111     COMMAND:
+                     112     
+0078 F590            113     MOV P1,A
+007A C2B0            114     CLR P3.0
+007C C2B1            115     CLR P3.1
+007E D2B2            116     SETB P3.2
+0080 C2B2            117     CLR P3.2
+0082 1192            118     ACALL DELAY
+0084 22              119     RET
+                     120     
+0085                 121     DISPLAY:
+                     122     
+0085 F590            123     MOV P1,A
+A51 MACRO ASSEMBLER  AVERAGE                                                              03/23/2020 16:24:52 PAGE     3
+
+0087 D2B0            124     SETB P3.0
+0089 C2B1            125     CLR P3.1
+008B D2B2            126     SETB P3.2
+008D C2B2            127     CLR P3.2
+008F 1192            128     ACALL DELAY
+0091 22              129     RET
+                     130     
+                     131     
+0092                 132     DELAY:
+                     133           
+0092 78FF            134               A1:   MOV R0,#255
+0094 79FF            135     AGAIN1:MOV R1,#255
+0096 D9FE            136     AGAIN: DJNZ R1,AGAIN
+0098 D8FA            137            DJNZ R0,AGAIN1
+                     138                
+009A 22              139     RET
+                     140     
+                     141      
+                     142      
+                     143     
+                     144     
+                     145     
+                     146     END
+A51 MACRO ASSEMBLER  AVERAGE                                                              03/23/2020 16:24:52 PAGE     4
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+A1 . . . . . . . .  C ADDR   0092H   A   
+AGAIN. . . . . . .  C ADDR   0096H   A   
+AGAIN1 . . . . . .  C ADDR   0094H   A   
+B. . . . . . . . .  D ADDR   00F0H   A   
+BACK . . . . . . .  C ADDR   002FH   A   
+COMMAND. . . . . .  C ADDR   0078H   A   
+DELAY. . . . . . .  C ADDR   0092H   A   
+DISPLAY. . . . . .  C ADDR   0085H   A   
+MAIN . . . . . . .  C ADDR   0000H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

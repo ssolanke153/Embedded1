@@ -1,0 +1,3 @@
+".\Objects\FIRST.obj" 
+TO ".\Objects\DIRECT" 
+PRINT(".\Listings\DIRECT.m51")

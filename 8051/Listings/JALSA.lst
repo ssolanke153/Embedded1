@@ -1,0 +1,139 @@
+A51 MACRO ASSEMBLER  JALSA                                                                04/03/2020 21:06:17 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\JALSA.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE JALSA.a51 SET(SMALL) DEBUG PRINT(.\Listings\JALSA.lst) OBJECT(.\Objects
+                      \JALSA.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 00H
+                       2     
+0000                   3     MAIN:
+                       4     
+0000 7438              5     MOV A,#38H
+0002 1140              6     ACALL COMMAND
+                       7     
+                       8     ;MOV A,#01H
+                       9     ;ACALL COMMAND
+                      10     
+0004 740C             11     MOV A,#0CH
+0006 1140             12     ACALL COMMAND
+                      13     
+0008 7406             14     MOV A,#06H
+000A 1140             15     ACALL COMMAND
+                      16     
+000C 7480             17     MOV A,#80H
+000E 1140             18     ACALL COMMAND
+                      19     
+                      20     ;MOV TMOD,#00000110B
+                      21     ;MOV TH0,#-60
+                      22     ;SETB P3.4 
+                      23     ;AGAIN3:SETB TR0
+                      24     ;BACK: MOV A,TL0
+                      25     ;ACALL CONV
+                      26     ;ACALL DISPLAY
+                      27     ;JNB TF0,BACK
+                      28     ;CLR TR0 
+                      29     ;CLR TF0 
+                      30     ;SJMP AGAIN3
+                      31     ;SJMP MAIN
+                      32     
+0010 74FF             33     MOV A,#-1
+0012 75F002           34     MOV B,#2
+0015 25F0             35     add A,B
+0017 111D             36     ACALL ASCII
+0019 114D             37     ACALL DISPLAY
+001B 80E3             38     SJMP MAIN
+001D                  39     ASCII:
+                      40     ;MOV B,#10
+                      41     ;DIV AB
+                      42     ;MOV R2,B
+                      43     ;MOV B,#10
+                      44     ;DIV AB
+                      45     ;ORL A,#30H
+                      46     ;MOV R4,A
+                      47     ;MOV A,B
+                      48     ;ORL A,#30H
+                      49     ;MOV R3,A
+                      50     ;MOV A,R2
+                      51     ;ORL A,#30O
+                      52     
+001D 75F00A           53     MOV B,#10
+0020 84               54     DIV AB
+0021 ABF0             55     MOV R3,B
+0023 75F00A           56     MOV B,#10
+0026 84               57     DIV AB
+A51 MACRO ASSEMBLER  JALSA                                                                04/03/2020 21:06:17 PAGE     2
+
+0027 AAF0             58     MOV R2,B
+0029 75F00A           59     MOV B,#10
+002C 84               60     DIV AB
+002D 4430             61     ORL A,#30H
+002F 114D             62     ACALL DISPLAY
+0031 E5F0             63     MOV A,B
+0033 4430             64     ORL A,#30H
+0035 114D             65     ACALL DISPLAY
+0037 EA               66     MOV A,R2
+0038 4430             67     ORL A,#30H
+003A 114D             68     ACALL DISPLAY
+003C EB               69     MOV A,R3
+003D 4430             70     ORL A,#30H
+003F 22               71     RET
+                      72     
+0040                  73     COMMAND:
+                      74     
+0040 F590             75     MOV P1,A
+0042 C2B0             76     CLR P3.0
+0044 C2B1             77     CLR P3.1
+0046 D2B2             78     SETB P3.2
+0048 C2B2             79     CLR P3.2
+004A 115A             80     ACALL DELAY
+004C 22               81     RET
+                      82     
+004D                  83     DISPLAY:
+                      84     
+004D F590             85     MOV P1,A
+004F D2B0             86     SETB P3.0
+0051 C2B1             87     CLR P3.1
+0053 D2B2             88     SETB P3.2
+0055 C2B2             89     CLR P3.2
+0057 115A             90     ACALL DELAY
+0059 22               91     RET
+                      92     
+005A                  93     DELAY:
+                      94     
+005A 78FF             95        MOV R0,#255
+005C 79FF             96     AGAIN1:MOV R1,#255
+005E D9FE             97     AGAIN: DJNZ R1,AGAIN
+0060 D8FA             98            DJNZ R0,AGAIN1
+                      99               
+0062 22              100     RET
+                     101                                                             ; 
+                     102     END
+                             
+A51 MACRO ASSEMBLER  JALSA                                                                04/03/2020 21:06:17 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   005EH   A   
+AGAIN1 . . . . . .  C ADDR   005CH   A   
+ASCII. . . . . . .  C ADDR   001DH   A   
+B. . . . . . . . .  D ADDR   00F0H   A   
+COMMAND. . . . . .  C ADDR   0040H   A   
+DELAY. . . . . . .  C ADDR   005AH   A   
+DISPLAY. . . . . .  C ADDR   004DH   A   
+MAIN . . . . . . .  C ADDR   0000H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

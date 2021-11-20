@@ -1,0 +1,53 @@
+A51 MACRO ASSEMBLER  INTERRUPT1                                                           04/12/2020 08:45:53 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\interrupt1.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE interrupt1.a51 SET(SMALL) DEBUG PRINT(.\Listings\interrupt1.lst) OBJECT
+                      (.\Objects\interrupt1.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 00H
+0000 020033            2             LJMP MAIN
+                       3             
+                       4             
+000B                   5             ORG 000BH
+000B B292              6                     CPL P1.2
+000D 32                7                     RETI
+                       8                     
+0030                   9                     ORG 0030H
+0030 758920           10                             MOV TMOD,#20H
+                      11                             
+0033 758CB6           12     MAIN:           MOV TH0,#0B6H
+0036 75A882           13                             MOV IE,#82H
+0039 D28C             14                             SETB TR0
+                      15                             
+003B 758059           16     BACK:           MOV P0,#"Y"
+003E 75A04E           17                             MOV P2,#"N"
+                      18                             
+0041 80F8             19                             SJMP BACK
+                      20                             END
+A51 MACRO ASSEMBLER  INTERRUPT1                                                           04/12/2020 08:45:53 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BACK . . . . . . .  C ADDR   003BH   A   
+IE . . . . . . . .  D ADDR   00A8H   A   
+MAIN . . . . . . .  C ADDR   0033H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

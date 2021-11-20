@@ -1,0 +1,61 @@
+A51 MACRO ASSEMBLER  SERVO                                                                03/23/2020 00:43:49 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\servo.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE servo.a51 SET(SMALL) DEBUG PRINT(.\Listings\servo.lst) OBJECT(.\Objects
+                      \servo.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 00H
+                       2             
+0000                   3             MAIN:
+0000 C2A0              4             CLR P2.0
+0002 1110              5             ACALL DELAY
+0004 D2A0              6             SETB P2.0
+                       7             
+0006 1110              8             ACALL DELAY
+                       9             
+0008 C2A0             10             CLR P2.0
+000A D2A0             11             SETB P2.0
+000C 1110             12             ACALL DELAY
+                      13             
+                      14             
+                      15             
+                      16         ;ACALL DELAY 
+000E 80F0             17             SJMP MAIN
+                      18             
+                      19             
+0010                  20             DELAY:
+0010 7A0A             21             MOV R2,#10
+0012 78FF             22             H3:MOV R0,#255
+                      23             
+0014 79FF             24             H2:MOV R1,#255
+                      25             
+0016 D9FE             26             H1:DJNZ R1,H1
+0018 D8FA             27             DJNZ R0,H2
+001A DAF6             28             DJNZ R2,H3
+001C 22               29             RET
+                      30             
+                      31             END
+A51 MACRO ASSEMBLER  SERVO                                                                03/23/2020 00:43:49 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DELAY. . . . . . .  C ADDR   0010H   A   
+H1 . . . . . . . .  C ADDR   0016H   A   
+H2 . . . . . . . .  C ADDR   0014H   A   
+H3 . . . . . . . .  C ADDR   0012H   A   
+MAIN . . . . . . .  C ADDR   0000H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

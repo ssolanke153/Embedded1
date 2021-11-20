@@ -1,0 +1,32 @@
+A51 MACRO ASSEMBLER  SUB                                                                  03/23/2020 09:47:44 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\sub.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE sub.a51 SET(SMALL) DEBUG PRINT(.\Listings\sub.lst) OBJECT(.\Objects\sub
+                      .obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 00H
+                       2             
+0000 C3                3             CLR C
+0001 743F              4             MOV A,#3FH
+0003 7B23              5             MOV R3,#23H
+0005 9B                6             SUBB A,R3
+                       7             
+                       8             END
+A51 MACRO ASSEMBLER  SUB                                                                  03/23/2020 09:47:44 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

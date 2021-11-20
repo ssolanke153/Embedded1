@@ -1,0 +1,48 @@
+
+
+Microchip MPLAB XC8 Assembler V2.20 build 20200408173844 
+                                                                                                           Wed Aug 05 10:33:23 2020
+
+
+     1                           	processor	18F458
+     2                           	pagewidth 132
+     3                           	opt	flic
+     4  0000                     	org	0
+     5  0000  0E25               	movlw	37
+     6                           tosu	equ	0xFFF
+     7                           tosh	equ	0xFFE
+     8                           tosl	equ	0xFFD
+     9                           stkptr	equ	0xFFC
+    10                           pclatu	equ	0xFFB
+    11                           pclath	equ	0xFFA
+    12                           pcl	equ	0xFF9
+    13                           tblptru	equ	0xFF8
+    14                           tblptrh	equ	0xFF7
+    15                           tblptrl	equ	0xFF6
+    16                           tablat	equ	0xFF5
+    17                           prodh	equ	0xFF4
+    18                           prodl	equ	0xFF3
+    19                           indf0	equ	0xFEF
+    20                           postinc0	equ	0xFEE
+    21                           postdec0	equ	0xFED
+    22                           preinc0	equ	0xFEC
+    23                           plusw0	equ	0xFEB
+    24                           fsr0h	equ	0xFEA
+    25                           fsr0l	equ	0xFE9
+    26                           wreg	equ	0xFE8
+    27                           indf1	equ	0xFE7
+    28                           postinc1	equ	0xFE6
+    29                           postdec1	equ	0xFE5
+    30                           preinc1	equ	0xFE4
+    31                           plusw1	equ	0xFE3
+    32                           fsr1h	equ	0xFE2
+    33                           fsr1l	equ	0xFE1
+    34                           bsr	equ	0xFE0
+    35                           indf2	equ	0xFDF
+    36                           postinc2	equ	0xFDE
+    37                           postdec2	equ	0xFDD
+    38                           preinc2	equ	0xFDC
+    39                           plusw2	equ	0xFDB
+    40                           fsr2h	equ	0xFDA
+    41                           fsr2l	equ	0xFD9
+    42                           status	equ	0xFD8

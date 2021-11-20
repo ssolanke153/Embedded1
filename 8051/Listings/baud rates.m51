@@ -1,0 +1,98 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    04/09/2020  12:14:31  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\double.obj, .\Objects\EXAMPLE.obj TO .\Objects\baud rates PRINT (.\Listings\baud r
+>> ates.m51)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\double.obj (DOUBLE)
+  .\Objects\EXAMPLE.obj (EXAMPLE)
+
+
+LINK MAP OF MODULE:  .\Objects\baud rates (DOUBLE)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     00A2H     ABSOLUTE     
+* OVERLAP * CODE    0000H     0005H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\baud rates (DOUBLE)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DOUBLE
+  C:0025H         SYMBOL        ACCESS
+  C:000EH         SYMBOL        CHECK
+  C:001EH         SYMBOL        H1
+  C:0031H         SYMBOL        HERE
+  C:0090H         SYMBOL        MES1
+  C:00A0H         SYMBOL        MES2
+  C:0017H         SYMBOL        OK
+  D:0080H         SYMBOL        P0
+  D:0099H         SYMBOL        SBUF
+  D:0098H         SYMBOL        SCON
+  C:002FH         SYMBOL        SEND
+  C:0015H         SYMBOL        TEST
+  D:008DH         SYMBOL        TH1
+  B:0098H.1       SYMBOL        TI
+  D:0089H         SYMBOL        TMOD
+  B:0088H.6       SYMBOL        TR1
+  C:0000H         LINE#         27
+  C:0003H         LINE#         28
+  C:0006H         LINE#         29
+  C:0009H         LINE#         30
+  C:000CH         LINE#         31
+  C:000EH         LINE#         33
+  C:0010H         LINE#         34
+  C:0013H         LINE#         35
+  C:0015H         LINE#         37
+  C:0017H         LINE#         38
+  C:001AH         LINE#         39
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/09/2020  12:14:31  PAGE 2
+
+
+  C:001CH         LINE#         40
+  C:001EH         LINE#         42
+  C:0021H         LINE#         43
+  C:0023H         LINE#         44
+  C:0025H         LINE#         46
+  C:0026H         LINE#         47
+  C:0027H         LINE#         48
+  C:0029H         LINE#         49
+  C:002AH         LINE#         50
+  C:002BH         LINE#         51
+  C:002CH         LINE#         52
+  C:002EH         LINE#         54
+  C:002FH         LINE#         56
+  C:0031H         LINE#         57
+  C:0034H         LINE#         58
+  C:0036H         LINE#         59
+  -------         ENDMOD        DOUBLE
+
+  -------         MODULE        EXAMPLE
+  D:00F0H         SYMBOL        B
+  C:0000H         LINE#         3
+  C:0002H         LINE#         4
+  -------         ENDMOD        EXAMPLE
+
+*** WARNING L5: CODE SPACE MEMORY OVERLAP
+    FROM:    0000H
+    TO:      00A1H
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0040H BYTE ( 3%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=167
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

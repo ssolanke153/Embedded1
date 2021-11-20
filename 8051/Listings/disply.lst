@@ -1,0 +1,131 @@
+A51 MACRO ASSEMBLER  DISPLY                                                               03/17/2020 15:58:25 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\disply.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE disply.a51 SET(SMALL) DEBUG PRINT(.\Listings\disply.lst) OBJECT(.\Objec
+                      ts\disply.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 00H
+0000 7438              2     HERE: MOV A,#38H
+0002 115A              3               ACALL CMND
+                       4             
+0004 740F              5               MOV A,#0FH 
+0006 115A              6               ACALL CMND
+                       7             
+                       8              ;MOV A,#01H
+                       9              ;ACALL CMND
+                      10             
+0008 740C             11               MOV A,#0CH
+000A 115A             12               ACALL CMND
+                      13             
+000C 7406             14               MOV A,#06H
+000E 115A             15               ACALL CMND
+                      16             
+0010 7480             17               MOV A,#80H
+0012 115A             18               ACALL CMND
+                      19             
+0014 7453             20               MOV A,#'S'
+0016 1167             21               ACALL DISP
+                      22             
+0018 7448             23               MOV A,#'H'
+001A 1167             24               ACALL DISP
+                      25             
+001C 7452             26               MOV A,#'R'
+001E 1167             27               ACALL DISP
+                      28             
+0020 7449             29               MOV A,#'I'
+0022 1167             30               ACALL DISP
+                      31             
+0024 744B             32               MOV A,#'K'
+0026 1167             33               ACALL DISP
+                      34             
+0028 7441             35               MOV A,#'A'
+002A 1167             36               ACALL DISP
+                      37             
+002C 744E             38               MOV A,#'N'
+002E 1167             39               ACALL DISP
+                      40             
+0030 7454             41               MOV A,#'T'
+0032 1167             42               ACALL DISP
+                      43             
+0034 7420             44               MOV A,#' '
+0036 1167             45               ACALL DISP
+                      46             
+0038 74C8             47           MOV A,#0C8H
+003A 115A             48               ACALL CMND
+                      49             
+003C 7453             50           MOV A,#'S'
+003E 1167             51               ACALL DISP
+                      52             
+0040 744F             53               MOV A,#'O'
+0042 1167             54               ACALL DISP
+                      55             
+0044 744C             56               MOV A,#'L'
+0046 1167             57               ACALL DISP
+A51 MACRO ASSEMBLER  DISPLY                                                               03/17/2020 15:58:25 PAGE     2
+
+                      58             
+0048 7441             59               MOV A,#'A'
+004A 1167             60               ACALL DISP
+                      61             
+004C 744E             62               MOV A,#'N'
+004E 1167             63               ACALL DISP
+                      64             
+0050 744B             65               MOV A,#'K'
+0052 1167             66               ACALL DISP
+                      67             
+0054 7445             68               MOV A,#'E'
+0056 1167             69               ACALL DISP
+                      70             
+0058 80A6             71               SJMP HERE
+                      72             
+005A F5A0             73               CMND: MOV P2,A
+005C C2B5             74               CLR P3.5
+005E C2B4             75               CLR P3.4
+0060 D2B3             76               SETB P3.3
+0062 C2B3             77               CLR P3.3
+0064 1174             78               ACALL DELAY
+0066 22               79               RET
+                      80             
+0067 F5A0             81     DISP: MOV P2,A
+0069 D2B5             82               SETB P3.5
+006B C2B4             83               CLR P3.4
+006D D2B3             84               SETB P3.3
+006F C2B3             85               CLR P3.3
+0071 1174             86           ACALL DELAY 
+0073 22               87               RET
+                      88             
+0074 7BFF             89     DELAY: MOV R3,#0FFH
+0076 7AFF             90     GO1:   MOV R2,#0FFH
+0078 DAFE             91     GO:   DJNZ R2,GO
+007A DBFA             92               DJNZ R3,GO1
+                      93             
+007C 22               94             RET 
+                      95             
+                      96             END
+                                     
+A51 MACRO ASSEMBLER  DISPLY                                                               03/17/2020 15:58:25 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+CMND . . . . . . .  C ADDR   005AH   A   
+DELAY. . . . . . .  C ADDR   0074H   A   
+DISP . . . . . . .  C ADDR   0067H   A   
+GO . . . . . . . .  C ADDR   0078H   A   
+GO1. . . . . . . .  C ADDR   0076H   A   
+HERE . . . . . . .  C ADDR   0000H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,102 @@
+A51 MACRO ASSEMBLER  L1                                                                   08/01/2020 16:37:55 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\l1.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE l1.a51 SET(SMALL) DEBUG PRINT(.\Listings\l1.lst) OBJECT(.\Objects\l1.ob
+                      j) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 00H
+                       2             
+0000                   3             AGAIN:  
+                       4             
+  0100                 5             COUNT EQU 100H
+0000 D290              6             SETB P1.0
+0002 1114              7             ACALL DELAY
+0004 C290              8             CLR P1.0
+0006 D291              9             SETB P1.1
+0008 1121             10             ACALL DELAY1
+000A C291             11             CLR P1.1
+                      12             
+000C D292             13             SETB P1.2
+000E 112E             14             ACALL DELAY2
+0010 C292             15             CLR P1.2
+0012 80EC             16             SJMP AGAIN
+                      17             
+0014                  18             DELAY:
+0014 7808             19             MOV R0,#8H
+0016 7900             20     HERE3:  MOV R1,#COUNT
+*** _________________________________________^
+*** WARNING #A52 IN 20 (l1.a51, LINE 20): VALUE HAS BEEN TRUNCATED TO 8 BITS
+0018 7A00             21     HERE2: MOV R2,#COUNT
+*** ________________________________________^
+*** WARNING #A52 IN 21 (l1.a51, LINE 21): VALUE HAS BEEN TRUNCATED TO 8 BITS
+001A DAFE             22     HERE: DJNZ R2,HERE
+001C D9FA             23     DJNZ R1,HERE2
+001E D8F6             24     DJNZ R0,HERE3
+0020 22               25     RET
+                      26     
+0021                  27     DELAY1:
+0021 7808             28             MOV R0,#8H
+0023 7900             29     HERE6:  MOV R1,#COUNT
+*** _________________________________________^
+*** WARNING #A52 IN 29 (l1.a51, LINE 29): VALUE HAS BEEN TRUNCATED TO 8 BITS
+0025 7A00             30     HERE5: MOV R2,#COUNT
+*** ________________________________________^
+*** WARNING #A52 IN 30 (l1.a51, LINE 30): VALUE HAS BEEN TRUNCATED TO 8 BITS
+0027 DAFE             31     HERE4: DJNZ R2,HERE4
+0029 D9FA             32     DJNZ R1,HERE5
+002B D8F6             33     DJNZ R0,HERE6
+002D 22               34     RET
+                      35     
+002E                  36     DELAY2:
+002E 7808             37             MOV R0,#8H
+0030 7900             38     HERE9:  MOV R1,#COUNT
+*** _________________________________________^
+*** WARNING #A52 IN 38 (l1.a51, LINE 38): VALUE HAS BEEN TRUNCATED TO 8 BITS
+0032 7A00             39     HERE8: MOV R2,#COUNT
+*** ________________________________________^
+*** WARNING #A52 IN 39 (l1.a51, LINE 39): VALUE HAS BEEN TRUNCATED TO 8 BITS
+0034 DAFE             40     HERE7: DJNZ R2,HERE7
+0036 D9FA             41     DJNZ R1,HERE8
+0038 D8F6             42     DJNZ R0,HERE9
+                      43     
+                      44      
+003A 22               45     RET
+A51 MACRO ASSEMBLER  L1                                                                   08/01/2020 16:37:55 PAGE     2
+
+                      46      
+                      47     END
+                             
+                                     
+A51 MACRO ASSEMBLER  L1                                                                   08/01/2020 16:37:55 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   0000H   A   
+COUNT. . . . . . .  N NUMB   0100H   A   
+DELAY. . . . . . .  C ADDR   0014H   A   
+DELAY1 . . . . . .  C ADDR   0021H   A   
+DELAY2 . . . . . .  C ADDR   002EH   A   
+HERE . . . . . . .  C ADDR   001AH   A   
+HERE2. . . . . . .  C ADDR   0018H   A   
+HERE3. . . . . . .  C ADDR   0016H   A   
+HERE4. . . . . . .  C ADDR   0027H   A   
+HERE5. . . . . . .  C ADDR   0025H   A   
+HERE6. . . . . . .  C ADDR   0023H   A   
+HERE7. . . . . . .  C ADDR   0034H   A   
+HERE8. . . . . . .  C ADDR   0032H   A   
+HERE9. . . . . . .  C ADDR   0030H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  6 WARNING(S), 0 ERROR(S)

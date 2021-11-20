@@ -1,0 +1,63 @@
+A51 MACRO ASSEMBLER  MOTOR                                                                03/22/2020 18:23:41 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\motor.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE motor.a51 SET(SMALL) DEBUG PRINT(.\Listings\motor.lst) OBJECT(.\Objects
+                      \motor.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 00H
+                       2             
+0000 D2A0              3             MAIN:   SETB P2.0
+0002 D2A1              4             SETB P2.1
+                       5             
+0004 1116              6             ACALL DELAY
+0006 1116              7             ACALL DELAY
+                       8             
+0008 C2A0              9             CLR P2.0
+000A C2A1             10             CLR P2.1
+                      11             
+000C 1116             12             ACALL DELAY
+                      13             
+000E D2A2             14             SETB P2.2
+0010 D2A3             15             SETB P2.3
+0012 1116             16             ACALL DELAY
+                      17             ;ACALL DELAY
+                      18             
+                      19             ;CLR P2.2
+                      20             ;CLR P2.3
+                      21             
+                      22             
+0014 80EA             23             SJMP MAIN
+                      24             
+0016                  25             DELAY:
+                      26             
+0016 7919             27             MOV R1,#25
+0018 A832             28             H1:     MOV R0,50
+                      29             
+001A D8FC             30             H2:DJNZ R0,H1
+001C D9FC             31             DJNZ R1,H2
+                      32             
+                      33             
+                      34             END
+A51 MACRO ASSEMBLER  MOTOR                                                                03/22/2020 18:23:41 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DELAY. . . . . . .  C ADDR   0016H   A   
+H1 . . . . . . . .  C ADDR   0018H   A   
+H2 . . . . . . . .  C ADDR   001AH   A   
+MAIN . . . . . . .  C ADDR   0000H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

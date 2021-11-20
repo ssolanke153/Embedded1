@@ -1,0 +1,37 @@
+;
+; stepper_motor.asm
+;
+; Created: 7/4/2020 12:53:23 PM
+; Author : Shri
+;
+
+ .INCLUDE "M32DEF.INC"
+
+   LDI R20, HIGH(RAMEND)
+   OUT SPH, R20
+   LDI R20, LOW(RAMEND)
+   OUT SPL, R20
+
+   LDI R20, 0xFF
+   OUT DDRB, R20
+   LDI R20, 0x06
+
+L1: OUT PORTB ,  R20
+    LSR R20
+	BRCC L2
+	ORI R20, 0x8
+
+L2:
+    RCALL DELAY
+	RJMP L1
+	`
+DELAY: 
+LDI R16, 0x50
+D_L1:
+NOP
+NOP
+DEC R16
+BRNE D_L1
+RET
+
+.EXIT

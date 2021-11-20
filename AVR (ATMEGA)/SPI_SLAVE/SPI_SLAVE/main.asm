@@ -1,0 +1,31 @@
+;
+; SPI_SLAVE.asm
+;
+; Created: 26-07-2020 09:38:39 PM
+; Author : Shri
+ 
+
+ .INCLUDE "M32DEF.INC"
+ .equ MISO = 6
+
+ LDI R17, 0xFF
+ OUT DDRD, R17
+ LDI R17, (1<<MISO)
+ OUT DDRB, R17
+
+ LDI R17, (1<<SPE)
+ OUT SPCR, R17
+
+  
+
+ wait:
+
+ SBIS SPSR, SPIF
+ RJMP wait
+ LDI R27, (1<<SPIF)
+ OUT SPSR, R27
+
+ IN R18,SPDR
+ OUT PORTD, R18
+ RJMP wait
+

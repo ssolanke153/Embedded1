@@ -1,0 +1,102 @@
+A51 MACRO ASSEMBLER  1                                                                    04/02/2020 23:42:31 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\1.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE 1.a51 SET(SMALL) DEBUG PRINT(.\Listings\1.lst) OBJECT(.\Objects\1.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ; ORG 00H 
+                       2     ;        MOV TMOD,#52H
+                       3     ;        HERE:   MOV TL0,#0FH
+                       4     ;        MOV TH0,#0FFH 
+                       5     ;        CPL P1.5
+                       6     ;        ACALL DELAY 
+                       7     ;        SJMP HERE
+                       8     ;        DELAY:
+                       9     ;        SETB TR0
+                      10     ;AGAIN: JNB TF0,AGAIN
+                      11     ;        
+                      12     ;        CLR TR0 
+                      13     ;        CLR TF0
+                      14     ;        RET
+                      15     ;        
+                      16     ;        END
+                      17     
+                      18     ;ORG 00H 
+                      19     ;       MOV R0,#7
+                      20     ;       H1:     MOV TMOD,#10H
+                      21     ;BACK: MOV TL1,#00H 
+                      22     ;       MOV TH1,#00H
+                      23     ;       MOV P1,#00H
+                      24     ;       ACALL DELAY 
+                      25     ;       DJNZ R0,H1
+                      26     ;       H2:MOV TL1,#00H
+                      27     ;    MOV TH1 ,#00H
+                      28     ;    MOV P1,#0FFH
+                      29     ;    ACALL DELAY
+                      30     ;       DJNZ R0,H2
+                      31     ;     SJMP BACK
+                      32     
+                      33     ;DELAY:
+                      34     ;      SETB TR1
+                      35     ;AGAIN:JNB TF1,AGAIN
+                      36     ;         CLR TR1
+                      37     ;         CLR TF1
+                      38     ;         RET
+                      39     ;         END
+                      40             
+0000                  41                 ORG 00H
+0000 780E             42     REPEAT: MOV R0,#14
+0002 758910           43                     MOV TMOD,#10H
+0005 758B00           44     H1:         MOV TL1,#00H
+0008 758D00           45                     MOV TH1,#00H
+000B 759001           46                     MOV P1,#01H
+000E 1121             47                     ACALL DELAY 
+0010 D8F3             48                     DJNZ R0,H1
+0012 758B00           49     H2:     MOV TL1,#00H
+0015 758D00           50                     MOV TH1,#00H
+0018 759000           51                     MOV P1,#00H
+001B 1121             52                     ACALL DELAY
+001D D8F3             53                     DJNZ R0,H2
+001F 80DF             54                     SJMP REPEAT
+                      55                     
+                      56                     
+                      57                     
+0021                  58     DELAY:
+A51 MACRO ASSEMBLER  1                                                                    04/02/2020 23:42:31 PAGE     2
+
+0021 D28E             59           SETB TR1
+0023 308FFD           60     AGAIN:JNB TF1,AGAIN
+0026 C28E             61               CLR TR1
+0028 C28F             62               CLR TF1
+002A 22               63               RET
+                      64               
+                      65               END
+                                     
+A51 MACRO ASSEMBLER  1                                                                    04/02/2020 23:42:31 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   0023H   A   
+DELAY. . . . . . .  C ADDR   0021H   A   
+H1 . . . . . . . .  C ADDR   0005H   A   
+H2 . . . . . . . .  C ADDR   0012H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+REPEAT . . . . . .  C ADDR   0000H   A   
+TF1. . . . . . . .  B ADDR   0088H.7 A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TL1. . . . . . . .  D ADDR   008BH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

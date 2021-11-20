@@ -1,0 +1,23 @@
+ .INCLUDE "m328pdef.inc"
+
+ .ORG 0
+
+ LDI R16,1
+ OUT PORTB,R16
+
+
+/* LDI R16,1
+
+ IN R16,0X00
+
+ MOV R1,R16
+ LDS R17,0X300
+ 
+
+ ADD R1,R16
+ DEC R1
+ DEC R1
+ DEC R1*/
+
+ .EXIT
+

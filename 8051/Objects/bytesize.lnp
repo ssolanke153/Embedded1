@@ -1,0 +1,3 @@
+".\Objects\two leds.obj" 
+TO ".\Objects\bytesize" 
+PRINT(".\Listings\bytesize.m51")

@@ -1,0 +1,52 @@
+;
+; MOTOR.asm
+;
+; Created: 6/18/2020 12:13:12 PM
+; Author : Shri
+ 
+
+ .INCLUDE "M32DEF.INC"
+
+       LDI R16, HIGH(RAMEND)
+	   OUT SPH, R16
+
+	   LDI R16, LOW(RAMEND)
+	   OUT SPL, R16
+
+	   SBI DDRB, 0
+	   CBI DDRA, 7
+	   SBI PORTB, 0
+
+CHK:   SBIC PINA, 7
+       RJMP P50
+	   SBI PORTB, 0
+	   RCALL DELAY
+	   RCALL DELAY
+
+	   CBI PORTB, 0
+	   RCALL DELAY
+	   RJMP CHK
+
+P50:   SBI PORTB, 0
+       RCALL DELAY
+	   RCALL DELAY
+	   CBI PORTB, 0
+	   RCALL DELAY
+	   RCALL DELAY
+	   RJMP CHK  
+
+
+DELAY: 
+     LDI R17, 100
+H2:	 LDI R18, 10
+
+H1:  DEC R18
+	 BRNE H1
+
+	 DEC R1
+	 BRNE H2
+
+	 RET
+
+
+.EXIT

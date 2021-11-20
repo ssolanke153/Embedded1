@@ -1,0 +1,46 @@
+;          ORG 00H
+;			MOV TMOD,#20H
+;			MOV TH1,#-3
+;			MOV SCON,#50H
+;			SETB TR1
+
+;AGAIN:      MOV SBUF,#'Y'
+;HERE:	    JNB T1,HERE
+;			CLR T1
+;			MOV P0,#'N'
+;			
+;			
+;    END
+
+
+
+
+;   1.  TAKE DATA IN THROUGH PORTS 0,1 AND 2 ONE AFTER THE ONTHER AND TRANSFER THIS DATA SERIALLY, CONTINUOSLY
+
+ ORG 00H
+		 MOV TMOD,#20H
+		 MOV TH1,#-6
+		 MOV SCON,#50H
+		 MOV P0,#0FFH
+		 MOV P1,#0FFH
+		 MOV P2,#0FFH
+		 SETB TR1
+		 
+ RPT:	 MOV A,P0
+		 ACALL SEND
+		 
+		 MOV A,P1
+		 ACALL SEND
+		 
+		 MOV A,P2
+		 ACALL SEND
+		 
+		 SJMP RPT
+	 
+SEND:    MOV SBUF,A
+HERE:	 JNB T1,HERE
+	     CLR T1
+	     RET
+	 
+ END
+	 

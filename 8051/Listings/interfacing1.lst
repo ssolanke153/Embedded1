@@ -1,0 +1,361 @@
+A51 MACRO ASSEMBLER  INTERFACING1                                                         04/28/2020 07:30:29 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\interfacing1.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE interfacing1.a51 SET(SMALL) DEBUG PRINT(.\Listings\interfacing1.lst) OB
+                      JECT(.\Objects\interfacing1.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 00H
+                       2     
+0000 7438              3     MAIN:       MOV A,#38H
+0002 313F              4                             ACALL COMMAND
+                       5     
+0004 7401              6                             MOV A,#01H
+0006 313F              7                             ACALL COMMAND
+                       8     
+0008 740C              9                             MOV A,#0CH
+000A 313F             10                             ACALL COMMAND
+                      11     
+000C 7406             12                             MOV A,#06H
+000E 313F             13                             ACALL COMMAND
+                      14     
+0010 7480             15                             MOV A,#80H
+0012 313F             16                             ACALL COMMAND
+                      17     
+                      18                 
+0014 75A0FF           19                             MOV P2,#0FFH 
+0017 758000           20     K1:         MOV P0,#0
+                      21                 
+001A E5A0             22                             MOV A,P2
+001C 540F             23                             ANL A,#00001111B
+001E B40FF6           24                             CJNE A,#00001111B,K1
+0021 3159             25     K2:         ACALL DELAY
+                      26                 
+0023 E5A0             27                             MOV A,P2
+0025 540F             28                             ANL A,#00001111B
+0027 B40702           29                             CJNE A,#00000111B,OVER
+002A 80F5             30                             SJMP K2
+                      31                             
+002C 3159             32     OVER:       ACALL DELAY 
+                      33     
+002E E5A0             34                             MOV A,P2
+0030 540F             35                             ANL A,#00001111B
+0032 B40F02           36                             CJNE A,#00001111B,OVER1
+0035 80EA             37                             SJMP K2
+0037 7580FE           38     OVER1:      MOV P0,#11111110B
+003A E5A0             39                             MOV A,P2
+003C 540F             40                             ANL A,#00001111B
+                      41                             
+003E B40F21           42                             CJNE A,#00001111B,ROW_0
+0041 7580FD           43                             MOV P0,#11111101B
+0044 E5A0             44                             MOV A,P2
+0046 540F             45                             ANL A,#00001111B
+                      46                             
+0048 B40F1C           47                             CJNE A,#00001111B,ROW_1
+004B 7580FB           48                             MOV P0,#11111011B
+004E E5A0             49                             MOV A,P2
+0050 540F             50                             ANL A,#00001111B
+                      51                             
+0052 B40F17           52                             CJNE A,#00001111B,ROW_2
+0055 7580F7           53                             MOV P0,#11110111B
+0058 E5A0             54                             MOV A,P2
+005A 540F             55                             ANL A,#00001111B
+005C B40F12           56                             CJNE A,#00001111B,ROW_3
+005F 020021           57                             LJMP K2
+A51 MACRO ASSEMBLER  INTERFACING1                                                         04/28/2020 07:30:29 PAGE     2
+
+                      58     
+0062 900100           59     ROW_0:      MOV DPTR,#KCODE0
+0065 800F             60                 SJMP FIND
+                      61       
+0067 900104           62     ROW_1:      MOV DPTR,#KCODE1
+006A 800A             63                 SJMP FIND
+                      64     
+006C 900108           65     ROW_2:      MOV DPTR,#KCODE2
+006F 8005             66                 SJMP FIND
+                      67     
+0071 90010C           68     ROW_3:      MOV DPTR,#KCODE3
+0074 8000             69                 SJMP FIND
+                      70     
+0076 13               71     FIND:       RRC A
+0077 5003             72                             JNC MATCH
+0079 A3               73                             INC DPTR
+007A 80FA             74                             SJMP FIND
+                      75                             
+                      76     
+007C                  77     MATCH:  
+007C E4               78                             CLR A
+007D 93               79                             MOVC A,@A+DPTR
+                      80                             
+007E B44302           81                             CJNE A,#01000011B,JP2
+0081 0100             82                             AJMP MAIN
+                      83                         
+0083                  84     JP2:
+0083 B43D05           85                         CJNE A,#00111101B,JP1
+0086 314C             86                             ACALL DISPLAY
+0088 0200C4           87                             LJMP PERFORM
+                      88                     
+                      89                             
+008B 314C             90     JP1:            ACALL DISPLAY   
+008D B42B03           91                             CJNE  A,#00101011B,VAJABAKI
+0090 FD               92                             MOV R5,A
+0091 801C             93                             SJMP N_3
+0093                  94     VAJABAKI:       
+0093 C3               95                 CLR C
+0094 B42D03           96                 CJNE A,#00101101B,GUNAKAR
+0097 FD               97                 MOV R5,A
+0098 8015             98                             SJMP N_3
+                      99                             
+009A C3              100     GUNAKAR:        CLR C
+009B B42A03          101                 CJNE A,#00101010B,BHAGAKAR
+009E FD              102                 MOV R5,A
+009F 800E            103                             SJMP N_3
+00A1 C3              104     BHAGAKAR:       CLR C
+00A2 B42F03          105                 CJNE A,#00101111B,NUM
+00A5 FD              106                 MOV R5,A
+00A6 8007            107                             SJMP N_3
+                     108                             
+00A8 C3              109     NUM:        CLR C
+00A9 30D106          110                 JNB PSW.1,CONV1        
+00AC 20D10D          111                 JB PSW.1,CONV2                      
+00AF 020017          112     N_3:        LJMP K1
+                     113                             
+00B2                 114     CONV1:
+00B2 540F            115                 ANL A,#0FH
+00B4 FB              116                 MOV R3,A
+00B5 E4              117                             CLR  A
+00B6 C2D1            118                             CLR PSW.1
+00B8 D2D1            119                             SETB PSW.1 
+00BA 0117            120                             AJMP K1
+                     121                             
+00BC                 122     CONV2:
+00BC 540F            123                 ANL A,#0FH
+A51 MACRO ASSEMBLER  INTERFACING1                                                         04/28/2020 07:30:29 PAGE     3
+
+00BE FC              124                 MOV R4,A
+00BF C2D1            125                             CLR PSW.1
+00C1 E4              126                             CLR A
+00C2 0117            127                             AJMP K1
+                     128                             
+00C4                 129     PERFORM:        
+00C4 BD2B02          130                 CJNE R5,#00101011B,MINUS
+00C7 8012            131                             SJMP ADDITION
+                     132                             
+00C9                 133     MINUS:          
+00C9 BD2D02          134                 CJNE R5,#00101101B,MULTYPLY
+00CC 8013            135                 SJMP SUBSTRACTION
+                     136     
+00CE                 137     MULTYPLY:   
+00CE BD2A02          138                 CJNE R5,#00101010B ,DIVIDE
+00D1 8014            139                 SJMP MULTIPLICATION
+                     140     
+                     141     
+                     142     ;            MOV A,R3
+                     143     ;               MOV B,R4
+                     144     ;                       MUL AB
+                     145     ;            ACALL ANTICONV1
+                     146                                             
+                     147                     ;AJMP K1
+                     148                             
+00D3                 149     DIVIDE:    
+00D3 EB              150               MOV A,R3
+00D4 8CF0            151                MOV B,R4
+00D6 84              152                        DIV AB
+00D7 312E            153                        ACALL ANTICONV2
+00D9 0117            154                        AJMP K1 
+                     155     
+                     156     
+00DB EB              157     ADDITION:       MOV A,R3
+00DC 2C              158                             ADD A,R4
+00DD 11EF            159                 ACALL  ANTICONV
+00DF 0117            160                 AJMP K1     
+                     161                             
+00E1                 162     SUBSTRACTION:   
+00E1 EB              163                 MOV A,R3
+00E2 9C              164                             SUBB A,R4
+00E3 11EF            165                 ACALL  ANTICONV
+00E5 0117            166                 AJMP K1
+                     167     
+00E7                 168     MULTIPLICATION:
+                     169                     
+00E7 EB              170                             MOV A,R3
+00E8 8CF0            171                     MOV B,R4
+00EA A4              172                             MUL AB
+00EB 11FE            173                 ACALL ANTICONV1
+                     174                                             
+00ED 0117            175                     AJMP K1
+                     176                             
+                     177     ;DIVIDETATION:                  
+                     178     ;           MOV A,R3
+                     179     ;           MOV B,R4
+                     180     ;                  DIV AB
+                     181     ;                  ACALL ANTICONV2
+                     182     ;                  AJMP K1
+                     183     ;   
+                     184      
+                     185                             
+                     186                             
+00EF 75F00A          187     ANTICONV:   MOV B,#10
+00F2 84              188                 DIV AB
+00F3 4430            189                             ORL A,#30H
+A51 MACRO ASSEMBLER  INTERFACING1                                                         04/28/2020 07:30:29 PAGE     4
+
+00F5 314C            190                             ACALL DISPLAY
+00F7 E5F0            191                             MOV A,B
+00F9 4430            192                             ORL A,#30H
+00FB 314C            193                             ACALL DISPLAY
+00FD 22              194                             RET
+00FE                 195     ANTICONV1:      
+00FE AEF0            196                 MOV R6,B
+0100 FD              197                             MOV R5,A
+0101 E4              198                             CLR A
+0102 EE              199                             MOV A,R6
+0103 75F00A          200                             MOV B,#10
+0106 84              201                             DIV AB
+0107 4430            202                             ORL A,#30H
+0109 B4301A          203                             CJNE A,#30H,NEXT
+                     204                        ; ACALL DISPLAY
+                     205                             
+010C E5F0            206     N_1:        MOV A,B
+010E 4430            207                             ORL A,#30H
+0110 B43017          208                             CJNE A,#30H,NEXT1               
+                     209                             ;ACALL DISPLAY                  
+                     210                     
+0113 C2F0            211     N_2:        CLR 0F0H
+0115 ED              212                 MOV A,R5
+0116 75F00A          213                             MOV B,#10
+0119 84              214                             DIV AB
+011A 4430            215                             ORL A,#30H
+011C 314C            216                  ACALL DISPLAY
+011E E5F0            217                 MOV A,B
+0120 4430            218                             ORL A,#30H
+0122 314C            219                             ACALL DISPLAY
+0124 0117            220                 AJMP K1
+                     221                             
+                     222                             
+                     223                             
+0126                 224     NEXT:     
+0126 314C            225          ACALL DISPLAY
+0128 80E2            226          SJMP N_1
+                     227     
+012A                 228     NEXT1:     
+012A 314C            229          ACALL DISPLAY
+012C 80E5            230          SJMP N_2
+                     231                             
+012E                 232     ANTICONV2:      
+                     233                
+012E 75F00A          234                        MOV B,#10
+0131 84              235                        DIV AB
+0132 4430            236                        ORL A,#30H
+0134 314C            237                        ACALL DISPLAY
+                     238                        
+0136 E5F0            239                        MOV A,B
+0138 4430            240                        ORL A,#30H
+013A 314C            241                        ACALL DISPLAY
+013C 0117            242                        AJMP K1
+013E 22              243                        RET
+                     244                        
+                     245      
+                     246      
+013F                 247     COMMAND:
+013F F590            248                             MOV P1,A
+0141 C2B0            249                             CLR P3.0
+0143 C2B1            250                             CLR P3.1
+0145 D2B2            251                             SETB P3.2
+0147 C2B2            252                             CLR P3.2
+0149 3159            253                             ACALL DELAY
+014B 22              254                             RET
+014C                 255     DISPLAY:
+A51 MACRO ASSEMBLER  INTERFACING1                                                         04/28/2020 07:30:29 PAGE     5
+
+014C F590            256                             MOV P1,A
+014E D2B0            257                             SETB P3.0
+0150 C2B1            258                             CLR P3.1
+0152 D2B2            259                             SETB P3.2
+0154 C2B2            260                             CLR P3.2
+0156 3159            261                             ACALL DELAY
+0158 22              262                             RET
+0159                 263     DELAY:
+                     264                 
+0159 7814            265                         MOV  R0,#20
+015B 79C8            266     AGAIN1:     MOV  R1,#200
+015D D9FE            267     AGAIN:      DJNZ R1,AGAIN
+015F D8FA            268                 DJNZ R0,AGAIN1
+0161 22              269                 RET
+                     270                             
+                     271                             
+0100                 272     ORG 100H
+                     273             
+0100 3738392F        274             KCODE0: DB '7','8','9','/'
+0104 3435362A        275             KCODE1: DB '4','5','6','*'
+0108 3132332D        276             KCODE2: DB '1','2','3','-'
+010C 43303D2B        277             KCODE3: DB 'C','0','=','+'
+                     278                     
+0110 22              279                     RET 
+                     280     END
+A51 MACRO ASSEMBLER  INTERFACING1                                                         04/28/2020 07:30:29 PAGE     6
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+ADDITION . . . . .  C ADDR   00DBH   A   
+AGAIN. . . . . . .  C ADDR   015DH   A   
+AGAIN1 . . . . . .  C ADDR   015BH   A   
+ANTICONV . . . . .  C ADDR   00EFH   A   
+ANTICONV1. . . . .  C ADDR   00FEH   A   
+ANTICONV2. . . . .  C ADDR   012EH   A   
+B. . . . . . . . .  D ADDR   00F0H   A   
+BHAGAKAR . . . . .  C ADDR   00A1H   A   
+COMMAND. . . . . .  C ADDR   013FH   A   
+CONV1. . . . . . .  C ADDR   00B2H   A   
+CONV2. . . . . . .  C ADDR   00BCH   A   
+DELAY. . . . . . .  C ADDR   0159H   A   
+DISPLAY. . . . . .  C ADDR   014CH   A   
+DIVIDE . . . . . .  C ADDR   00D3H   A   
+FIND . . . . . . .  C ADDR   0076H   A   
+GUNAKAR. . . . . .  C ADDR   009AH   A   
+JP1. . . . . . . .  C ADDR   008BH   A   
+JP2. . . . . . . .  C ADDR   0083H   A   
+K1 . . . . . . . .  C ADDR   0017H   A   
+K2 . . . . . . . .  C ADDR   0021H   A   
+KCODE0 . . . . . .  C ADDR   0100H   A   
+KCODE1 . . . . . .  C ADDR   0104H   A   
+KCODE2 . . . . . .  C ADDR   0108H   A   
+KCODE3 . . . . . .  C ADDR   010CH   A   
+MAIN . . . . . . .  C ADDR   0000H   A   
+MATCH. . . . . . .  C ADDR   007CH   A   
+MINUS. . . . . . .  C ADDR   00C9H   A   
+MULTIPLICATION . .  C ADDR   00E7H   A   
+MULTYPLY . . . . .  C ADDR   00CEH   A   
+NEXT . . . . . . .  C ADDR   0126H   A   
+NEXT1. . . . . . .  C ADDR   012AH   A   
+NUM. . . . . . . .  C ADDR   00A8H   A   
+N_1. . . . . . . .  C ADDR   010CH   A   
+N_2. . . . . . . .  C ADDR   0113H   A   
+N_3. . . . . . . .  C ADDR   00AFH   A   
+OVER . . . . . . .  C ADDR   002CH   A   
+OVER1. . . . . . .  C ADDR   0037H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+PERFORM. . . . . .  C ADDR   00C4H   A   
+PSW. . . . . . . .  D ADDR   00D0H   A   
+ROW_0. . . . . . .  C ADDR   0062H   A   
+ROW_1. . . . . . .  C ADDR   0067H   A   
+ROW_2. . . . . . .  C ADDR   006CH   A   
+ROW_3. . . . . . .  C ADDR   0071H   A   
+SUBSTRACTION . . .  C ADDR   00E1H   A   
+VAJABAKI . . . . .  C ADDR   0093H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,165 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/31/2020  13:22:39  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\first in c.obj TO .\Objects\first in c PRINT (.\Listings\first in c.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\first in c.obj (FIRST_IN_C)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?COPY)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\first in c (FIRST_IN_C)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     001EH     UNIT         _DATA_GROUP_
+            DATA    0026H     0001H     UNIT         ?DT?FIRST_IN_C
+            IDATA   0027H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     00F6H     UNIT         ?C?LIB_CODE
+            CODE    08F6H     008CH     UNIT         ?C_C51STARTUP
+            CODE    0982H     0070H     UNIT         ?PR?MAIN?FIRST_IN_C
+            CODE    09F2H     0020H     UNIT         ?PR?_DELAY?FIRST_IN_C
+            CODE    0A12H     001DH     UNIT         ?CO?FIRST_IN_C
+            CODE    0A2FH     0012H     UNIT         ?PR?COMMAND?FIRST_IN_C
+            CODE    0A41H     0004H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\first in c (FIRST_IN_C)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?FIRST_IN_C
+  +--> ?C_INITSEG
+
+?PR?MAIN?FIRST_IN_C            0008H    001EH
+  +--> ?CO?FIRST_IN_C
+  +--> ?PR?COMMAND?FIRST_IN_C
+  +--> ?PR?_DELAY?FIRST_IN_C
+
+?PR?COMMAND?FIRST_IN_C         -----    -----
+  +--> ?PR?_DELAY?FIRST_IN_C
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/31/2020  13:22:39  PAGE 2
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\first in c (FIRST_IN_C)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        FIRST_IN_C
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  C:09F2H         PUBLIC        _delay
+  C:0982H         PUBLIC        main
+  B:00B0H.2       PUBLIC        En
+  C:0A12H         SYMBOL        _?ix1000
+  B:00B0H.0       PUBLIC        Rs
+  D:00E0H         PUBLIC        ACC
+  B:00B0H.1       PUBLIC        Rw
+  C:0A2FH         PUBLIC        command
+  D:0026H         PUBLIC        d
+  -------         PROC          COMMAND
+  C:0A2FH         LINE#         8
+  C:0A2FH         LINE#         9
+  C:0A2FH         LINE#         11
+  C:0A31H         LINE#         12
+  C:0A33H         LINE#         13
+  C:0A35H         LINE#         14
+  C:0A37H         LINE#         15
+  -------         ENDPROC       COMMAND
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        message
+  D:0025H         SYMBOL        z
+  -------         ENDDO         
+  C:0982H         LINE#         18
+  C:0982H         LINE#         19
+  C:0982H         LINE#         42
+  C:0995H         LINE#         45
+  C:0998H         LINE#         47
+  C:099BH         LINE#         48
+  C:099EH         LINE#         50
+  C:09A1H         LINE#         51
+  C:09A4H         LINE#         53
+  C:09A7H         LINE#         54
+  C:09AAH         LINE#         57
+  C:09ADH         LINE#         58
+  C:09B0H         LINE#         61
+  C:09B3H         LINE#         62
+  C:09B6H         LINE#         64
+  C:09B8H         LINE#         67
+  C:09C7H         LINE#         68
+  C:09C7H         LINE#         69
+  C:09CCH         LINE#         70
+  C:09CCH         LINE#         71
+  C:09CFH         LINE#         72
+  C:09D1H         LINE#         73
+  C:09D1H         LINE#         74
+  C:09D1H         LINE#         75
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/31/2020  13:22:39  PAGE 3
+
+
+  C:09D1H         LINE#         76
+  C:09D1H         LINE#         78
+  C:09D3H         LINE#         79
+  C:09D3H         LINE#         80
+  C:09DBH         LINE#         82
+  C:09DDH         LINE#         83
+  C:09DFH         LINE#         84
+  C:09E1H         LINE#         85
+  C:09E3H         LINE#         86
+  C:09EDH         LINE#         87
+  C:09EDH         LINE#         89
+  C:09F1H         LINE#         90
+  -------         ENDPROC       MAIN
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        time
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:09F2H         LINE#         92
+  C:09F2H         LINE#         93
+  C:09F2H         LINE#         95
+  C:09FCH         LINE#         96
+  C:09FCH         LINE#         97
+  C:09FFH         LINE#         98
+  C:09FFH         LINE#         99
+  C:0A0AH         LINE#         100
+  C:0A11H         LINE#         101
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        FIRST_IN_C
+
+  -------         MODULE        ?C?COPY
+  C:08D0H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00C2H BYTE ( 9%) *
+******************************************************************************
+
+Program Size: data=40.0 xdata=0 code=584
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,9 @@
+ORG 00H
+	
+	CLR C
+	MOV A,#3FH
+	MOV R3,#23H
+	SUBB A,R3
+	
+	
+	END

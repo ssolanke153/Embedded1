@@ -1,0 +1,52 @@
+;
+; DIRECTIVES.asm
+;
+; Created: 08-05-2020 6.44.43 AM
+; Author : Shri
+;
+ 
+
+ .INCLUDE "M32DEF.INC"
+ .ESEG
+
+ /*.equ alpha =0x20
+ .equ beta =0x4
+
+ ldi r20,alpha
+ ldi r16,0b0011100<<1
+ ldi r16,~(0x55)
+
+ ldi r16,1<<SREG_S
+OUT SREG,R16
+
+ LDI R23,0x25
+ LDI XL,0X20
+ LDI XH,0X2
+H1: STD X+5,R23
+ RJMP H1*/
+
+/*LDI R16,0xFF
+LDI R20,0xFF
+OUT DDRB,R16
+OUT PORTB,R20
+LDI R16,0x00
+OUT DDRB,R16
+IN R23,PORTB
+LDI R16,(1<<SREG_H)|(1<<SREG_S)|(1<<SREG_C)
+
+OUT SREG,R16
+LDI R20,(1<<PB4)|(1<<PB2)
+OUT DDRB,R20
+LD R19,0x95
+.EXIT
+*/
+
+.ORG $1
+
+DATA:
+     .DB   $10
+
+DATA1:
+      .DB  $5
+
+ 

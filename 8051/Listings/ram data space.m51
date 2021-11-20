@@ -1,0 +1,74 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/31/2020  13:11:53  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\ex1.obj TO .\Objects\ram data space PRINT (.\Listings\ram data space.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\ex1.obj (EX1)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\ram data space (EX1)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     000CH     UNIT         ?C_C51STARTUP
+            CODE    080CH     0009H     UNIT         ?PR?MAIN?EX1
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\ram data space (EX1)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?EX1
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\ram data space (EX1)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        EX1
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  C:080CH         PUBLIC        main
+  D:00E0H         PUBLIC        ACC
+  -------         PROC          MAIN
+  C:080CH         LINE#         3
+  C:080CH         LINE#         4
+  C:080CH         LINE#         29
+  C:080FH         LINE#         30
+  C:0812H         LINE#         31
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/31/2020  13:11:53  PAGE 2
+
+
+  C:0814H         LINE#         33
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        EX1
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0009H BYTE ( 0%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=24
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,126 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    04/03/2020  21:01:20  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\JALSA.obj, .\Objects\timer.obj TO .\Objects\JALSA PRINT (.\Listings\JALSA.m51) COD
+>> E (0X0000-0X0FFF)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\JALSA.obj (JALSA)
+  .\Objects\timer.obj (TIMER)
+
+
+LINK MAP OF MODULE:  .\Objects\JALSA (JALSA)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0063H     ABSOLUTE     
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\JALSA (JALSA)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\JALSA (JALSA)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        JALSA
+  C:005EH         SYMBOL        AGAIN
+  C:005CH         SYMBOL        AGAIN1
+  C:001DH         SYMBOL        ASCII
+  D:00F0H         SYMBOL        B
+  C:0040H         SYMBOL        COMMAND
+  C:005AH         SYMBOL        DELAY
+  C:004DH         SYMBOL        DISPLAY
+  C:0000H         SYMBOL        MAIN
+  D:0090H         SYMBOL        P1
+  D:00B0H         SYMBOL        P3
+  C:0000H         LINE#         5
+  C:0002H         LINE#         6
+  C:0004H         LINE#         11
+  C:0006H         LINE#         12
+  C:0008H         LINE#         14
+  C:000AH         LINE#         15
+  C:000CH         LINE#         17
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/03/2020  21:01:20  PAGE 2
+
+
+  C:000EH         LINE#         18
+  C:0010H         LINE#         33
+  C:0012H         LINE#         34
+  C:0015H         LINE#         35
+  C:0017H         LINE#         36
+  C:0019H         LINE#         37
+  C:001BH         LINE#         38
+  C:001DH         LINE#         53
+  C:0020H         LINE#         54
+  C:0021H         LINE#         55
+  C:0023H         LINE#         56
+  C:0026H         LINE#         57
+  C:0027H         LINE#         58
+  C:0029H         LINE#         59
+  C:002CH         LINE#         60
+  C:002DH         LINE#         61
+  C:002FH         LINE#         62
+  C:0031H         LINE#         63
+  C:0033H         LINE#         64
+  C:0035H         LINE#         65
+  C:0037H         LINE#         66
+  C:0038H         LINE#         67
+  C:003AH         LINE#         68
+  C:003CH         LINE#         69
+  C:003DH         LINE#         70
+  C:003FH         LINE#         71
+  C:0040H         LINE#         75
+  C:0042H         LINE#         76
+  C:0044H         LINE#         77
+  C:0046H         LINE#         78
+  C:0048H         LINE#         79
+  C:004AH         LINE#         80
+  C:004CH         LINE#         81
+  C:004DH         LINE#         85
+  C:004FH         LINE#         86
+  C:0051H         LINE#         87
+  C:0053H         LINE#         88
+  C:0055H         LINE#         89
+  C:0057H         LINE#         90
+  C:0059H         LINE#         91
+  C:005AH         LINE#         95
+  C:005CH         LINE#         96
+  C:005EH         LINE#         97
+  C:0060H         LINE#         98
+  C:0062H         LINE#         100
+  -------         ENDMOD        JALSA
+
+  -------         MODULE        TIMER
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  -------         ENDMOD        TIMER
+
+*** WARNING L10: CANNOT DETERMINE ROOT SEGMENT
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0063H BYTE ( 4%) *
+******************************************************************************
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/03/2020  21:01:20  PAGE 3
+
+
+Program Size: data=8.0 xdata=0 code=99
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

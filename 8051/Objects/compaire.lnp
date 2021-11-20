@@ -1,0 +1,3 @@
+".\Objects\compair instructions.obj" 
+TO ".\Objects\compaire" 
+PRINT(".\Listings\compaire.m51")

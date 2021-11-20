@@ -1,0 +1,93 @@
+
+
+Microchip MPLAB XC8 Assembler V2.20 build 20200408173844 
+                                                                                                           Wed Aug 05 09:11:47 2020
+
+
+     1                           	processor	18F458
+     2                           	pagewidth 132
+     3                           	opt	flic
+     4                           	psect	udata_acs,global,class=COMRAM,space=1,delta=1,noexec
+     5                           	psect	udata_bank0,global,class=BANK0,space=1,delta=1,noexec
+     6                           	psect	udata_bank1,global,class=BANK1,space=1,delta=1,noexec
+     7                           	psect	udata_bank2,global,class=BANK2,space=1,delta=1,noexec
+     8                           	psect	udata_bank3,global,class=BANK3,space=1,delta=1,noexec
+     9                           	psect	udata_bank4,global,class=BANK4,space=1,delta=1,noexec
+    10                           	psect	udata_bank5,global,class=BANK5,space=1,delta=1,noexec
+    11                           	psect	udata,global,class=RAM,space=1,delta=1,noexec
+    12                           	psect	code,global,reloc=2,class=CODE,delta=1
+    13                           	psect	data,global,reloc=2,class=CONST,delta=1,noexec
+    14                           	psect	edata,global,class=EEDATA,space=3,delta=2,noexec
+    15  0000                     
+    16                           	psect	edata
+    17  0000                     stk_offset	set	0
+    18  0000                     auto_size	set	0
+    19                           
+    20                           ; stack_auto defines a symbol /name/_offset which equates to the
+    21                           ; stack offset of the auto object in question
+    22  0000'                    
+    23                           ; stack_param defines a symbol /name/_offset which equates to the
+    24                           ; stack offset of the parameter object in question
+    25  0000'                    
+    26                           ; alloc_stack adjusts the SP to allocate space for auto objects
+    27                           ; it also links in to the btemp symbol so that can be used
+    28  0000'                    
+    29                           ; restore_stack adjusts the SP to remove all auto and parameter
+    30                           ; objects from the stack prior to returning from a function
+    31  0000'                    
+    32                           ; When assembly code is placed in a psect, it can be manipulated as a
+    33                           ; whole by the linker and placed in memory.
+    34                           ;
+    35                           ; In this example, barfunc is the program section (psect) name, 'local' means
+    36                           ; that the section will not be combined with other sections even if they have
+    37                           ; the same name. class=CODE means the barfunc must go in the CODE container.
+    38                           ; PIC18's should have a delta (addressible unit size) of 1 (default) since they
+    39                           ; are byte addressible. PIC10/12/16's have a delta of 2 since they are word
+    40                           ; addressible. PIC18's should have a reloc (alignment) flag of 2 for any
+    41                           ; psect which contains executable code. PIC10/12/16's can use the default
+    42                           ; reloc value of 1. Use one of the psects below for the device you use:
+    43                           ;psect barfunc,local,class=CODE,delta=2 ; PIC10/12/16
+    44  0000' 5080               	movf	3968,w,c	; here we use a symbol defined via xc.inc
+    45                           tosu	equ	0xFFF
+    46                           tosh	equ	0xFFE
+    47                           tosl	equ	0xFFD
+    48                           stkptr	equ	0xFFC
+    49                           pclatu	equ	0xFFB
+    50                           pclath	equ	0xFFA
+    51                           pcl	equ	0xFF9
+    52                           tblptru	equ	0xFF8
+    53                           tblptrh	equ	0xFF7
+    54                           tblptrl	equ	0xFF6
+    55                           tablat	equ	0xFF5
+    56                           prodh	equ	0xFF4
+    57                           prodl	equ	0xFF3
+    58                           indf0	equ	0xFEF
+    59                           postinc0	equ	0xFEE
+    60                           postdec0	equ	0xFED
+    61                           preinc0	equ	0xFEC
+    62                           plusw0	equ	0xFEB
+    63                           fsr0h	equ	0xFEA
+    64                           fsr0l	equ	0xFE9
+    65                           wreg	equ	0xFE8
+    66                           indf1	equ	0xFE7
+    67                           postinc1	equ	0xFE6
+    68                           postdec1	equ	0xFE5
+    69                           preinc1	equ	0xFE4
+    70                           plusw1	equ	0xFE3
+    71                           fsr1h	equ	0xFE2
+    72                           fsr1l	equ	0xFE1
+    73                           bsr	equ	0xFE0
+    74                           indf2	equ	0xFDF
+    75                           postinc2	equ	0xFDE
+    76                           postdec2	equ	0xFDD
+    77                           preinc2	equ	0xFDC
+    78                           plusw2	equ	0xFDB
+    79                           fsr2h	equ	0xFDA
+    80                           fsr2l	equ	0xFD9
+    81                           status	equ	0xFD8
+
+
+Microchip Technology PIC18 Macro Assembler V2.20 build 20200408173844 
+Symbol Table                                                                                               Wed Aug 05 09:11:47 2020
+
+                                                       PORTA 000F80  

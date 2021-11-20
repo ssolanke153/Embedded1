@@ -1,0 +1,46 @@
+;
+; OCF0.asm
+;
+; Created: 17-05-2020 18:01:49
+; Author : Shri
+
+
+ .ORG $0
+
+ LDI R16,1<<5
+ SBI DDRB,5
+ LDI R17,0
+ OUT  PORTB,R17
+
+RPT:
+ OUT PORTB,R17
+ RCALL DELAY
+ EOR R17,R16
+ RJMP RPT
+
+DELAY:
+      LDI R20,51
+	  OUT TCNT0,R20
+
+	  LDI R20,50
+	  OUT OCF0,R20
+	  LDI R20,0x01
+	  OUT TCCR0,R20
+
+RPT1:	  IN R20,TIFR
+	  SBRS R20,OCF0
+	  RJMP RPT1
+
+	  LDI R20,0x00
+	  OUT TCCR0,R20
+	  LDI R20,(1<<OCF0)
+	  OUT TIFR,R20
+	  RET
+
+
+.EXIT
+
+
+
+
+
